@@ -8,8 +8,7 @@ export default function Home() {
         <Image 
             src={LaunchingPicture} 
             alt="LaunchingImage" 
-            layout="intrinsic" 
-            objectFit="cover"
+            layout="intrinsic"
             className="w-auto max-h-[80vh]"
           />
       </div>
