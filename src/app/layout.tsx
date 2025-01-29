@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Skin and Cell",
-  description: "Protect and Repair your skin with our bottled goodness.",
+  description: "Protect and repair your skin with our formula.",
   icons: {
     icon: "/skinandcellfavicon.png",
   },
