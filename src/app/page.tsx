@@ -7,11 +7,6 @@ import B3_Body_Slim from "../../public/2_B3_Body_slim-200ml.png"
 import BB3_Eye_Gold from "../../public/B3_Eye_gold.png"
 import B3_Serum_Gold from "../../public/B3_Serum_gold.png"
 
-
-
-/* import { First_Section } from "@/app/components/first_seciton"
- */
-
 const Logo = () => {
   return (
     <svg width="100%" height="50%" className=" mt-[3%]" viewBox="0 0 1048 437" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">

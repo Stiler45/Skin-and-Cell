@@ -1,5 +1,5 @@
 import Image from "next/image";
-import LaunchingPicture from "../../public/LaunchingPicture.png"
+import LaunchingPicture from "../../../public/LaunchingPicture.png"
 
 export default function Home() {
   return (
