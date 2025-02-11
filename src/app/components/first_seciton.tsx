@@ -34,7 +34,7 @@ const Logo = () => {
 
 export const First_Section = () => {
     return (
-        <>
+        <div className="bg-gradient-to-r from-[#719DDF] to-[#7BA1E3]" >
             <Image
                 src={Bg_Lander}
                 alt="Landerbackground"
@@ -45,6 +45,6 @@ export const First_Section = () => {
                     <Logo/>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
