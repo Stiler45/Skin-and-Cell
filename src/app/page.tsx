@@ -37,12 +37,6 @@ const Logo = () => {
 }
 
 export default function RedirectPage() {
-  /* const router = useRouter();
-
-  useEffect(() => {
-    router.push('/');
-  }, []); */
-
   return (
 
     <main className="max-h-[200svh] overflow-y-hidden bg-gradient-to-r ">
@@ -92,7 +86,6 @@ export default function RedirectPage() {
                 className="w-[8vw] h-auto object-contain max-[738px]:w-[15vw] max-[540px]:w-[18vw]"
               />
             </div>
-
           </div>
         </div>
       </div>
