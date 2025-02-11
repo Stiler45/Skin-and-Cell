@@ -1,6 +1,13 @@
 import Image from "next/image"
 import Bg_Lander from "../../../public/Bg_Lander.png"
+import Bg_Section_2 from "../../../public/BG_Section_2.jpeg"
 import Flag from "../../../public/Flag.png"
+import B3_Face_Gold from "../../../public/B3_Face_gold.png"
+import B3_Body_Slim from "../../../public/2_B3_Body_slim-200ml.png"
+import BB3_Eye_Gold from "../../../public/B3_Eye_gold.png"
+import B3_Serum_Gold from "../../../public/B3_Serum_gold.png"
+
+
 
 /* import { First_Section } from "@/app/components/first_seciton"
  */
@@ -43,15 +50,52 @@ export default function RedirectPage() {
 
   return (
 
-    <div >
+    <div className="max-h-[200svh]">
       <Image
         src={Bg_Lander}
         alt="Landerbackground"
         className="absolute w-full h-svh object-cover sm:object-center md:object-[center_top] lg:object-cover z-[-1]"
       />
-      <div className="w-full h-screen flex justify-center">
-        <div className="flex justify-center mx-[5%]">
+      <Image
+        src={Bg_Section_2}
+        alt="Secondbackground"
+        className="absolute w-full top-[100svh] h-svh object-cover sm:object-center md:object-[center_top] lg:object-cover z-[-1]"
+      />
+      <div className="w-full h-[100svh] flex justify-center">
+        <div className="flex justify-center mx-[5%] relative h-[100svh]">
           <Logo />
+        </div>
+      </div>
+      <div className="h-[100svh] w-full relative flex justify-center items-center">
+        <div className="flex flex-wrap max-[740px]:top-[-10vh] justify-center items-end gap-4 w-full h-[50vh] px-[5%]">
+          <div className="w-full/5">
+            <Image
+              src={B3_Face_Gold}
+              alt="B3_Face"
+              className="w-auto h-[50vh] bottom-0 object-contain max-[738px]:h-[30vh] max-[540px]:h-[35vh]"
+            />
+          </div>
+          <div className="w-full/5">
+            <Image
+              src={B3_Body_Slim}
+              alt="B3_Body"
+              className="w-auto h-[50vh] bottom-0 object-contain max-[738px]:h-[30vh] max-[540px]:h-[35vh] "
+            />
+          </div>
+          <div className="w-full/5">
+            <Image
+              src={BB3_Eye_Gold}
+              alt="B3_Eye"
+              className="w-auto h-[50vh] bottom-0 object-contain max-[738px]:h-[30vh] max-[540px]:h-[35vh] "
+            />
+          </div>
+          <div className="w-full/5">
+            <Image
+              src={B3_Serum_Gold}
+              alt="B3_Serum"
+              className="w-auto h-[50vh] bottom-0 object-contain max-[738px]:h-[30vh] max-[540px]:h-[35vh]"
+            />
+          </div>
         </div>
       </div>
     </div>

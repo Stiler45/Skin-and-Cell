@@ -40,6 +40,11 @@ export const First_Section = () => {
                 alt="Landerbackground"
                 className="absolute w-full h-svh object-cover sm:object-center md:object-[center_top] lg:object-cover z-[-1]" 
             />
+            <Image
+                src={Bg_Lander}
+                alt="Landerbackground"
+                className="absolute w-full h-svh object-cover top-[100vh] sm:object-center md:object-[center_top] lg:object-cover z-[-1]" 
+            />
             <div className="w-full h-screen flex justify-center">
                 <div className="flex justify-center mx-[5%]">
                     <Logo/>
