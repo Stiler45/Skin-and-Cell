@@ -50,7 +50,7 @@ export default function RedirectPage() {
 
   return (
 
-    <div className="max-h-[200vh] overflow-y-hidden">
+    <div className="max-h-[200svh] overflow-y-hidden bg-gradient-to-r from-[#719DDF] to-[#7BA1E3]">
       <Image
         src={Bg_Lander}
         alt="Landerbackground"
