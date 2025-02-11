@@ -34,7 +34,7 @@ const Logo = () => {
 
 export const First_Section = () => {
     return (
-        <div className="w-full h-screen">
+        <div className="w-full h-svh">
             <Image
                 src={Bg_Lander}
                 alt="Landerbackground"
