@@ -68,40 +68,40 @@ export default function RedirectPage() {
       </div>
       <div className="h-[100svh] w-full relative flex justify-center items-center">
         <div className="flex justify-center items-center h-screen">
-          <div className="flex flex-wrap max-[540px]:grid max-[540px]:grid-cols-2 p-6 justify-center items-center gap-4">
-            <div className="w-full/5 flex justify-center">
+          <div className="flex flex-wrap max-[540px]:grid max-[540px]:grid-cols-2 p-6 justify-center items-end gap-8">
+            <div className="w-full/5 flex justify-center items-end">
               <Image
                 src={B3_Face_Gold}
                 alt="B3_Face"
-                className="w-auto h-[50vh] bottom-0 object-contain max-[738px]:h-[30vh] max-[540px]:h-[35vh]"
+                className="w-[8vw] h-auto object-contain max-[738px]:w-[15vw] max-[540px]:w-[18vw]"
               />
             </div>
             <div className="w-full/5 flex justify-center">
               <Image
                 src={B3_Body_Slim}
                 alt="B3_Body"
-                className="w-auto h-[50vh] bottom-0 object-contain max-[738px]:h-[30vh] max-[540px]:h-[35vh]"
+                className="w-[8vw] h-auto object-contain max-[738px]:w-[15vw] max-[540px]:w-[18vw]"
               />
             </div>
             <div className="w-full/5 flex justify-center">
               <Image
                 src={BB3_Eye_Gold}
                 alt="B3_Eye"
-                className="w-auto h-[50vh] bottom-0 object-contain max-[738px]:h-[30vh] max-[540px]:h-[35vh]"
+                className="w-[8vw] h-auto object-contain max-[738px]:w-[15vw] max-[540px]:w-[18vw]"
               />
             </div>
             <div className="w-full/5 flex justify-center">
               <Image
                 src={B3_Serum_Gold}
                 alt="B3_Serum"
-                className="w-auto h-[50vh] bottom-0 object-contain max-[738px]:h-[30vh] max-[540px]:h-[35vh]"
+                className="w-[8vw] h-auto object-contain max-[738px]:w-[15vw] max-[540px]:w-[18vw]"
               />
             </div>
+
           </div>
         </div>
       </div>
     </div>
-
   );
 
 }
