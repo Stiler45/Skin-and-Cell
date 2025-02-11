@@ -50,7 +50,7 @@ export default function RedirectPage() {
 
   return (
 
-    <div className="max-h-[200vh]">
+    <div className="max-h-[200vh] overflow-y-hidden">
       <Image
         src={Bg_Lander}
         alt="Landerbackground"
