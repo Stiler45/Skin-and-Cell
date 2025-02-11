@@ -50,7 +50,7 @@ export default function RedirectPage() {
 
   return (
 
-    <div className="max-h-[200svh]">
+    <div className="max-h-[200vh]">
       <Image
         src={Bg_Lander}
         alt="Landerbackground"
@@ -103,4 +103,5 @@ export default function RedirectPage() {
     </div>
 
   );
+
 }
