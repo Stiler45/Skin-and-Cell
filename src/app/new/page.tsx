@@ -5,6 +5,11 @@ import { motion, AnimatePresence } from "framer-motion"
 import { useState, useEffect } from "react"
 import { TextEffect } from '@/components/ui/text-effect';
 import { AnimatedGroup } from "@/components/ui/animated-group"
+import B3_Face_Gold from "../../public/B3_Face_gold.png"
+import B3_Body_Slim from "../../public/2_B3_Body_slim-200ml.png"
+import BB3_Eye_Gold from "../../public/B3_Eye_gold.png"
+import B3_Serum_Gold from "../../public/B3_Serum_gold.png"
+
 
 
 const NewLander = () => {
@@ -73,13 +78,33 @@ const NewLander = () => {
             </svg>
         )
     }
+
     const [move, setMoved] = useState(false)
+    
     useEffect(() => {
         setTimeout(() => {
             setMoved(!move)
         }, 1000);
+    },[])
 
-    }, [])
+    interface Product {
+        name: string;
+        title: string;
+        description: string;
+        imageUrl: string;
+        marginTop: number;
+    };
+
+    const productData: Product[] = [
+        {
+            name: "B",
+            title: "Software Engineer",
+            description: "Building scalable applications.",
+            imageUrl: "https://via.placeholder.com/40",
+            marginTop: 324
+        }
+    ];
+
 
     const blurSlideVariants = {
         container: {
@@ -167,10 +192,30 @@ const NewLander = () => {
             </section>
 
             <section className="w-full h-svh max-h-svh">
+                <div className="flex justify-center flex-col">
+                    <div className="w-full h-[48px]" />
+                    <div className="text-[56px] w-full text-center text-[#000]">
+                        Products
+                    </div>
 
-            </section>
-            <section className="w-full h-svh max-h-svh">
+                </div>
 
+                <div className="flex w-full justify-center space-x-[64px] pb-[px]">
+                    <div className="h-[118px] w-full"/>
+                    {productData.map((item, index) => (
+                        <div
+                            key={index}
+                            className="p-[94px] border-r-[5px] bg-white/10 border border-white/10 shadow-md shadow-black/25 backdrop-blur-2xl rounded-lg"
+                        >
+                            <div className="w-10 h-10 mb-4">
+                                <img src={item.imageUrl} alt={item.name} className="w-full h-full rounded-full object-cover" />
+                            </div>
+                            <h3 className="text-lg font-bold text-white">{item.title}</h3>
+                            <p className="text-sm text-gray-300">{item.name}</p>
+                            <p className="text-xs text-gray-400">{item.description}</p>
+                        </div>
+                    ))}
+                </div>
             </section>
         </main>
     )

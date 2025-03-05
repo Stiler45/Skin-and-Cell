@@ -1,1 +1,1 @@
-Skin and Cell GitHub Repo
+Skin and Cell GitHub Repository
