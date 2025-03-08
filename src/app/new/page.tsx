@@ -1,4 +1,3 @@
-'use client'
 import Image from "next/image"
 import BG_Lander_New from "../../../public/BG_Lander_New.jpg"
 import { motion, AnimatePresence } from "framer-motion"
@@ -266,7 +265,7 @@ const NewLander = () => {
                             <Image
                                 src={B3_Serum_Gold}
                                 alt="B3 Serum"
-                                className="w-[50%] h-auto object-contain aspect-auto"
+                                className="w-[70%] h-auto object-contain"
                             />
                         </div>
                     ))}
