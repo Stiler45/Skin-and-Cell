@@ -4,20 +4,21 @@ import { useState, useEffect, useRef } from "react"
 import { TextEffect } from '@/components/ui/text-effect';
 import Image from "next/image"
 import Flag from "../../../public/Flag.png"
-import BG_Lander_New from "../../../public/BG_Lander_New.jpg"
+import BG_Lander_New from "../../../public/BG_Lander_New.png"
 import B3_Face_Gold from "../../../public/B3_Face_gold.png"
 import B3_Body_Slim from "../../../public/2_B3_Body_slim-200ml.png"
 import B3_Eye_Gold from "../../../public/B3_Eye_gold.png"
 import B3_Serum_Gold from "../../../public/B3_Serum_gold.png"
 import { Carousel, CarouselContent, CarouselNavigation, CarouselItem } from '@/components/ui/carousel';
-
+import { Cursor } from "@/components/ui/cursor";
 
 const NewLander = () => {
 
     const [scrolled, setScrolled] = useState(false)
+    const [move, setMoved] = useState(false)
 
     const ProductsRef = useRef(null)
-    const TextIsInView = useInView(ProductsRef, { once: true })
+    const isInView = useInView(ProductsRef, { once: true });
 
     useEffect(() => {
         const handleScroll = () => {
@@ -29,12 +30,32 @@ const NewLander = () => {
 
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+    useEffect(() => {
+        setTimeout(() => {
+            setMoved(!move)
+        }, 1000);
+    }, []);
 
+    const Swisscross = () => {
+        return (
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clipPath="url(#clip0_1100_817)">
+                    <path d="M0 0H18V18H0V0Z" fill="#DA291C" />
+                    <path d="M7.3125 3.375H10.6875V7.3125H14.625V10.6875H10.6875V14.625H7.3125V10.6875H3.375V7.3125H7.3125V3.375Z" fill="white" />
+                </g>
+                <defs>
+                    <clipPath id="clip0_1100_817">
+                        <rect width="18" height="18" fill="white" />
+                    </clipPath>
+                </defs>
+            </svg>
+        )
+    }
     const Logo = () => {
         return (
             <svg
-                width="112"
-                height="115"
+                width={move ? "95" : "112"}
+                height={move ? "95" : "115"}
                 viewBox="0 0 112 115"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -219,109 +240,70 @@ const NewLander = () => {
             marginTop: 324
         },
     ];
+   
 
     return (
-        <main className="overflow-x-hidden">
-            <section className="flex flex-col justify-center items-center w-full h-svh max-h-svh">
-                <div className="flex flex-col justify-center items-center px-[20%] min-[1980px]:px-[30%]">
+        <main>
+            <section className="w-full h-svh max-h-svh">
+                <Image
+                    src={BG_Lander_New}
+                    alt="Landerbackground"
+                    className="z-[-1] absolute w-full h-svh object-cover sm:object-center md:object-[center_top] lg:object-cover" />
+                <div className="top-[-5%] absolute flex justify-center items-center w-full h-svh">
                     <motion.div
-                        className="pb-[48px]"
                         initial={{ opacity: 0, y: 40, filter: 'blur(4px)' }}
                         animate={{
                             opacity: 1,
                             y: 0,
                             filter: 'blur(0px)',
                             transition: {
-                                duration: 1.2,
+                                duration: 0.6,
                                 type: 'spring',
-                                bounce: 0.3,
-                                delay: 0.2
-                            },
-                        }}>
-                        <TextLander />
-                    </motion.div>
-                    <div className="relative flex justify-center items-center w-full h-[68%] max-h-[800px]">
-                        <motion.div
-                            className="absolute flex justify-center items-center w-full h-full"
-                            initial={{ opacity: 0, y: 40, filter: 'blur(4px)' }}
-                            animate={{
-                                opacity: 1,
-                                y: 0,
-                                filter: 'blur(0px)',
-                                transition: {
-                                    duration: 1.2,
-                                    type: 'spring',
-                                    bounce: 0.3,
-                                    delay: 0.6
-                                },
-                            }}>
-                            <Image
-                                src={BG_Lander_New}
-                                alt="Laner Image"
-                                quality={10}
-                                className="z-[-1] inset-0 blur-[8px] min-[1080px]:blur-[10px] rounded-[5px] w-full h-full object-cover"
-                            />
-                        </motion.div>
-
-                        <motion.div
-                            className="relative flex justify-center items-center w-full h-full"
-                            initial={{ opacity: 0, y: 40, filter: 'blur(4px)' }}
-                            animate={{
-                                opacity: 1,
-                                y: 0,
-                                filter: 'blur(0px)',
-                                transition: {
-                                    duration: 1.2,
-                                    type: 'spring',
-                                    bounce: 0.3,
-                                    delay: 0.6
-                                },
-                            }}>
-                            <Image
-                                src={BG_Lander_New}
-                                alt="Laner Image"
-                                className="rounded-[5px] w-full h-full object-cover"
-                            />
-                            <motion.div
-                                className="z-[1] absolute flex justify-center items-center w-full h-full"
-                                initial={{ opacity: 0, y: 40, filter: 'blur(4px)' }}
-                                animate={{
-                                    opacity: 1,
-                                    y: 0,
-                                    filter: 'blur(0px)',
-                                    transition: {
-                                        duration: 1.2,
-                                        type: 'spring',
-                                        bounce: 0.3,
-                                        delay: 1
-                                    },
-                                }}>
-                                <Logo />
-                            </motion.div>
-                        </motion.div>
-                    </div>
-                    <motion.div
-                        className="pt-[48px]"
-                        initial={{ opacity: 0, y: 40, filter: 'blur(4px)' }}
-                        animate={{
-                            opacity: 1,
-                            y: 0,
-                            filter: 'blur(0px)',
-                            transition: {
-                                duration: 1.2,
-                                type: 'spring',
-                                bounce: 0.3,
-                                delay: 1.4
+                                bounce: 0.2,
+                                delay: 1.2
                             },
                         }}
-                    >
-                        <BottomText />
+                        className="z-[50] flex flex-col">
+                        <div className="font-normal text-[#fff] text-[60px] text-center">
+                            New Bioactive Skincare
+                        </div>
+                        <div className="flex items-center px-[4px]">
+                            <Swisscross />
+                            <div className="pl-[8px] font-normal text-[#fff] text-[20px]">
+                                From The Glarner Alps in Switzerland
+                            </div>
+                            <div className="pl-[4px] font-normal text-[#BFBFBF] text-[20px]">
+                                made with the highest cosmetic standards.
+                            </div>
+                        </div>
                     </motion.div>
                 </div>
+
+                <div className={`flex ${move ? "justify-start" : "justify-center"} ${move ? "pt-[64px]" : undefined} flex-col max-[900px]:flex-col items-center space-x-[32px]  h-full`}>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 40, filter: 'blur(4px)' }}
+                        animate={{
+                            opacity: 1,
+                            y: 0,
+                            filter: 'blur(0px)',
+                            transition: {
+                                duration: 1.2,
+                                type: 'spring',
+                                bounce: 0.2,
+                            },
+                        }}
+                        layoutId="moveToTop"
+                        layout>
+                        <Logo />
+                    </motion.div>
+                </div>
+
             </section>
-            <section ref={ProductsRef} className="flex-col items-center px-[5%]">
+
+            <section ref={ProductsRef} className="flex flex-col justify-center items-center px-[5%] w-full">
                 <motion.div
-                    className="flex justify-center pb-[48px]"
+                    className="flex justify-center pt-[64px] pb-[64px]"
                     initial={{ opacity: 0, y: 40, filter: 'blur(4px)' }}
                     whileInView={{
                         opacity: 1,
@@ -330,169 +312,19 @@ const NewLander = () => {
                         transition: {
                             duration: 1.2,
                             type: 'spring',
-                            bounce: 0.3,
+                            bounce: 0.2,
                             delay: 0.2
                         },
                     }}>
                     <ProductText />
                 </motion.div>
-                <div className="flex space-x-[64px] space-y-[64px] w-full jusitfy-center">
-                    <motion.div
-                        className="flex justify-center items-center bg-white/10 shadow-black/25 shadow-md p-[64px] border border-black/10 rounded-[5px] cursor-pointer"
-                        initial={{ opacity: 0, y: 40, filter: 'blur(4px)' }}
-                        whileInView={{
-                            opacity: 1,
-                            y: 0,
-                            filter: 'blur(0px)',
-                            transition: {
-                                duration: 1.2,
-                                type: 'spring',
-                                bounce: 0.3,
-                                delay: 1
-                            },
-                        }}
-                        >
-                        <Image
-                            src={B3_Serum_Gold}
-                            alt="B3 Serum"
-                            className="h-[30%] object-contain"
-                        />
-                        <div className="top-0 absolute flex justify-end p-[12px] w-full">
-                            <div className="bg-white/10 shadow-black/25 shadow-sm p-[6px] border border-black/10 rounded-[5px] h-auto cursor-pointer select-all">
-                                <PlusSvg/>
-                            </div>
-                        </div>
-                    </motion.div>
-
-                    <motion.div
-                        className="flex justify-center bg-white/10 shadow-black/25 shadow-md p-[64px] border border-black/10 rounded-[5px] cursor-pointer"
-                        initial={{ opacity: 0, y: 40, filter: 'blur(4px)' }}
-                        whileInView={{
-                            opacity: 1,
-                            y: 0,
-                            filter: 'blur(0px)',
-                            transition: {
-                                duration: 1.2,
-                                type: 'spring',
-                                bounce: 0.3,
-                                delay: 1.4
-                            },
-                        }}
-                        >
-                        <Image
-                            src={B3_Face_Gold}
-                            alt="B3 Serum"
-                            className="h-[40%] object-contain"
-                        />
-                        <div className="top-0 absolute flex justify-end p-[12px] w-full">
-                            <div className="bg-white/10 shadow-black/25 shadow-sm p-[6px] border border-black/10 rounded-[5px] h-auto cursor-pointer select-all">
-                                <PlusSvg/>
-                            </div>
-                        </div>
-                    </motion.div>
-
-                    <motion.div
-                        className="flex justify-center bg-white/10 shadow-black/25 shadow-md p-[64px] border border-black/10 rounded-[5px] cursor-pointer"
-                        initial={{ opacity: 0, y: 40, filter: 'blur(4px)' }}
-                        whileInView={{
-                            opacity: 1,
-                            y: 0,
-                            filter: 'blur(0px)',
-                            transition: {
-                                duration: 1.2,
-                                type: 'spring',
-                                bounce: 0.3,
-                                delay: 1.8
-                            },
-                        }}
-                        >
-                        <Image
-                            src={B3_Body_Slim}
-                            alt="B3 Serum"
-                            className="h-[55%] object-contain"
-                        />
-                        <div className="top-0 absolute flex justify-end p-[12px] w-full">
-                            <div className="bg-white/10 shadow-black/25 shadow-sm p-[6px] border border-black/10 rounded-[5px] h-auto cursor-pointer select-all">
-                                <PlusSvg/>
-                            </div>
-                        </div>
-                    </motion.div>
-
-                    <motion.div
-                        className="flex justify-center bg-white/10 shadow-black/25 shadow-md p-[64px] border border-black/10 rounded-[5px] cursor-pointer"
-                        initial={{ opacity: 0, y: 40, filter: 'blur(4px)' }}
-                        whileInView={{
-                            opacity: 1,
-                            y: 0,
-                            filter: 'blur(0px)',
-                            transition: {
-                                duration: 1.2,
-                                type: 'spring',
-                                bounce: 0.3,
-                                delay: 2.2
-                            },
-                        }}
-                        >
-                        <Image
-                            src={B3_Eye_Gold}
-                            alt="B3 Serum"
-                            className="h-[30%] object-contain"
-                        />
-                        <div className="top-0 absolute flex justify-end p-[12px] w-full">
-                            <div className="bg-white/10 shadow-black/25 shadow-sm p-[6px] border border-black/10 rounded-[5px] h-auto cursor-pointer select-all">
-                                <PlusSvg/>
-                            </div>
-                        </div>
-                    </motion.div>
-                </div>
             </section>
-            <section className="flex justify-center">
-                <div className="pt-[48px]">
+
+            <section className="flex justify-center items-end max-[1000px]:mt-[64px] max-[550px]:mt-[72px] p-[5%]">
                     <Footer />
-                </div>
             </section>
         </main>
     )
 }
 
 export default NewLander
-// <Carousel>
-//                     <CarouselContent>
-//                     <CarouselItem className='basis-1/3'>
-//                         <div className='flex justify-center items-center border-zinc-200 dark:border-zinc-800 border-t border-b border-l aspect-square'>
-//                         1
-//                         </div>
-//                     </CarouselItem>
-//                     <CarouselItem className='basis-1/3'>
-//                         <div className='flex justify-center items-center border border-zinc-200 dark:border-zinc-800 aspect-square'>
-//                         2
-//                         </div>
-//                     </CarouselItem>
-//                     <CarouselItem className='basis-1/3'>
-//                         <div className='flex justify-center items-center border-zinc-200 dark:border-zinc-800 border-t border-r border-b aspect-square'>
-//                         3
-//                         </div>
-//                     </CarouselItem>
-//                     <CarouselItem className='basis-1/3'>
-//                         <div className='flex justify-center items-center border-zinc-200 dark:border-zinc-800 border-t border-r border-b aspect-square'>
-//                         4
-//                         </div>
-//                     </CarouselItem>
-//                     <CarouselItem className='basis-1/3'>
-//                         <div className='flex justify-center items-center border-zinc-200 dark:border-zinc-800 border-t border-r border-b aspect-square'>
-//                         5
-//                         </div>
-//                     </CarouselItem>
-//                     <CarouselItem className='basis-1/3'>
-//                         <div className='flex justify-center items-center border-zinc-200 dark:border-zinc-800 border-t border-r border-b aspect-square'>
-//                         6
-//                         </div>
-//                     </CarouselItem>
-//                     <CarouselItem className='basis-1/3'>
-//                         <div className='flex justify-center items-center border-zinc-200 dark:border-zinc-800 border-t border-r border-b aspect-square'>
-//                         7
-//                         </div>
-//                     </CarouselItem>
-//                     </CarouselContent>
-//                     <CarouselNavigation />
-//                 </Carousel>

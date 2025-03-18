@@ -1,5 +1,6 @@
+'use client'
 import Image from "next/image"
-import BG_Lander_New from "../../../public/BG_Lander_New.jpg"
+import BG_Lander_New from "../../../public/BG_Lander_New.png"
 import { motion, AnimatePresence } from "framer-motion"
 import { useState, useEffect } from "react"
 import { TextEffect } from '@/components/ui/text-effect';
@@ -78,6 +79,103 @@ const NewLander = () => {
             </svg>
         )
     }
+    // <section className="flex flex-col justify-center items-center w-full h-svh max-h-svh">
+    //             <div className="flex flex-col justify-center items-center px-[20%] min-[1980px]:px-[30%]">
+    //                 <motion.div
+    //                     className="pb-[48px]"
+    //                     initial={{ opacity: 0, y: 40, filter: 'blur(4px)' }}
+    //                     animate={{
+    //                         opacity: 1,
+    //                         y: 0,
+    //                         filter: 'blur(0px)',
+    //                         transition: {
+    //                             duration: 1.2,
+    //                             type: 'spring',
+    //                             bounce: 0.3,
+    //                             delay: 0.2
+    //                         },
+    //                     }}>
+    //                     <TextLander />
+    //                 </motion.div>
+    //                 <div className="relative flex justify-center items-center w-full h-[68%] max-h-[800px]">
+    //                     <motion.div
+    //                         className="absolute flex justify-center items-center w-full h-full"
+    //                         initial={{ opacity: 0, y: 40, filter: 'blur(4px)' }}
+    //                         animate={{
+    //                             opacity: 1,
+    //                             y: 0,
+    //                             filter: 'blur(0px)',
+    //                             transition: {
+    //                                 duration: 1.2,
+    //                                 type: 'spring',
+    //                                 bounce: 0.3,
+    //                                 delay: 0.6
+    //                             },
+    //                         }}>
+    //                         <Image
+    //                             src={BG_Lander_New}
+    //                             alt="Laner Image"
+    //                             quality={10}
+    //                             className="z-[-1] inset-0 blur-[8px] min-[1080px]:blur-[10px] rounded-[5px] w-full h-full object-cover"
+    //                         />
+    //                     </motion.div>
+
+    //                     <motion.div
+    //                         className="relative flex justify-center items-center w-full h-full"
+    //                         initial={{ opacity: 0, y: 40, filter: 'blur(4px)' }}
+    //                         animate={{
+    //                             opacity: 1,
+    //                             y: 0,
+    //                             filter: 'blur(0px)',
+    //                             transition: {
+    //                                 duration: 1.2,
+    //                                 type: 'spring',
+    //                                 bounce: 0.3,
+    //                                 delay: 0.6
+    //                             },
+    //                         }}>
+    //                         <Image
+    //                             src={BG_Lander_New}
+    //                             alt="Laner Image"
+    //                             className="rounded-[5px] w-full h-full object-cover"
+    //                         />
+    //                         <motion.div
+    //                             className="z-[1] absolute flex justify-center items-center w-full h-full"
+    //                             initial={{ opacity: 0, y: 40, filter: 'blur(4px)' }}
+    //                             animate={{
+    //                                 opacity: 1,
+    //                                 y: 0,
+    //                                 filter: 'blur(0px)',
+    //                                 transition: {
+    //                                     duration: 1.2,
+    //                                     type: 'spring',
+    //                                     bounce: 0.3,
+    //                                     delay: 1
+    //                                 },
+    //                             }}>
+    //                             <Logo />
+    //                         </motion.div>
+    //                     </motion.div>
+    //                 </div>
+    //                 <motion.div
+    //                     className="pt-[48px]"
+    //                     initial={{ opacity: 0, y: 40, filter: 'blur(4px)' }}
+    //                     animate={{
+    //                         opacity: 1,
+    //                         y: 0,
+    //                         filter: 'blur(0px)',
+    //                         transition: {
+    //                             duration: 1.2,
+    //                             type: 'spring',
+    //                             bounce: 0.3,
+    //                             delay: 1.4
+    //                         },
+    //                     }}
+    //                 >
+    //                     <BottomText />
+    //                 </motion.div>
+    //             </div>
+    //         </section>
 
     const Footer = () => {
         return (
@@ -159,7 +257,6 @@ const NewLander = () => {
             marginTop: 324
         },
     ];
-
 
     const blurSlideVariants = {
         container: {
