@@ -224,87 +224,87 @@ const PoppdOut = () => {
     return (
         <main className="flex justify-center items-center h-svh">
             <motion.div
-    layout
-    layoutId="openHand"
-    className="flex justify-center bg-white bg-blur-[24px] p-[32px] max-[800px]:p-[24px] max-[800px]:pr-[0px] border border-black/10 max-[800px]:border-none w-auto max-[800px]:w-full max-w-[1200px] overflow-hidden cursor-pointer"
->
-    <div className="flex max-[800px]:flex-col select-none">
-        <div className="flex flex-col justify-between space-y-[40px] pr-[32px] max-[800px]:pr-[0px] max-[800px]:pb-[8px] max-w-[650px] max-[800px]:max-w-[100%]">
-            <motion.div
                 layout
-                layoutId="hand-box"
-                className="flex justify-center items-center pt-[12px] w-full h-full"
+                layoutId="openHand"
+                className="flex justify-center bg-white bg-blur-[24px] p-[32px] max-[800px]:p-[24px] max-[800px]:pr-[0px] border border-black/10 max-[800px]:border-none w-auto max-[800px]:w-full max-w-[1200px] overflow-hidden cursor-pointer"
             >
-                <motion.img
-                    layout
-                    src="/B3_Hand_Gold.png"
-                    alt="B3 Hand"
-                    layoutId="hand-same"
-                    className="h-[320px] max-h-[500px] object-contain"
-                />
-            </motion.div>
+                <div className="flex max-[800px]:flex-col select-none">
+                    <div className="flex flex-col justify-between space-y-[40px] pr-[32px] max-[800px]:pr-[0px] max-[800px]:pb-[8px] max-w-[650px] max-[800px]:max-w-[100%]">
+                        <motion.div
+                            layout
+                            layoutId="hand-box"
+                            className="flex justify-center items-center pt-[12px] w-full h-full"
+                        >
+                            <motion.img
+                                layout
+                                src="/B3_Hand_Gold.png"
+                                alt="B3 Hand"
+                                layoutId="hand-same"
+                                className="h-[320px] max-h-[500px] object-contain"
+                            />
+                        </motion.div>
 
-            <div className="flex flex-col">
-                <motion.div
-                    layout
-                    initial="initial"
-                    animate="animate"
-                    exit="exit"
-                    layoutId="hand-head-text"
-                    className="font-normal text-[#6F6F6F] text-[24px] max-[800px]:text-[20px]"
-                >
-                    B3 infused with Ceramides & Vitamin B3
-                </motion.div>
-                <motion.div
-                    layout
-                    initial="initial"
-                    animate="animate"
-                    exit="exit"
-                    layoutId="hand-descp-text"
-                    className="font-normal text-[#999999] text-[20px] max-[800px]:text-[16px]"
-                >
-                    Hand Concentrate
-                </motion.div>
-            </div>
-        </div>
-        <div className="flex flex-col justify-center w-auto max-w-[760px]">
-            <motion.div
-                layout
-                initial="initial"
-                animate="animate"
-                exit="exit"
-                layoutId="hand-ingredients"
-                className="pb-[12px] font-normal text-[#6F6F6F] text-[24px] max-[800px]:text-[18px]"
-            >
-                Ingredients
-            </motion.div>
-            {ingredients.map((ingredient, index) => (
-                <div key={index} className="max-w-[35vw] max-[800px]:max-w-[100%]">
-                    <motion.div
-                        layout
-                        initial="initial"
-                        animate="animate"
-                        exit="exit"
-                        layoutId={`hand-text-${index}`}
-                        className="font-normal text-[#6F6F6F] text-[20px] max-[800px]:text-[16px]"
-                    >
-                        {index + 1}. {ingredient.title}
-                    </motion.div>
-                    <motion.div
-                        layout
-                        initial="initial"
-                        animate="animate"
-                        exit="exit"
-                        layoutId={`hand-desc-${index}`}
-                        className="max-w-[650px] font-light text-[#999999] text-[20px] max-[800px]:text-[16px]"
-                    >
-                        {ingredient.description}
-                    </motion.div>
+                        <div className="flex flex-col">
+                            <motion.div
+                                layout
+                                initial="initial"
+                                animate="animate"
+                                exit="exit"
+                                layoutId="hand-head-text"
+                                className="font-normal text-[#6F6F6F] text-[24px] max-[800px]:text-[20px]"
+                            >
+                                B3 infused with Ceramides & Vitamin B3
+                            </motion.div>
+                            <motion.div
+                                layout
+                                initial="initial"
+                                animate="animate"
+                                exit="exit"
+                                layoutId="hand-descp-text"
+                                className="font-normal text-[#999999] text-[20px] max-[800px]:text-[16px]"
+                            >
+                                Hand Concentrate
+                            </motion.div>
+                        </div>
+                    </div>
+                    <div className="flex flex-col justify-center w-auto max-w-[760px]">
+                        <motion.div
+                            layout
+                            initial="initial"
+                            animate="animate"
+                            exit="exit"
+                            layoutId="hand-ingredients"
+                            className="pb-[12px] font-normal text-[#6F6F6F] text-[24px] max-[800px]:text-[18px]"
+                        >
+                            Ingredients
+                        </motion.div>
+                        {ingredients.map((ingredient, index) => (
+                            <div key={index} className="max-w-[35vw] max-[800px]:max-w-[100%]">
+                                <motion.div
+                                    layout
+                                    initial="initial"
+                                    animate="animate"
+                                    exit="exit"
+                                    layoutId={`hand-text-${index}`}
+                                    className="font-normal text-[#6F6F6F] text-[20px] max-[800px]:text-[16px]"
+                                >
+                                    {index + 1}. {ingredient.title}
+                                </motion.div>
+                                <motion.div
+                                    layout
+                                    initial="initial"
+                                    animate="animate"
+                                    exit="exit"
+                                    layoutId={`hand-desc-${index}`}
+                                    className="max-w-[650px] font-light text-[#999999] text-[20px] max-[800px]:text-[16px]"
+                                >
+                                    {ingredient.description}
+                                </motion.div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
-            ))}
-        </div>
-    </div>
-</motion.div>
+            </motion.div>
         </main>
     )
 }

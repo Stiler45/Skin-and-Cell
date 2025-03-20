@@ -434,11 +434,20 @@ const Test = () => {
                     )}
                 </AnimatePresence>
 
-                <div className="hidden min-[1450px]:block min-[1450px]:pt-[14%]">
+                <div className="hidden min-[1150px]:block  min-[1150px]:pt-[14%]">
                     <motion.div
-                        variants={fadeInUp}
-                        whileInView="animate"
-                        initial="initialUp"
+                        initial={{ opacity: 0, y: 40, filter: 'blur(4px)' }}
+                        whileInView={{
+                            opacity: 1,
+                            y: 0,
+                            filter: 'blur(0px)',
+                            transition: {
+                                duration: 0.6,
+                                type: 'spring',
+                                bounce: 0.2,
+                                delay: 0.2
+                            },
+                        }}
                         layout
                         layoutId="openSerum"
                         whileHover={{ boxShadow: "0 5px 20px rgba(0, 0, 0, 0.05)" }}
@@ -550,11 +559,20 @@ const Test = () => {
                     )}
                 </AnimatePresence>
 
-                <div className="hidden min-[1450px]:block min-[1450px]:pl-[64px]">
+                <div className="hidden min-[1150px]:block pl-[32px] min-[1150px]:pl-[64px]">
                     <motion.div
-                        variants={fadeInUp}
-                        whileInView="animate"
-                        initial="initialUp"
+                        initial={{ opacity: 0, y: 40, filter: 'blur(4px)' }}
+                        whileInView={{
+                            opacity: 1,
+                            y: 0,
+                            filter: 'blur(0px)',
+                            transition: {
+                                duration: 0.6,
+                                type: 'spring',
+                                bounce: 0.2,
+                                delay: 0.4
+                            },
+                        }}
                         layout
                         layoutId="openFace"
                         whileHover={{ boxShadow: "0 5px 20px rgba(0, 0, 0, 0.05)" }}
@@ -666,11 +684,20 @@ const Test = () => {
                     )}
                 </AnimatePresence>
 
-                <div className="hidden min-[1450px]:block min-[1450px]:pt-[10.5%] min-[1450px]:pl-[64px]">
+                <div className="hidden min-[1150px]:block pl-[32px] min-[1150px]:pt-[10.5%] min1[1450px]:pl-[64px]">
                     <motion.div
-                        variants={fadeInUp}
-                        whileInView="animate"
-                        initial="initialUp"
+                        initial={{ opacity: 0, y: 40, filter: 'blur(4px)' }}
+                        whileInView={{
+                            opacity: 1,
+                            y: 0,
+                            filter: 'blur(0px)',
+                            transition: {
+                                duration: 0.6,
+                                type: 'spring',
+                                bounce: 0.2,
+                                delay: 0.6
+                            },
+                        }}
                         layout
                         layoutId="openBody"
                         whileHover={{ boxShadow: "0 5px 20px rgba(0, 0, 0, 0.05)" }}
@@ -782,11 +809,20 @@ const Test = () => {
                     )}
                 </AnimatePresence>
 
-                <div className="hidden min-[1450px]:block min-[1450px]:pt-[4%] min-[1450px]:pl-[64px]">
+                <div className="hidden min-[1150px]:block pl-[32px] min-[1150px]:pt-[4%] min-[1150px]:pl-[64px]">
                     <motion.div
-                        variants={fadeInUp}
-                        whileInView="animate"
-                        initial="initialUp"
+                        initial={{ opacity: 0, y: 40, filter: 'blur(4px)' }}
+                        whileInView={{
+                            opacity: 1,
+                            y: 0,
+                            filter: 'blur(0px)',
+                            transition: {
+                                duration: 0.6,
+                                type: 'spring',
+                                bounce: 0.2,
+                                delay: 0.8
+                            },
+                        }}
                         layout
                         layoutId="openEye"
                         whileHover={{ boxShadow: "0 5px 20px rgba(0, 0, 0, 0.05)" }}
@@ -903,11 +939,20 @@ const Test = () => {
                     )}
                 </AnimatePresence>
 
-                <div className="hidden min-[1450px]:block min-[1450px]:pt-[16%] min-[1450px]:pl-[64px]">
+                <div className="hidden min-[1150px]:block pl-[32px] min-[1150px]:pt-[16%] min-[1150px]:pl-[64px]">
                     <motion.div
-                        variants={fadeInUp}
-                        whileInView="animate"
-                        initial="initialUp"
+                        initial={{ opacity: 0, y: 40, filter: 'blur(4px)' }}
+                        whileInView={{
+                            opacity: 1,
+                            y: 0,
+                            filter: 'blur(0px)',
+                            transition: {
+                                duration: 0.6,
+                                type: 'spring',
+                                bounce: 0.2,
+                                delay: 1
+                            },
+                        }}
                         layout
                         layoutId="openHand"
                         whileHover={{ boxShadow: "0 5px 20px rgba(0, 0, 0, 0.05)" }}
@@ -925,10 +970,10 @@ const Test = () => {
                 </div>
 
 
-                <div className="min-[1450px]:hidden flex justify-center items-center p-[64px] w- h-svh">
+                <div className="min-[1150px]:hidden flex justify-center items-center p-[64px] w- h-svh">
                     <Carousel className="">
                         <CarouselContent className=''>
-                            <CarouselItem className='pl-4'>
+                            <CarouselItem className=''>
                                 <div className="w-ful h-full">
                                     <motion.div
                                         variants={fadeInUp}
@@ -1030,7 +1075,7 @@ const Test = () => {
                                     >
                                         <motion.img
                                             layout
-                                            layoutId="hand-same"
+                                            layoutId="hand-same-mobile"
                                             src="/B3_Hand_Gold.png"
                                             alt="B3 Hand"
                                             className="h-[30%] max-h-[250px] object-contain"
@@ -1041,13 +1086,12 @@ const Test = () => {
 
                         </CarouselContent>
                         <CarouselNavigation
-                            className='top-auto -bottom-20 left-auto absolute justify-end gap-2 w-full'
+                            className='top-auto max-[550px]:left-[-12px] -bottom-20 left-auto absolute justify-end  w-full'
                             alwaysShow
                         />
                     </Carousel>
                 </div>
             </div>
-
         </section>
     )
 }
