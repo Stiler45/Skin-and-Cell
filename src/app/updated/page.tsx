@@ -7,17 +7,14 @@ import B3_Serum_Gold from "../../../public/B3_Serum_gold.png"
 import BG_Lander_new from "../../../public/BG_Lander_New.png"
 import { delay, motion } from "framer-motion"
 import { useEffect, useState } from "react"
+import {
+    Carousel,
+    CarouselContent,
+    CarouselNavigation,
+    CarouselItem,
+} from '../../components/ui/carousel';
 
 const Updated = () => {
-
-    const [move, setMoved] = useState(false)
-
-    // useEffect(() => {
-    //     setTimeout((resolve) => {
-            
-    //     }, 3000);
-    //     setMoved(true)
-    // }, [])
 
     const Logo = () => {
         return (
@@ -156,7 +153,7 @@ const Updated = () => {
 
     return (
         <main className="w-full">
-            <section className=" max-h-svh flex-col">
+            <section className="h-svh max-h-svh flex-col ">
                 <Image
                     src={BG_Lander_new}
                     alt="Landerbackground"
@@ -225,10 +222,107 @@ const Updated = () => {
 
                     </div>
                 </div>
+            </section>
+            <section className="h-svh flex justify-center">
+
+                <div>
+                    <h1 className="pt-24 pb-16 text-[7.5rem] font-semibold text-[#000]">
+                        Products
+                    </h1>
+                    <Carousel className="max-w-[1350px] max-[1900px]:max-w-[1072px] max-[1200px]:max-w-[696px]">
+                        <CarouselContent className='-ml-4'>
+                            <CarouselItem className='basis-1/3 max-[850px]:basis-0 max-[1200px]:basis-1/2 pl-4'>
+                                <div className="flex flex-col">
+                                    <motion.div className=" flex justify-center items-center w-[25rem] relative cursor-pointer p-16 h-[27rem] max-[1900px]:w-[20rem] bg-[#fff] border border-[#000]/10">
+                                        <motion.img
+                                            layout
+                                            src="/B3_Serum_Gold.png"
+                                            alt="B3 Serum"
+                                            layoutId="Serum-same"
+                                            className="h-[290px] max-h-[450px] object-contain"
+                                        />
+                                    </motion.div>
+                                    <div className="pt-6">
+                                        <motion.h1 className="text-[1.25rem] text-[#000] font-semibold">B3 Serum Concentrate</motion.h1>
+                                        <motion.p className="text-[0.875rem] text-[#000]/80 font-normal">Infused with Peptides which is Anti Aging</motion.p>
+                                    </div>
+                                </div>
+                            </CarouselItem>
+                            <CarouselItem className='basis-1/3 max-[850px]:basis-0 max-[1200px]:basis-1/2 pl-4'>
+                                <div className="flex flex-col">
+                                    <motion.div className=" flex justify-center items-center w-[25rem] relative cursor-pointer max-[1900px]:w-[20rem] p-16 bg-[#fff] h-[27rem] border border-[#000]/10">
+                                        <motion.img
+                                            layout
+                                            src="/B3_Eye_Gold.png"
+                                            alt="B3 Eye"
+                                            layoutId="Eye-same"
+                                            className="h-[290px] max-h-[450px] object-contain"
+                                        />
+                                    </motion.div>
+                                    <div className="pt-6">
+                                        <motion.h1 className="text-[1.25rem] text-[#000] font-semibold">B3 Eye Concentrate</motion.h1>
+                                        <motion.p className="text-[0.875rem] text-[#000]/80 font-normal">Infused with Peptides which is Anti Aging</motion.p>
+                                    </div>
+                                </div>
+                            </CarouselItem>
+                            <CarouselItem className='basis-1/3 max-[850px]:basis-0 max-[1200px]:basis-1/2 pl-4'>
+                                <div className="flex flex-col">
+                                    <motion.div className="flex justify-center items-center w-[25rem] relative cursor-pointer max-[1900px]:w-[20rem] p-16 bg-[#fff] h-[27rem] border border-[#000]/10">
+                                        <motion.img
+                                            layout
+                                            src="/2_B3_Body_slim-200ml.png"
+                                            alt="B3 Body"
+                                            layoutId="Body-same"
+                                            className="h-[290px] max-h-[450px] object-contain"
+                                        />
+                                    </motion.div>
+                                    <div className="pt-6">
+                                        <motion.h1 className="text-[1.25rem] text-[#000] font-semibold">B3 Body Concentrate</motion.h1>
+                                        <motion.p className="text-[0.875rem] text-[#000]/80 font-normal">Infused with Peptides which is Anti Aging</motion.p>
+                                    </div>
+                                </div>
+                            </CarouselItem>
+                            <CarouselItem className='basis-1/3 max-[850px]:basis-0 max-[1200px]:basis-1/2 pl-4'>
+                                <div className="flex flex-col">
+                                    <motion.div className="flex justify-center items-center w-[25rem] relative cursor-pointer max-[1900px]:w-[20rem] p-16 bg-[#fff] h-[27rem] border border-[#000]/10">
+                                        <motion.img
+                                            layout
+                                            src="/B3_Face_gold.png"
+                                            alt="B3 Face"
+                                            layoutId="Face-same"
+                                            className="h-[290px] max-h-[450px] object-contain"
+                                        />
+                                    </motion.div>
+                                    <div className="pt-6">
+                                        <motion.h1 className="text-[1.25rem] text-[#000] font-semibold">B3 Face Concentrate</motion.h1>
+                                        <motion.p className="text-[0.875rem] text-[#000]/80 font-normal">Infused with Peptides which is Anti Aging</motion.p>
+                                    </div>
+                                </div>
+                            </CarouselItem>
+                        </CarouselContent>
+                        <CarouselNavigation
+                            className='absolute -bottom-20 left-auto top-auto w-full justify-end gap-2'
+                            classNameButton='bg-black *:stroke-zinc-50 '
+                            alwaysShow
+                        />
+                    </Carousel>
+                </div>
 
             </section>
-            <section>
-                
+            <section className="h-svh flex justify-center">
+
+                <div>
+                    <h1 className="pt-24 text-[7.5rem] font-semibold text-[#000]">
+                        Bioactive Technology
+                    </h1>
+                    <p className="text-[1.25rem]  pb-16 text-[#000]/80 font-normal">Read our research about Bioactive Technology that nourishes your skin.</p>
+                    <div className="max-w-[1350px] max-[1900px]:max-w-[1072px] max-[1200px]:max-w-[696px]">
+                        <div>
+
+                        </div>
+                    </div>
+                </div>
+
             </section>
         </main>
     )
@@ -237,6 +331,6 @@ const Updated = () => {
 export default Updated
 
 // top headings = .875rem
-// header = 3.875rem
+// header = 3.875rem | 2.25rem
 // little text = 1.25rem
 // products = 7.5rem
