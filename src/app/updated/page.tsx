@@ -1,4 +1,4 @@
-'use client'
+/* 'use client'
 import Image from "next/image"
 import B3_Face_Gold from "../../../public/B3_Face_gold.png"
 import B3_Body_Slim from "../../../public/2_B3_Body_slim-200ml.png"
@@ -649,7 +649,7 @@ const Updated = () => {
 }
 
 export default Updated
-
+ */
 // top headings = .875rem
 // header = 3.875rem | 2.25rem
 // little text = 1.25rem
