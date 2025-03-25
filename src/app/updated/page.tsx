@@ -29,7 +29,7 @@ const Updated = () => {
         setTimeout(() => {
             setMoved(!move)
         }, 1000);
-    }, []);
+    });
 
     const ingredients = [
         {

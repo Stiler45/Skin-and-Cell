@@ -1,7 +1,6 @@
-'use client'
+/* 'use client'
 import { motion, AnimatePresence, useInView } from "framer-motion"
 import { useState, useEffect, useRef } from "react"
-import { TextEffect } from '@/components/ui/text-effect';
 import Image from "next/image"
 import BG_Lander_New from "../../../public/BG_Lander_New.png"
 // import B3_Face_Gold from "../../../public/B3_Face_gold.png"
@@ -1159,9 +1158,9 @@ const NewLander = () => {
 
             <section className="flex justify-center items-end max-[1000px]:mt-[64px] max-[550px]:mt-[72px] p-[5%]">
                 <Footer />
-            </section> */}
+            </section>
         </main>
     )
 }
 
-export default NewLander
+export default NewLander */
