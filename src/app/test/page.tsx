@@ -1,4 +1,4 @@
-'use client'
+/* 'use client'
 import { motion, AnimatePresence, useInView, delay, animate } from "framer-motion"
 import { useState, useEffect, useRef } from "react"
 import { TextEffect } from '@/components/ui/text-effect';
@@ -1096,4 +1096,4 @@ const Test = () => {
     )
 }
 
-export default Test
+export default Test */

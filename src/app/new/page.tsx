@@ -1,4 +1,4 @@
-'use client'
+/* 'use client'
 import Image from "next/image"
 import BG_Lander_New from "../../../public/BG_Lander_New.png"
 import { motion, AnimatePresence } from "framer-motion"
@@ -376,4 +376,4 @@ const NewLander = () => {
     )
 }
 
-export default NewLander
+export default NewLander */

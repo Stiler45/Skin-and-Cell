@@ -3,14 +3,11 @@ import { motion, AnimatePresence, useInView } from "framer-motion"
 import { useState, useEffect, useRef } from "react"
 import { TextEffect } from '@/components/ui/text-effect';
 import Image from "next/image"
-import Flag from "../../../public/Flag.png"
 import BG_Lander_New from "../../../public/BG_Lander_New.png"
-import B3_Face_Gold from "../../../public/B3_Face_gold.png"
-import B3_Body_Slim from "../../../public/2_B3_Body_slim-200ml.png"
-import B3_Eye_Gold from "../../../public/B3_Eye_gold.png"
-import B3_Serum_Gold from "../../../public/B3_Serum_gold.png"
-import { Carousel, CarouselContent, CarouselNavigation, CarouselItem } from '@/components/ui/carousel';
-import { Cursor } from "@/components/ui/cursor";
+// import B3_Face_Gold from "../../../public/B3_Face_gold.png"
+// import B3_Body_Slim from "../../../public/2_B3_Body_slim-200ml.png"
+// import B3_Eye_Gold from "../../../public/B3_Eye_gold.png"
+// import B3_Serum_Gold from "../../../public/B3_Serum_gold.png"
 
 const NewLander = () => {
 
@@ -121,211 +118,211 @@ const NewLander = () => {
             </svg>
         )
     }
-    const Footer = () => {
-        return (
-            <svg width="80%" height="276" viewBox="0 0 1510 276" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M46.0156 274.439C36.216 274.439 26.8424 272.325 18.7471 268.096C10.2257 263.867 3.83463 257.947 0 250.758V232.998H2.13035C11.0778 252.027 25.5642 262.176 45.1635 262.176C64.7627 262.176 67.7452 258.37 75.8405 251.181C83.9358 243.993 88.1965 235.535 88.1965 226.232C88.1965 216.929 85.6401 209.318 80.5273 202.975C75.4144 196.632 68.5973 191.135 60.9281 186.906C53.2588 182.254 45.5895 178.026 37.9203 173.374C30.251 168.723 23.4339 163.226 17.895 156.883C12.356 150.54 9.37355 142.505 9.37355 134.048C9.37355 125.591 12.7821 117.556 20.0253 111.636C27.2685 105.716 36.216 102.756 47.2938 102.756C58.3716 102.756 68.1712 106.985 75.8405 115.865V116.711V131.511L73.7102 132.357C66.467 121.362 56.6673 115.865 45.5895 115.865C34.5117 115.865 34.5117 117.979 29.8249 121.785C25.1381 125.591 23.0078 130.242 23.0078 136.162C23.0078 142.082 25.5642 147.157 30.6771 151.808C36.216 156.883 42.607 161.534 49.8502 165.34C57.5195 169.569 65.1888 174.22 72.858 178.872C80.5273 183.523 87.3444 189.866 92.8833 197.478C98.4222 205.089 101.405 213.969 101.405 223.695C101.405 238.073 95.8658 250.336 84.788 260.484C73.7102 270.633 60.502 275.707 45.1635 275.707L46.0156 274.439ZM530.457 270.633H518.953L517.675 269.365V175.489C517.675 159.42 511.71 145.042 500.633 133.202C489.129 121.362 475.068 115.442 458.878 115.442C442.687 115.442 428.201 121.362 415.845 133.202C403.488 145.042 397.097 159.42 397.097 175.489V269.365L395.819 270.633H384.315L383.037 269.365V107.83L384.315 106.562H395.819L397.097 107.83V135.739C409.88 113.75 430.331 102.756 458.878 102.756C487.424 102.756 496.798 109.945 510.858 123.899C524.919 137.854 531.736 155.191 531.736 175.489V269.365L530.457 270.633ZM318.274 270.633H306.771L305.492 269.365V108.253L306.771 106.985H318.274L319.553 108.253V269.365L318.274 270.633ZM262.885 270.633H246.695L166.167 187.329V269.365L164.889 270.633H153.385L152.107 269.365V1.26859L153.385 0H164.889L166.167 1.26859V161.534L228.374 107.408H229.226H244.138L244.99 109.522L171.28 173.374L263.737 269.365L262.885 271.479V270.633ZM312.736 70.1955C305.066 70.1955 301.232 66.3897 301.232 59.201C301.232 52.0123 305.066 48.2065 312.736 48.2065C320.405 48.2065 324.239 52.0123 324.239 59.201C324.239 66.3897 320.405 70.1955 312.736 70.1955Z" fill="url(#paint0_linear_1014_1389)" />
-                <path d="M1024.84 275.999H1021.43C998.854 275.999 977.556 270.072 958.388 258.218C938.795 246.364 923.46 230.699 912.386 211.225C901.311 191.75 895.348 171.006 895.348 148.991C895.348 114.699 908.126 84.2168 933.257 59.6619C958.388 34.6837 988.631 22.4062 1023.56 22.4062C1058.49 22.4062 1069.14 28.7567 1090.43 40.6107L1091.29 42.3042V54.1583L1088.3 55.4283C1068.28 41.8808 1046.56 35.1071 1023.56 35.1071C1000.56 35.1071 965.204 46.5378 943.054 68.5525C920.905 90.5672 909.404 117.662 909.404 148.991C909.404 180.32 920.479 206.991 943.054 229.429C965.204 251.867 992.464 262.875 1023.56 262.875C1054.65 262.875 1068.28 256.101 1088.3 242.554L1091.29 243.824V255.678L1090.43 257.371C1070.41 269.649 1048.69 275.576 1025.26 275.576L1024.84 275.999Z" fill="url(#paint1_linear_1014_1389)" />
-                <path d="M1231.42 272.188H1144.1L1142.39 270.495V28.7559L1144.1 27.0625H1231.42L1233.12 28.7559V38.0699L1231.42 39.7633H1156.45V168.041H1218.64L1220.34 169.735V179.049L1218.64 180.742H1156.45V259.911H1231.42L1233.12 261.604V270.918L1231.42 272.611V272.188Z" fill="url(#paint2_linear_1014_1389)" />
-                <path d="M1508.3 272.188H1422.25L1420.55 270.495V28.7559L1422.25 27.0625H1432.9L1434.61 28.7559V259.487H1508.3L1510 261.181V270.495L1508.3 272.188Z" fill="url(#paint3_linear_1014_1389)" />
-                <path d="M1374.12 272.188H1288.08L1286.38 270.495V28.7559L1288.08 27.0625H1298.73L1300.44 28.7559V259.487H1374.12L1375.83 261.181V270.495L1374.12 272.188Z" fill="url(#paint4_linear_1014_1389)" />
-                <path d="M716.098 275.706H709.284C707.154 275.706 705.876 274.01 705.876 272.315V162.934H597.7C595.571 162.934 594.293 161.238 594.293 159.543V153.183C594.293 151.063 595.996 149.792 597.7 149.792H705.876V40.4112C705.876 38.2914 707.58 37.0195 709.284 37.0195H716.098C718.227 37.0195 719.505 38.7154 719.505 40.4112V149.792H829.385C831.514 149.792 832.792 151.487 832.792 153.183V159.543C832.792 161.662 831.088 162.934 829.385 162.934H719.505V272.315C719.505 274.434 717.801 275.706 716.098 275.706Z" fill="url(#paint5_linear_1014_1389)" />
-                <defs>
-                    <linearGradient id="paint0_linear_1014_1389" x1="265.868" y1="0" x2="265.868" y2="275.707" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="#6F6F6F" stopOpacity="0.9" />
-                        <stop offset="1" stopColor="white" stopOpacity="0.9" />
-                    </linearGradient>
-                    <linearGradient id="paint1_linear_1014_1389" x1="993.316" y1="22.4062" x2="993.316" y2="275.999" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="#6F6F6F" stopOpacity="0.9" />
-                        <stop offset="1" stopColor="white" stopOpacity="0.9" />
-                    </linearGradient>
-                    <linearGradient id="paint2_linear_1014_1389" x1="1187.76" y1="27.0625" x2="1187.76" y2="272.611" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="#6F6F6F" stopOpacity="0.9" />
-                        <stop offset="1" stopColor="white" stopOpacity="0.9" />
-                    </linearGradient>
-                    <linearGradient id="paint3_linear_1014_1389" x1="1465.28" y1="27.0625" x2="1465.28" y2="272.188" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="#6F6F6F" stopOpacity="0.9" />
-                        <stop offset="1" stopColor="white" stopOpacity="0.9" />
-                    </linearGradient>
-                    <linearGradient id="paint4_linear_1014_1389" x1="1331.1" y1="27.0625" x2="1331.1" y2="272.188" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="#6F6F6F" stopOpacity="0.9" />
-                        <stop offset="1" stopColor="white" stopOpacity="0.9" />
-                    </linearGradient>
-                    <linearGradient id="paint5_linear_1014_1389" x1="713.542" y1="37.0195" x2="713.542" y2="275.706" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="#6F6F6F" stopOpacity="0.9" />
-                        <stop offset="1" stopColor="white" stopOpacity="0.9" />
-                    </linearGradient>
-                </defs>
-            </svg>
-        )
-    }
-    interface Product {
-        title: string;
-        description: string;
-        imageVar: any;
-    };
-    const productData: Product[] = [
-        {
-            title: "B3 Serum",
-            description: "Building scalable applications.",
-            imageVar: B3_Serum_Gold,
-        },
-        {
-            title: "B3 Face",
-            description: "Building scalable applications.",
-            imageVar: B3_Face_Gold,
-        },
-        {
-            title: "B3 Body",
-            description: "B3_Body_Slim",
-            imageVar: B3_Body_Slim,
-        },
-        {
-            title: "B3 Eye",
-            description: "Under Eye Concentrate",
-            imageVar: B3_Eye_Gold,
-        },
-    ];
-    const ingredients = [
-        {
-            id: 1,
-            title: "Ceramides",
-            description:
-                "Key structural components of the skin, replenishing and providing a healthier-looking skin.",
-        },
-        {
-            id: 2,
-            title: "Glycerol",
-            description:
-                "Moisturizer (established as the best possible moisturizing agent), hydrating and softening the skin.",
-        },
-        {
-            id: 3,
-            title: "Nicotinamide",
-            description:
-                "Nicotinamide (Niacinamide) – the bioactive form of Vitamin B3, shown to provide protection against the harmful effects of the sun (UV irradiation), skin aging, and environmental insult.",
-        },
-        {
-            id: 4,
-            title: "Nicotinamide",
-            description:
-                "Nicotinamide (Niacinamide) – the bioactive form of Vitamin B3, shown to provide protection against the harmful effects of the sun (UV irradiation), skin aging, and environmental insult.",
-        },
-    ];
-    const ingredients_Serum = [
-        {
-            id: 1,
-            title: "Ceramides",
-            description:
-                "Key structural components of the skin, replenishing and providing a healthier-looking skin.",
-        },
-        {
-            id: 2,
-            title: "Glycerol",
-            description:
-                "Moisturizer (established as the best possible moisturizing agent), hydrating and softening the skin.",
-        },
-        {
-            id: 3,
-            title: "Nicotinamide",
-            description:
-                "Nicotinamide (Niacinamide) – the bioactive form of Vitamin B3, shown to provide protection against the harmful effects of the sun (UV irradiation), skin aging, and environmental insult.",
-        },
-        {
-            id: 4,
-            title: "Nicotinamide",
-            description:
-                "Nicotinamide (Niacinamide) – the bioactive form of Vitamin B3, shown to provide protection against the harmful effects of the sun (UV irradiation), skin aging, and environmental insult.",
-        },
-    ];
-    const ingredients_Body = [
-        {
-            id: 1,
-            title: "Ceramides",
-            description:
-                "Key structural components of the skin, replenishing and providing a healthier-looking skin.",
-        },
-        {
-            id: 2,
-            title: "Glycerol",
-            description:
-                "Moisturizer (established as the best possible moisturizing agent), hydrating and softening the skin.",
-        },
-        {
-            id: 3,
-            title: "Nicotinamide",
-            description:
-                "Nicotinamide (Niacinamide) – the bioactive form of Vitamin B3, shown to provide protection against the harmful effects of the sun (UV irradiation), skin aging, and environmental insult.",
-        },
-        {
-            id: 4,
-            title: "Nicotinamide",
-            description:
-                "Nicotinamide (Niacinamide) – the bioactive form of Vitamin B3, shown to provide protection against the harmful effects of the sun (UV irradiation), skin aging, and environmental insult.",
-        },
-    ];
-    const ingredients_Eye = [
-        {
-            id: 1,
-            title: "Ceramides",
-            description:
-                "Key structural components of the skin, replenishing and providing a healthier-looking skin.",
-        },
-        {
-            id: 2,
-            title: "Glycerol",
-            description:
-                "Moisturizer (established as the best possible moisturizing agent), hydrating and softening the skin.",
-        },
-        {
-            id: 3,
-            title: "Nicotinamide",
-            description:
-                "Nicotinamide (Niacinamide) – the bioactive form of Vitamin B3, shown to provide protection against the harmful effects of the sun (UV irradiation), skin aging, and environmental insult.",
-        },
-        {
-            id: 4,
-            title: "Nicotinamide",
-            description:
-                "Nicotinamide (Niacinamide) – the bioactive form of Vitamin B3, shown to provide protection against the harmful effects of the sun (UV irradiation), skin aging, and environmental insult.",
-        },
-    ];
-    const fadeInUp = {
-        initialUp: {
-            opacity: 0,
-            filter: 'blur(4px)',
-            y: 40
-        },
-        initial: {
-            opacity: 0,
-            filter: 'blur(4px)',
-        },
-        animate: {
-            opacity: 1,
-            filter: 'blur(0px)',
-            y: 0,
-            transition: {
-                layout: {
-                    duration: 0.6,
-                    type: 'spring',
-                    bounce: 0.2,
-                },
-                duration: 0.6,
-                type: 'spring',
-                bounce: 0.2,
-                delay: 0.1,
-            },
-        },
-        exit: {
-            opacity: 0,
-            filter: 'blur(4px)',
-            transition: {
-                duration: 0.2,
-                type: 'spring',
-                bounce: 0.2,
-            }
-        },
-    };
+    // const Footer = () => {
+    //     return (
+    //         <svg width="80%" height="276" viewBox="0 0 1510 276" fill="none" xmlns="http://www.w3.org/2000/svg">
+    //             <path d="M46.0156 274.439C36.216 274.439 26.8424 272.325 18.7471 268.096C10.2257 263.867 3.83463 257.947 0 250.758V232.998H2.13035C11.0778 252.027 25.5642 262.176 45.1635 262.176C64.7627 262.176 67.7452 258.37 75.8405 251.181C83.9358 243.993 88.1965 235.535 88.1965 226.232C88.1965 216.929 85.6401 209.318 80.5273 202.975C75.4144 196.632 68.5973 191.135 60.9281 186.906C53.2588 182.254 45.5895 178.026 37.9203 173.374C30.251 168.723 23.4339 163.226 17.895 156.883C12.356 150.54 9.37355 142.505 9.37355 134.048C9.37355 125.591 12.7821 117.556 20.0253 111.636C27.2685 105.716 36.216 102.756 47.2938 102.756C58.3716 102.756 68.1712 106.985 75.8405 115.865V116.711V131.511L73.7102 132.357C66.467 121.362 56.6673 115.865 45.5895 115.865C34.5117 115.865 34.5117 117.979 29.8249 121.785C25.1381 125.591 23.0078 130.242 23.0078 136.162C23.0078 142.082 25.5642 147.157 30.6771 151.808C36.216 156.883 42.607 161.534 49.8502 165.34C57.5195 169.569 65.1888 174.22 72.858 178.872C80.5273 183.523 87.3444 189.866 92.8833 197.478C98.4222 205.089 101.405 213.969 101.405 223.695C101.405 238.073 95.8658 250.336 84.788 260.484C73.7102 270.633 60.502 275.707 45.1635 275.707L46.0156 274.439ZM530.457 270.633H518.953L517.675 269.365V175.489C517.675 159.42 511.71 145.042 500.633 133.202C489.129 121.362 475.068 115.442 458.878 115.442C442.687 115.442 428.201 121.362 415.845 133.202C403.488 145.042 397.097 159.42 397.097 175.489V269.365L395.819 270.633H384.315L383.037 269.365V107.83L384.315 106.562H395.819L397.097 107.83V135.739C409.88 113.75 430.331 102.756 458.878 102.756C487.424 102.756 496.798 109.945 510.858 123.899C524.919 137.854 531.736 155.191 531.736 175.489V269.365L530.457 270.633ZM318.274 270.633H306.771L305.492 269.365V108.253L306.771 106.985H318.274L319.553 108.253V269.365L318.274 270.633ZM262.885 270.633H246.695L166.167 187.329V269.365L164.889 270.633H153.385L152.107 269.365V1.26859L153.385 0H164.889L166.167 1.26859V161.534L228.374 107.408H229.226H244.138L244.99 109.522L171.28 173.374L263.737 269.365L262.885 271.479V270.633ZM312.736 70.1955C305.066 70.1955 301.232 66.3897 301.232 59.201C301.232 52.0123 305.066 48.2065 312.736 48.2065C320.405 48.2065 324.239 52.0123 324.239 59.201C324.239 66.3897 320.405 70.1955 312.736 70.1955Z" fill="url(#paint0_linear_1014_1389)" />
+    //             <path d="M1024.84 275.999H1021.43C998.854 275.999 977.556 270.072 958.388 258.218C938.795 246.364 923.46 230.699 912.386 211.225C901.311 191.75 895.348 171.006 895.348 148.991C895.348 114.699 908.126 84.2168 933.257 59.6619C958.388 34.6837 988.631 22.4062 1023.56 22.4062C1058.49 22.4062 1069.14 28.7567 1090.43 40.6107L1091.29 42.3042V54.1583L1088.3 55.4283C1068.28 41.8808 1046.56 35.1071 1023.56 35.1071C1000.56 35.1071 965.204 46.5378 943.054 68.5525C920.905 90.5672 909.404 117.662 909.404 148.991C909.404 180.32 920.479 206.991 943.054 229.429C965.204 251.867 992.464 262.875 1023.56 262.875C1054.65 262.875 1068.28 256.101 1088.3 242.554L1091.29 243.824V255.678L1090.43 257.371C1070.41 269.649 1048.69 275.576 1025.26 275.576L1024.84 275.999Z" fill="url(#paint1_linear_1014_1389)" />
+    //             <path d="M1231.42 272.188H1144.1L1142.39 270.495V28.7559L1144.1 27.0625H1231.42L1233.12 28.7559V38.0699L1231.42 39.7633H1156.45V168.041H1218.64L1220.34 169.735V179.049L1218.64 180.742H1156.45V259.911H1231.42L1233.12 261.604V270.918L1231.42 272.611V272.188Z" fill="url(#paint2_linear_1014_1389)" />
+    //             <path d="M1508.3 272.188H1422.25L1420.55 270.495V28.7559L1422.25 27.0625H1432.9L1434.61 28.7559V259.487H1508.3L1510 261.181V270.495L1508.3 272.188Z" fill="url(#paint3_linear_1014_1389)" />
+    //             <path d="M1374.12 272.188H1288.08L1286.38 270.495V28.7559L1288.08 27.0625H1298.73L1300.44 28.7559V259.487H1374.12L1375.83 261.181V270.495L1374.12 272.188Z" fill="url(#paint4_linear_1014_1389)" />
+    //             <path d="M716.098 275.706H709.284C707.154 275.706 705.876 274.01 705.876 272.315V162.934H597.7C595.571 162.934 594.293 161.238 594.293 159.543V153.183C594.293 151.063 595.996 149.792 597.7 149.792H705.876V40.4112C705.876 38.2914 707.58 37.0195 709.284 37.0195H716.098C718.227 37.0195 719.505 38.7154 719.505 40.4112V149.792H829.385C831.514 149.792 832.792 151.487 832.792 153.183V159.543C832.792 161.662 831.088 162.934 829.385 162.934H719.505V272.315C719.505 274.434 717.801 275.706 716.098 275.706Z" fill="url(#paint5_linear_1014_1389)" />
+    //             <defs>
+    //                 <linearGradient id="paint0_linear_1014_1389" x1="265.868" y1="0" x2="265.868" y2="275.707" gradientUnits="userSpaceOnUse">
+    //                     <stop stopColor="#6F6F6F" stopOpacity="0.9" />
+    //                     <stop offset="1" stopColor="white" stopOpacity="0.9" />
+    //                 </linearGradient>
+    //                 <linearGradient id="paint1_linear_1014_1389" x1="993.316" y1="22.4062" x2="993.316" y2="275.999" gradientUnits="userSpaceOnUse">
+    //                     <stop stopColor="#6F6F6F" stopOpacity="0.9" />
+    //                     <stop offset="1" stopColor="white" stopOpacity="0.9" />
+    //                 </linearGradient>
+    //                 <linearGradient id="paint2_linear_1014_1389" x1="1187.76" y1="27.0625" x2="1187.76" y2="272.611" gradientUnits="userSpaceOnUse">
+    //                     <stop stopColor="#6F6F6F" stopOpacity="0.9" />
+    //                     <stop offset="1" stopColor="white" stopOpacity="0.9" />
+    //                 </linearGradient>
+    //                 <linearGradient id="paint3_linear_1014_1389" x1="1465.28" y1="27.0625" x2="1465.28" y2="272.188" gradientUnits="userSpaceOnUse">
+    //                     <stop stopColor="#6F6F6F" stopOpacity="0.9" />
+    //                     <stop offset="1" stopColor="white" stopOpacity="0.9" />
+    //                 </linearGradient>
+    //                 <linearGradient id="paint4_linear_1014_1389" x1="1331.1" y1="27.0625" x2="1331.1" y2="272.188" gradientUnits="userSpaceOnUse">
+    //                     <stop stopColor="#6F6F6F" stopOpacity="0.9" />
+    //                     <stop offset="1" stopColor="white" stopOpacity="0.9" />
+    //                 </linearGradient>
+    //                 <linearGradient id="paint5_linear_1014_1389" x1="713.542" y1="37.0195" x2="713.542" y2="275.706" gradientUnits="userSpaceOnUse">
+    //                     <stop stopColor="#6F6F6F" stopOpacity="0.9" />
+    //                     <stop offset="1" stopColor="white" stopOpacity="0.9" />
+    //                 </linearGradient>
+    //             </defs>
+    //         </svg>
+    //     )
+    // }
+    // interface Product {
+    //     title: string;
+    //     description: string;
+    //     imageVar: any;
+    // };
+    // const productData: Product[] = [
+    //     {
+    //         title: "B3 Serum",
+    //         description: "Building scalable applications.",
+    //         imageVar: B3_Serum_Gold,
+    //     },
+    //     {
+    //         title: "B3 Face",
+    //         description: "Building scalable applications.",
+    //         imageVar: B3_Face_Gold,
+    //     },
+    //     {
+    //         title: "B3 Body",
+    //         description: "B3_Body_Slim",
+    //         imageVar: B3_Body_Slim,
+    //     },
+    //     {
+    //         title: "B3 Eye",
+    //         description: "Under Eye Concentrate",
+    //         imageVar: B3_Eye_Gold,
+    //     },
+    // ];
+    // const ingredients = [
+    //     {
+    //         id: 1,
+    //         title: "Ceramides",
+    //         description:
+    //             "Key structural components of the skin, replenishing and providing a healthier-looking skin.",
+    //     },
+    //     {
+    //         id: 2,
+    //         title: "Glycerol",
+    //         description:
+    //             "Moisturizer (established as the best possible moisturizing agent), hydrating and softening the skin.",
+    //     },
+    //     {
+    //         id: 3,
+    //         title: "Nicotinamide",
+    //         description:
+    //             "Nicotinamide (Niacinamide) – the bioactive form of Vitamin B3, shown to provide protection against the harmful effects of the sun (UV irradiation), skin aging, and environmental insult.",
+    //     },
+    //     {
+    //         id: 4,
+    //         title: "Nicotinamide",
+    //         description:
+    //             "Nicotinamide (Niacinamide) – the bioactive form of Vitamin B3, shown to provide protection against the harmful effects of the sun (UV irradiation), skin aging, and environmental insult.",
+    //     },
+    // ];
+    // const ingredients_Serum = [
+    //     {
+    //         id: 1,
+    //         title: "Ceramides",
+    //         description:
+    //             "Key structural components of the skin, replenishing and providing a healthier-looking skin.",
+    //     },
+    //     {
+    //         id: 2,
+    //         title: "Glycerol",
+    //         description:
+    //             "Moisturizer (established as the best possible moisturizing agent), hydrating and softening the skin.",
+    //     },
+    //     {
+    //         id: 3,
+    //         title: "Nicotinamide",
+    //         description:
+    //             "Nicotinamide (Niacinamide) – the bioactive form of Vitamin B3, shown to provide protection against the harmful effects of the sun (UV irradiation), skin aging, and environmental insult.",
+    //     },
+    //     {
+    //         id: 4,
+    //         title: "Nicotinamide",
+    //         description:
+    //             "Nicotinamide (Niacinamide) – the bioactive form of Vitamin B3, shown to provide protection against the harmful effects of the sun (UV irradiation), skin aging, and environmental insult.",
+    //     },
+    // ];
+    // const ingredients_Body = [
+    //     {
+    //         id: 1,
+    //         title: "Ceramides",
+    //         description:
+    //             "Key structural components of the skin, replenishing and providing a healthier-looking skin.",
+    //     },
+    //     {
+    //         id: 2,
+    //         title: "Glycerol",
+    //         description:
+    //             "Moisturizer (established as the best possible moisturizing agent), hydrating and softening the skin.",
+    //     },
+    //     {
+    //         id: 3,
+    //         title: "Nicotinamide",
+    //         description:
+    //             "Nicotinamide (Niacinamide) – the bioactive form of Vitamin B3, shown to provide protection against the harmful effects of the sun (UV irradiation), skin aging, and environmental insult.",
+    //     },
+    //     {
+    //         id: 4,
+    //         title: "Nicotinamide",
+    //         description:
+    //             "Nicotinamide (Niacinamide) – the bioactive form of Vitamin B3, shown to provide protection against the harmful effects of the sun (UV irradiation), skin aging, and environmental insult.",
+    //     },
+    // ];
+    // const ingredients_Eye = [
+    //     {
+    //         id: 1,
+    //         title: "Ceramides",
+    //         description:
+    //             "Key structural components of the skin, replenishing and providing a healthier-looking skin.",
+    //     },
+    //     {
+    //         id: 2,
+    //         title: "Glycerol",
+    //         description:
+    //             "Moisturizer (established as the best possible moisturizing agent), hydrating and softening the skin.",
+    //     },
+    //     {
+    //         id: 3,
+    //         title: "Nicotinamide",
+    //         description:
+    //             "Nicotinamide (Niacinamide) – the bioactive form of Vitamin B3, shown to provide protection against the harmful effects of the sun (UV irradiation), skin aging, and environmental insult.",
+    //     },
+    //     {
+    //         id: 4,
+    //         title: "Nicotinamide",
+    //         description:
+    //             "Nicotinamide (Niacinamide) – the bioactive form of Vitamin B3, shown to provide protection against the harmful effects of the sun (UV irradiation), skin aging, and environmental insult.",
+    //     },
+    // ];
+    // const fadeInUp = {
+    //     initialUp: {
+    //         opacity: 0,
+    //         filter: 'blur(4px)',
+    //         y: 40
+    //     },
+    //     initial: {
+    //         opacity: 0,
+    //         filter: 'blur(4px)',
+    //     },
+    //     animate: {
+    //         opacity: 1,
+    //         filter: 'blur(0px)',
+    //         y: 0,
+    //         transition: {
+    //             layout: {
+    //                 duration: 0.6,
+    //                 type: 'spring',
+    //                 bounce: 0.2,
+    //             },
+    //             duration: 0.6,
+    //             type: 'spring',
+    //             bounce: 0.2,
+    //             delay: 0.1,
+    //         },
+    //     },
+    //     exit: {
+    //         opacity: 0,
+    //         filter: 'blur(4px)',
+    //         transition: {
+    //             duration: 0.2,
+    //             type: 'spring',
+    //             bounce: 0.2,
+    //         }
+    //     },
+    // };
 
     return (
         <main>

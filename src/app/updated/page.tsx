@@ -6,7 +6,7 @@ import B3_Eye_Gold from "../../../public/B3_Eye_gold.png"
 import B3_Serum_Gold from "../../../public/B3_Serum_gold.png"
 import BG_Lander_new from "../../../public/BG_Lander_New.png"
 import Lindenpark from "../../../public/Lindenpark.png"
-import { delay, motion, AnimatePresence } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import { useEffect, useState } from "react"
 import {
     Carousel,
