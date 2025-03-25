@@ -326,10 +326,10 @@ const NewLander = () => {
             }
         },
     };
-    const getInnerHeight = () =>{
+    const getInnerHeight = () => {
         const e = window.innerHeight
         let l = ""
-        if(e<1450){
+        if (e < 1450) {
             l = "serum-same-Mobile"
 
         }
@@ -409,34 +409,33 @@ const NewLander = () => {
                             delay: 0.2
                         },
                     }}>
-                        <div className="text-[48px] text-[#000]">
-                            Products
-                        </div>
+                    <div className="text-[48px] text-[#000]">
+                        Products
+                    </div>
                 </motion.div>
                 <section className="z-10 flex justify-center items-center px-[5%] w-full h-svh overflow-x-hidden">
                     <div className="flex">
 
-                        <AnimatePresence> 
+                        <AnimatePresence>
                             {openSerum && (
                                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="top-0 left-0 z-[100] absolute flex justify-center items-center backdrop-blur-[8px] w-full h-svh select-all">
                                     <motion.div
-                                        onClick={() => setOpenSerum(!openSerum)}
                                         layout
-                                        layoutId="openSerum"
-                                        className="flex justify-center bg-white bg-blur-[24px] p-[32px] border border-black/10 w-auto max-w-[1200px] overflow-hidden cursor-pointer"
+                                        layoutId="openHand"
+                                        className="flex justify-center bg-white bg-blur-[24px] p-[32px] max-[800px]:p-[24px] max-[800px]:pr-[0px] border border-black/10 max-[800px]:border-none w-auto max-[800px]:w-full max-w-[1200px] overflow-hidden cursor-pointer"
                                     >
-                                        <div className="flex select-none">
-                                            <div className="flex flex-col justify-between space-y-[40px] pr-[32px] max-w-[650px]">
+                                        <div className="flex max-[800px]:flex-col select-none">
+                                            <div className="flex flex-col justify-between space-y-[40px] pr-[32px] max-[800px]:pr-[0px] max-[800px]:pb-[8px] max-w-[650px] max-[800px]:max-w-[100%]">
                                                 <motion.div
                                                     layout
-                                                    layoutId="serum-box"
+                                                    layoutId="hand-box"
                                                     className="flex justify-center items-center pt-[12px] w-full h-full"
                                                 >
                                                     <motion.img
                                                         layout
                                                         src="/B3_Serum_Gold.png"
                                                         alt="B3 Serum"
-                                                        layoutId="serum-same"
+                                                        layoutId="Serum-same"
                                                         className="h-[320px] max-h-[500px] object-contain"
                                                     />
                                                 </motion.div>
@@ -444,61 +443,56 @@ const NewLander = () => {
                                                 <div className="flex flex-col">
                                                     <motion.div
                                                         layout
-                                                        variants={fadeInUp}
                                                         initial="initial"
                                                         animate="animate"
                                                         exit="exit"
-                                                        layoutId="serum-head-text"
-                                                        className="font-normal text-[#6F6F6F] text-[24px]"
+                                                        layoutId="hand-head-text"
+                                                        className="text-[1.25rem] text-[#000] font-semibold"
                                                     >
-                                                        Serum infused with Ceramides & Vitamin B3
+                                                        B3 infused with Ceramides & Vitamin B3
                                                     </motion.div>
                                                     <motion.div
                                                         layout
-                                                        variants={fadeInUp}
                                                         initial="initial"
                                                         animate="animate"
                                                         exit="exit"
-                                                        layoutId="serum-descp-text"
-                                                        className="font-normal text-[#999999] text-[20px]"
+                                                        layoutId="hand-descp-text"
+                                                        className="text-[0.875rem] text-[#000]/80 font-normal"
                                                     >
-                                                        Under - Eye Concentrate
+                                                        Hand Concentrate
                                                     </motion.div>
                                                 </div>
                                             </div>
-                                            <div className="flex flex-col justify-center w-auto max-w-[760px]">
+                                            <div className="flex flex-col justify-start w-auto max-w-[760px]">
                                                 <motion.div
                                                     layout
-                                                    variants={fadeInUp}
                                                     initial="initial"
                                                     animate="animate"
                                                     exit="exit"
-                                                    layoutId="serum-ingredients"
-                                                    className="pb-[12px] font-normal text-[#6F6F6F] text-[24px]"
+                                                    layoutId="hand-ingredients"
+                                                    className=" pb-3 text-[1.25rem] text-[#000] font-semibold"
                                                 >
                                                     Ingredients
                                                 </motion.div>
                                                 {ingredients.map((ingredient, index) => (
-                                                    <div key={index} className="max-w-[35vw]">
+                                                    <div key={index} className="max-w-[35vw] max-[800px]:max-w-[100%]">
                                                         <motion.div
                                                             layout
-                                                            variants={fadeInUp}
                                                             initial="initial"
                                                             animate="animate"
                                                             exit="exit"
-                                                            layoutId={`serum-text-${index}`}
-                                                            className="font-normal text-[#6F6F6F] text-[20px]"
+                                                            layoutId={`hand-text-${index}`}
+                                                            className={`text-[1.25rem]  text-[#000] font-medium`}
                                                         >
                                                             {index + 1}. {ingredient.title}
                                                         </motion.div>
                                                         <motion.div
                                                             layout
-                                                            variants={fadeInUp}
                                                             initial="initial"
                                                             animate="animate"
                                                             exit="exit"
-                                                            layoutId={`serum-desc-${index}`}
-                                                            className="max-w-[650px] font-light text-[#999999] text-[20px]"
+                                                            layoutId={`hand-desc-${index}`}
+                                                            className={`max-w-[650px] pb-4 text-[0.875rem] text-[#000]/80 font-normal`}
                                                         >
                                                             {ingredient.description}
                                                         </motion.div>

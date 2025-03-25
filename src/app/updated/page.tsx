@@ -5,7 +5,7 @@ import B3_Body_Slim from "../../../public/2_B3_Body_slim-200ml.png"
 import B3_Eye_Gold from "../../../public/B3_Eye_gold.png"
 import B3_Serum_Gold from "../../../public/B3_Serum_gold.png"
 import BG_Lander_new from "../../../public/BG_Lander_New.png"
-import { delay, motion } from "framer-motion"
+import { delay, motion, AnimatePresence } from "framer-motion"
 import { useEffect, useState } from "react"
 import {
     Carousel,
@@ -15,6 +15,41 @@ import {
 } from '../../components/ui/carousel';
 
 const Updated = () => {
+
+    const [scrolled, setScrolled] = useState(false)
+    const [openHand, setOpenHand] = useState(false)
+    const [move, setMoved] = useState(false)
+    const [openFace, setOpenFace] = useState(false)
+    const [openSerum, setOpenSerum] = useState(false)
+    const [openBody, setOpenBody] = useState(false)
+    const [openEye, setOpenEye] = useState(false)
+
+    const ingredients = [
+        {
+            id: 1,
+            title: "Ceramides",
+            description:
+                "Key structural components of the skin, replenishing and providing a healthier-looking skin.",
+        },
+        {
+            id: 2,
+            title: "Glycerol",
+            description:
+                "Moisturizer (established as the best possible moisturizing agent), hydrating and softening the skin.",
+        },
+        {
+            id: 3,
+            title: "Nicotinamide",
+            description:
+                "Nicotinamide (Niacinamide) – the bioactive form of Vitamin B3, shown to provide protection against the harmful effects of the sun (UV irradiation), skin aging, and environmental insult.",
+        },
+        {
+            id: 4,
+            title: "Nicotinamide",
+            description:
+                "Nicotinamide (Niacinamide) – the bioactive form of Vitamin B3, shown to provide protection against the harmful effects of the sun (UV irradiation), skin aging, and environmental insult.",
+        },
+    ];
 
     const Logo = () => {
         return (
@@ -229,11 +264,102 @@ const Updated = () => {
                     <h1 className="pt-24 pb-16 text-[7.5rem] font-semibold text-[#000]">
                         Products
                     </h1>
+                    <AnimatePresence>
+                            {openSerum && (
+                                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className=" left-0 z-[100] absolute flex justify-center items-center backdrop-blur-[8px] w-full h-svh overflow-y-hidden select-all">
+                                    <motion.div
+                                        onClick={()=>{
+                                            setOpenSerum(!openSerum)
+                                        }}
+                                        layout
+                                        layoutId="openSerum"
+                                        className="flex justify-center bg-white bg-blur-[24px] p-[32px] max-[800px]:p-[24px] max-[800px]:pr-[0px] border border-black/10 max-[800px]:border-none w-auto max-[800px]:w-full max-w-[1200px] overflow-hidden cursor-pointer"
+                                    >
+                                        <div className="flex max-[800px]:flex-col select-none">
+                                            <div className="flex flex-col justify-between space-y-[40px] pr-[32px] max-[800px]:pr-[0px] max-[800px]:pb-[8px] max-w-[650px] max-[800px]:max-w-[100%]">
+                                                <motion.div
+                                                    layout
+                                                    layoutId="hand-box"
+                                                    className="flex justify-center items-center pt-[12px] w-full h-full"
+                                                >
+                                                    <motion.img
+                                                        layout
+                                                        src="/B3_Serum_Gold.png"
+                                                        alt="B3 Serum"
+                                                        layoutId="Serum-same"
+                                                        className="h-[320px] max-h-[500px] object-contain"
+                                                    />
+                                                </motion.div>
+
+                                                <div className="flex flex-col">
+                                                    <motion.div
+                                                        layout
+                                                        initial="initial"
+                                                        animate="animate"
+                                                        exit="exit"
+                                                        layoutId="hand-head-text"
+                                                        className="text-[1.25rem] text-[#000] font-semibold"
+                                                    >
+                                                        B3 Eye Concentrate
+                                                    </motion.div>
+                                                    <motion.div
+                                                        layout
+                                                        initial="initial"
+                                                        animate="animate"
+                                                        exit="exit"
+                                                        layoutId="hand-descp-text"
+                                                        className="text-[0.875rem] text-[#000]/80 font-normal"
+                                                    >
+                                                        Infused with Peptides which is Anti Aging
+                                                    </motion.div>
+                                                </div>
+                                            </div>
+                                            <div className="flex flex-col justify-start w-auto max-w-[760px]">
+                                                <motion.div
+                                                    layout
+                                                    initial="initial"
+                                                    animate="animate"
+                                                    exit="exit"
+                                                    layoutId="hand-ingredients"
+                                                    className=" pb-3 text-[1.25rem] text-[#000] font-semibold"
+                                                >
+                                                    Ingredients
+                                                </motion.div>
+                                                {ingredients.map((ingredient, index) => (
+                                                    <div key={index} className="max-w-[35vw] max-[800px]:max-w-[100%]">
+                                                        <motion.div
+                                                            layout
+                                                            initial="initial"
+                                                            animate="animate"
+                                                            exit="exit"
+                                                            layoutId={`hand-text-${index}`}
+                                                            className={`text-[1.25rem]  text-[#000] font-medium`}
+                                                        >
+                                                            {index + 1}. {ingredient.title}
+                                                        </motion.div>
+                                                        <motion.div
+                                                            layout
+                                                            initial="initial"
+                                                            animate="animate"
+                                                            exit="exit"
+                                                            layoutId={`hand-desc-${index}`}
+                                                            className={`max-w-[650px] pb-4 text-[0.875rem] text-[#000]/80 font-normal`}
+                                                        >
+                                                            {ingredient.description}
+                                                        </motion.div>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    </motion.div>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
                     <Carousel className="max-w-[1350px] max-[1900px]:max-w-[1072px] max-[1200px]:max-w-[696px]">
                         <CarouselContent className='-ml-4'>
-                            <CarouselItem className='basis-1/3 max-[850px]:basis-0 max-[1200px]:basis-1/2 pl-4'>
+                            <CarouselItem className='basis-1/3 max-[850px]:basis-0 z-50 max-[1200px]:basis-1/2 pl-4'>
                                 <div className="flex flex-col">
-                                    <motion.div className=" flex justify-center items-center w-[25rem] relative cursor-pointer p-16 h-[27rem] max-[1900px]:w-[20rem] bg-[#fff] border border-[#000]/10">
+                                    <motion.div onClick={()=>{setOpenSerum(true)}} layout layoutId="openSerum" className=" flex justify-center items-center w-[25rem] relative cursor-pointer p-16 h-[27rem] max-[1900px]:w-[20rem] bg-[#fff] border border-[#000]/10">
                                         <motion.img
                                             layout
                                             src="/B3_Serum_Gold.png"
@@ -243,8 +369,8 @@ const Updated = () => {
                                         />
                                     </motion.div>
                                     <div className="pt-6">
-                                        <motion.h1 className="text-[1.25rem] text-[#000] font-semibold">B3 Serum Concentrate</motion.h1>
-                                        <motion.p className="text-[0.875rem] text-[#000]/80 font-normal">Infused with Peptides which is Anti Aging</motion.p>
+                                        <motion.h1 layoutId="hand-head-text" layout  className="text-[1.25rem] text-[#000] font-semibold">B3 Serum Concentrate</motion.h1>
+                                        <motion.p layout layoutId="hand-descp-text" className="text-[0.875rem] text-[#000]/80 font-normal">Infused with Peptides which is Anti Aging</motion.p>
                                     </div>
                                 </div>
                             </CarouselItem>

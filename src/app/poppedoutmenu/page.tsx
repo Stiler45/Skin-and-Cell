@@ -237,7 +237,7 @@ const PoppdOut = () => {
                         >
                             <motion.img
                                 layout
-                                src="/B3_Hand_Gold.png"
+                                src="/2_B3_Body_slim-200ml.png"
                                 alt="B3 Hand"
                                 layoutId="hand-same"
                                 className="h-[320px] max-h-[500px] object-contain"
@@ -251,7 +251,7 @@ const PoppdOut = () => {
                                 animate="animate"
                                 exit="exit"
                                 layoutId="hand-head-text"
-                                className="font-normal text-[#6F6F6F] text-[24px] max-[800px]:text-[20px]"
+                                className="text-[1.25rem] text-[#000] font-semibold"
                             >
                                 B3 infused with Ceramides & Vitamin B3
                             </motion.div>
@@ -261,20 +261,20 @@ const PoppdOut = () => {
                                 animate="animate"
                                 exit="exit"
                                 layoutId="hand-descp-text"
-                                className="font-normal text-[#999999] text-[20px] max-[800px]:text-[16px]"
+                                className="text-[0.875rem] text-[#000]/80 font-normal"
                             >
                                 Hand Concentrate
                             </motion.div>
                         </div>
                     </div>
-                    <div className="flex flex-col justify-center w-auto max-w-[760px]">
+                    <div className="flex flex-col justify-start w-auto max-w-[760px]">
                         <motion.div
                             layout
                             initial="initial"
                             animate="animate"
                             exit="exit"
                             layoutId="hand-ingredients"
-                            className="pb-[12px] font-normal text-[#6F6F6F] text-[24px] max-[800px]:text-[18px]"
+                            className=" pb-3 text-[1.25rem] text-[#000] font-semibold"
                         >
                             Ingredients
                         </motion.div>
@@ -286,7 +286,7 @@ const PoppdOut = () => {
                                     animate="animate"
                                     exit="exit"
                                     layoutId={`hand-text-${index}`}
-                                    className="font-normal text-[#6F6F6F] text-[20px] max-[800px]:text-[16px]"
+                                    className={`text-[1.25rem]  text-[#000] font-medium`}
                                 >
                                     {index + 1}. {ingredient.title}
                                 </motion.div>
@@ -296,7 +296,7 @@ const PoppdOut = () => {
                                     animate="animate"
                                     exit="exit"
                                     layoutId={`hand-desc-${index}`}
-                                    className="max-w-[650px] font-light text-[#999999] text-[20px] max-[800px]:text-[16px]"
+                                    className={`max-w-[650px] pb-4 text-[0.875rem] text-[#000]/80 font-normal`}
                                 >
                                     {ingredient.description}
                                 </motion.div>
