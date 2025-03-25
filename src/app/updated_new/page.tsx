@@ -44,7 +44,7 @@ const NewLander = () => {
 
     const Swisscross = () => {
         return (
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="18" height="18" className="max-[800px]:h-[16px] max-[800px]:w-[16px]" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clipPath="url(#clip0_1100_817)">
                     <path d="M0 0H18V18H0V0Z" fill="#DA291C" />
                     <path d="M7.3125 3.375H10.6875V7.3125H14.625V10.6875H10.6875V14.625H7.3125V10.6875H3.375V7.3125H7.3125V3.375Z" fill="white" />
@@ -326,14 +326,6 @@ const NewLander = () => {
             }
         },
     };
-    const getInnerHeight = () => {
-        const e = window.innerHeight
-        let l = ""
-        if (e < 1450) {
-            l = "serum-same-Mobile"
-
-        }
-    }
 
     return (
         <main>
@@ -356,16 +348,19 @@ const NewLander = () => {
                                 delay: 1.2
                             },
                         }}
-                        className="z-[50] flex flex-col">
-                        <div className="font-normal text-[#fff] text-[60px] text-center">
+                        className="z-[50] flex flex-col max-[600px]:justify-between">
+                        <div className="font-normal max-[800px]:text-[40px] max-[400px]:text-[32px] text-[#fff] text-[60px] text-center">
                             New Bioactive Skincare
                         </div>
-                        <div className="flex items-center px-[4px]">
-                            <Swisscross />
-                            <div className="pl-[8px] font-normal text-[#fff] text-[20px]">
-                                From The Glarner Alps in Switzerland
+                        <div className="flex max-[650px]:flex-col  items-center px-[4px]">
+                            <div className="flex items-center">
+                                <Swisscross />
+                                <div className="pl-[8px] font-normal text-[#fff] max-[800px]:text-[16px] text-[20px]">
+                                    From The Glarner Alps in Switzerland
+                                </div>
                             </div>
-                            <div className="pl-[4px] font-normal text-[#BFBFBF] text-[20px]">
+
+                            <div className="min-[800px]:pl-[4px] font-normal max-[800px]:text-[16px] text-[#BFBFBF] text-[20px]">
                                 made with the highest cosmetic standards.
                             </div>
                         </div>
@@ -373,7 +368,6 @@ const NewLander = () => {
                 </div>
 
                 <div className={`flex ${move ? "justify-start" : "justify-center"} ${move ? "pt-[64px]" : undefined} flex-col max-[900px]:flex-col items-center space-x-[32px]  h-full`}>
-
                     <motion.div
                         initial={{ opacity: 0, y: 40, filter: 'blur(4px)' }}
                         animate={{
@@ -394,7 +388,7 @@ const NewLander = () => {
 
             </section>
 
-            <section ref={ProductsRef} className="flex flex-col justify-center items-center px-[5%] w-full">
+            {/* <section ref={ProductsRef} className="flex flex-col justify-center items-center px-[5%] w-full">
                 <motion.div
                     className="flex justify-center pt-[64px] pb-[64px]"
                     initial={{ opacity: 0, y: 40, filter: 'blur(4px)' }}
@@ -409,7 +403,7 @@ const NewLander = () => {
                             delay: 0.2
                         },
                     }}>
-                    <div className="text-[48px] text-[#000]">
+                    <div className="text-[48px] font-medium text-[#000]">
                         Products
                     </div>
                 </motion.div>
@@ -1164,11 +1158,11 @@ const NewLander = () => {
                         </div>
                     </div>
                 </section>
-            </section>
+                </section>
 
             <section className="flex justify-center items-end max-[1000px]:mt-[64px] max-[550px]:mt-[72px] p-[5%]">
                 <Footer />
-            </section>
+            </section> */}
         </main>
     )
 }
