@@ -24,16 +24,6 @@ const Test = () => {
     const isInView = useInView(ProductsRef, { once: true });
 
     useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(true)
-            window.removeEventListener("scroll", handleScroll);
-        };
-
-        window.addEventListener("scroll", handleScroll);
-
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
-    useEffect(() => {
         setTimeout(() => {
             setMoved(!move)
         }, 1000);
@@ -323,14 +313,6 @@ const Test = () => {
             }
         },
     };
-    const getInnerHeight = () =>{
-        const e = window.innerHeight
-        let l = ""
-        if(e<1450){
-            l = "serum-same-Mobile"
-
-        }
-    }
 
     return (
         <section className="z-10 flex justify-center items-center px-[5%] w-full h-svh overflow-x-hidden">

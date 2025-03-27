@@ -27,10 +27,13 @@ const Updated = () => {
     const [openEye, setOpenEye] = useState(false)
 
     useEffect(() => {
-        setTimeout(() => {
-            setMoved(true)
+        // Clear the timeout when component unmounts to avoid memory leaks
+        const timer = setTimeout(() => {
+          setMoved(true);
         }, 1000);
-    }), [];
+      
+        return () => clearTimeout(timer);
+      }, []); // Empty dependency array means this runs once on mount
 
     const ingredients = [
         {
