@@ -1,10 +1,7 @@
-/* 'use client'
+'use client'
 import { motion, AnimatePresence, useInView, delay, animate } from "framer-motion"
 import { useState, useEffect, useRef } from "react"
-import { TextEffect } from '@/components/ui/text-effect';
 import Image from "next/image"
-import Flag from "../../../public/Flag.png"
-import BG_Lander_New from "../../../public/BG_Lander_New.png"
 import B3_Face_Gold from "../../../public/B3_Face_gold.png"
 import B3_Body_Slim from "../../../public/2_B3_Body_slim-200ml.png"
 import B3_Eye_Gold from "../../../public/B3_Eye_gold.png"
@@ -1096,4 +1093,4 @@ const Test = () => {
     )
 }
 
-export default Test */
+export default Test

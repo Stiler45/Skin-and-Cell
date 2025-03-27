@@ -1,13 +1,15 @@
-/* 'use client'
-import { motion, AnimatePresence,  } from "framer-motion"
+'use client'
+import { motion  } from "framer-motion"
 import { useState, useEffect, useRef } from "react"
+import {
+    Accordion,
+    AccordionItem,
+    AccordionTrigger,
+    AccordionContent,
+  } from '../../components/ui/accordion';
 import Image from "next/image"
-import Flag from "../../../public/Flag.png"
-import BG_Lander_New from "../../../public/BG_Lander_New.png"
-import B3_Face_Gold from "../../../public/B3_Face_gold.png"
-import B3_Body_Slim from "../../../public/2_B3_Body_slim-200ml.png"
-import B3_Eye_Gold from "../../../public/B3_Eye_gold.png"
-import B3_Serum_Gold from "../../../public/B3_Serum_gold.png"
+import { ChevronUp } from 'lucide-react';
+
 
 const PoppdOut = () => {
 
@@ -218,91 +220,99 @@ const PoppdOut = () => {
     ];
 
     return (
-        <main className="flex justify-center items-center h-svh">
-            <motion.div
-                layout
-                layoutId="openHand"
-                className="flex justify-center bg-white bg-blur-[24px] p-[32px] max-[800px]:p-[24px] max-[800px]:pr-[0px] border border-black/10 max-[800px]:border-none w-auto max-[800px]:w-full max-w-[1200px] overflow-hidden cursor-pointer"
-            >
-                <div className="flex max-[800px]:flex-col select-none">
-                    <div className="flex flex-col justify-between space-y-[40px] pr-[32px] max-[800px]:pr-[0px] max-[800px]:pb-[8px] max-w-[650px] max-[800px]:max-w-[100%]">
-                        <motion.div
-                            layout
-                            layoutId="hand-box"
-                            className="flex justify-center items-center pt-[12px] w-full h-full"
-                        >
-                            <motion.img
-                                layout
-                                src="/2_B3_Body_slim-200ml.png"
-                                alt="B3 Hand"
-                                layoutId="hand-same"
-                                className="h-[320px] max-h-[500px] object-contain"
-                            />
-                        </motion.div>
-
-                        <div className="flex flex-col">
-                            <motion.div
-                                layout
-                                initial="initial"
-                                animate="animate"
-                                exit="exit"
-                                layoutId="hand-head-text"
-                                className="text-[1.25rem] text-[#000] font-semibold"
-                            >
-                                B3 infused with Ceramides & Vitamin B3
-                            </motion.div>
-                            <motion.div
-                                layout
-                                initial="initial"
-                                animate="animate"
-                                exit="exit"
-                                layoutId="hand-descp-text"
-                                className="text-[0.875rem] text-[#000]/80 font-normal"
-                            >
-                                Hand Concentrate
-                            </motion.div>
-                        </div>
-                    </div>
-                    <div className="flex flex-col justify-start w-auto max-w-[760px]">
-                        <motion.div
-                            layout
-                            initial="initial"
-                            animate="animate"
-                            exit="exit"
-                            layoutId="hand-ingredients"
-                            className=" pb-3 text-[1.25rem] text-[#000] font-semibold"
-                        >
-                            Ingredients
-                        </motion.div>
-                        {ingredients.map((ingredient, index) => (
-                            <div key={index} className="max-w-[35vw] max-[800px]:max-w-[100%]">
-                                <motion.div
-                                    layout
-                                    initial="initial"
-                                    animate="animate"
-                                    exit="exit"
-                                    layoutId={`hand-text-${index}`}
-                                    className={`text-[1.25rem]  text-[#000] font-medium`}
-                                >
-                                    {index + 1}. {ingredient.title}
-                                </motion.div>
-                                <motion.div
-                                    layout
-                                    initial="initial"
-                                    animate="animate"
-                                    exit="exit"
-                                    layoutId={`hand-desc-${index}`}
-                                    className={`max-w-[650px] pb-4 text-[0.875rem] text-[#000]/80 font-normal`}
-                                >
-                                    {ingredient.description}
-                                </motion.div>
-                            </div>
-                        ))}
-                    </div>
+        <main className="flex h-svh">
+            <div className="h-full w-1/2 flex justify-center items-center">
+                <motion.img
+                    layout
+                    src="/B3_Serum_Gold.png"
+                    alt="B3 Serum"
+                    layoutId="serum-same"
+                    className="h-[320px] max-h-[500px] object-contain"
+                />
+            </div>
+            <div className="h-full justify-center flex flex-col items-center w-1/2">
+                <div>
+                    <h1 className="text-[2.5rem]  mt-4 text-[#000] font-normal">
+                        B3 Serum
+                    </h1>
+                    <Accordion
+      className='flex w-full flex-col divide-y divide-zinc-200 dark:divide-zinc-700'
+      transition={{ duration: 0.2, ease: 'easeInOut' }}
+    >
+      <AccordionItem value='getting-started' className='py-2'>
+        <AccordionTrigger className='w-full text-left text-zinc-950 dark:text-zinc-50'>
+          <div className='flex items-center justify-between'>
+            <div>Getting Started</div>
+            <ChevronUp className='h-4 w-4 text-zinc-950 transition-transform duration-200 group-data-expanded:-rotate-180 dark:text-zinc-50' />
+          </div>
+        </AccordionTrigger>
+        <AccordionContent>
+          <p className='text-zinc-500 dark:text-zinc-400'>
+            Discover the fundamental concepts of Motion-Primitives. This section
+            guides you through the installation process and provides an overview
+            of how to integrate these components into your projects. Learn about
+            the core functionalities and how to set up your first animation
+            effectively.
+          </p>
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value='animation-properties' className='py-2'>
+        <AccordionTrigger className='w-full text-left text-zinc-950 dark:text-zinc-50'>
+          <div className='flex items-center justify-between'>
+            <div>Animation Properties</div>
+            <ChevronUp className='h-4 w-4 text-zinc-950 transition-transform duration-200 group-data-expanded:-rotate-180 dark:text-zinc-50' />
+          </div>
+        </AccordionTrigger>
+        <AccordionContent>
+          <p className='text-zinc-500 dark:text-zinc-400'>
+            Explore the comprehensive range of animation properties available in
+            Motion-Primitives. Understand how to manipulate timing, easing, and
+            delays to create smooth, dynamic animations. This segment also
+            covers the customization of animations to fit the flow and style of
+            your web applications.
+          </p>
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value='advanced-usage' className='py-2'>
+        <AccordionTrigger className='w-full text-left text-zinc-950 dark:text-zinc-50'>
+          <div className='flex items-center justify-between'>
+            <div>Advanced Usage</div>
+            <ChevronUp className='h-4 w-4 text-zinc-950 transition-transform duration-200 group-data-expanded:-rotate-180 dark:text-zinc-50' />
+          </div>
+        </AccordionTrigger>
+        <AccordionContent>
+          <p className='text-zinc-500 dark:text-zinc-400'>
+            Dive deeper into advanced techniques and features of
+            Motion-Primitives. Learn about chaining animations, creating complex
+            sequences, and utilizing motion sensors for interactive animations.
+            Gain insights on how to leverage these advanced features to enhance
+            user experience and engagement.
+          </p>
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value='community-and-support' className='py-2'>
+        <AccordionTrigger className='w-full text-left text-zinc-950 dark:text-zinc-50'>
+          <div className='flex items-center justify-between'>
+            <div>Community and Support</div>
+            <ChevronUp className='h-4 w-4 text-zinc-950 transition-transform duration-200 group-data-expanded:-rotate-180 dark:text-zinc-50' />
+          </div>
+        </AccordionTrigger>
+        <AccordionContent>
+          <p className='text-zinc-500 dark:text-zinc-400'>
+            Engage with the Motion-Primitives community to gain additional
+            support and insight. Find out how to participate in discussions,
+            contribute to the project, and access a wealth of shared knowledge
+            and resources. Learn about upcoming features, best practices, and
+            how to get help with your specific use cases.
+          </p>
+        </AccordionContent>
+      </AccordionItem>
+    </Accordion>
                 </div>
-            </motion.div>
+
+            </div>
         </main>
     )
 }
 
-export default PoppdOut */
+export default PoppdOut

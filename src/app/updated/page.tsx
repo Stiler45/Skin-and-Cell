@@ -1,4 +1,4 @@
-/* 'use client'
+'use client'
 import Image from "next/image"
 import B3_Face_Gold from "../../../public/B3_Face_gold.png"
 import B3_Body_Slim from "../../../public/2_B3_Body_slim-200ml.png"
@@ -14,6 +14,7 @@ import {
     CarouselNavigation,
     CarouselItem,
 } from '../../components/ui/carousel';
+import Word from '../../components/ui/word'
 
 const Updated = () => {
 
@@ -27,9 +28,9 @@ const Updated = () => {
 
     useEffect(() => {
         setTimeout(() => {
-            setMoved(!move)
+            setMoved(true)
         }, 1000);
-    });
+    }), [];
 
     const ingredients = [
         {
@@ -318,51 +319,60 @@ const Updated = () => {
     }
     const Footer = () => {
         return (
-            <svg width="40%" height="276" viewBox="0 0 1510 276" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M46.0156 274.439C36.216 274.439 26.8424 272.325 18.7471 268.096C10.2257 263.867 3.83463 257.947 0 250.758V232.998H2.13035C11.0778 252.027 25.5642 262.176 45.1635 262.176C64.7627 262.176 67.7452 258.37 75.8405 251.181C83.9358 243.993 88.1965 235.535 88.1965 226.232C88.1965 216.929 85.6401 209.318 80.5273 202.975C75.4144 196.632 68.5973 191.135 60.9281 186.906C53.2588 182.254 45.5895 178.026 37.9203 173.374C30.251 168.723 23.4339 163.226 17.895 156.883C12.356 150.54 9.37355 142.505 9.37355 134.048C9.37355 125.591 12.7821 117.556 20.0253 111.636C27.2685 105.716 36.216 102.756 47.2938 102.756C58.3716 102.756 68.1712 106.985 75.8405 115.865V116.711V131.511L73.7102 132.357C66.467 121.362 56.6673 115.865 45.5895 115.865C34.5117 115.865 34.5117 117.979 29.8249 121.785C25.1381 125.591 23.0078 130.242 23.0078 136.162C23.0078 142.082 25.5642 147.157 30.6771 151.808C36.216 156.883 42.607 161.534 49.8502 165.34C57.5195 169.569 65.1888 174.22 72.858 178.872C80.5273 183.523 87.3444 189.866 92.8833 197.478C98.4222 205.089 101.405 213.969 101.405 223.695C101.405 238.073 95.8658 250.336 84.788 260.484C73.7102 270.633 60.502 275.707 45.1635 275.707L46.0156 274.439ZM530.457 270.633H518.953L517.675 269.365V175.489C517.675 159.42 511.71 145.042 500.633 133.202C489.129 121.362 475.068 115.442 458.878 115.442C442.687 115.442 428.201 121.362 415.845 133.202C403.488 145.042 397.097 159.42 397.097 175.489V269.365L395.819 270.633H384.315L383.037 269.365V107.83L384.315 106.562H395.819L397.097 107.83V135.739C409.88 113.75 430.331 102.756 458.878 102.756C487.424 102.756 496.798 109.945 510.858 123.899C524.919 137.854 531.736 155.191 531.736 175.489V269.365L530.457 270.633ZM318.274 270.633H306.771L305.492 269.365V108.253L306.771 106.985H318.274L319.553 108.253V269.365L318.274 270.633ZM262.885 270.633H246.695L166.167 187.329V269.365L164.889 270.633H153.385L152.107 269.365V1.26859L153.385 0H164.889L166.167 1.26859V161.534L228.374 107.408H229.226H244.138L244.99 109.522L171.28 173.374L263.737 269.365L262.885 271.479V270.633ZM312.736 70.1955C305.066 70.1955 301.232 66.3897 301.232 59.201C301.232 52.0123 305.066 48.2065 312.736 48.2065C320.405 48.2065 324.239 52.0123 324.239 59.201C324.239 66.3897 320.405 70.1955 312.736 70.1955Z" fill="url(#paint0_linear_1014_1389)" />
-                <path d="M1024.84 275.999H1021.43C998.854 275.999 977.556 270.072 958.388 258.218C938.795 246.364 923.46 230.699 912.386 211.225C901.311 191.75 895.348 171.006 895.348 148.991C895.348 114.699 908.126 84.2168 933.257 59.6619C958.388 34.6837 988.631 22.4062 1023.56 22.4062C1058.49 22.4062 1069.14 28.7567 1090.43 40.6107L1091.29 42.3042V54.1583L1088.3 55.4283C1068.28 41.8808 1046.56 35.1071 1023.56 35.1071C1000.56 35.1071 965.204 46.5378 943.054 68.5525C920.905 90.5672 909.404 117.662 909.404 148.991C909.404 180.32 920.479 206.991 943.054 229.429C965.204 251.867 992.464 262.875 1023.56 262.875C1054.65 262.875 1068.28 256.101 1088.3 242.554L1091.29 243.824V255.678L1090.43 257.371C1070.41 269.649 1048.69 275.576 1025.26 275.576L1024.84 275.999Z" fill="url(#paint1_linear_1014_1389)" />
-                <path d="M1231.42 272.188H1144.1L1142.39 270.495V28.7559L1144.1 27.0625H1231.42L1233.12 28.7559V38.0699L1231.42 39.7633H1156.45V168.041H1218.64L1220.34 169.735V179.049L1218.64 180.742H1156.45V259.911H1231.42L1233.12 261.604V270.918L1231.42 272.611V272.188Z" fill="url(#paint2_linear_1014_1389)" />
-                <path d="M1508.3 272.188H1422.25L1420.55 270.495V28.7559L1422.25 27.0625H1432.9L1434.61 28.7559V259.487H1508.3L1510 261.181V270.495L1508.3 272.188Z" fill="url(#paint3_linear_1014_1389)" />
-                <path d="M1374.12 272.188H1288.08L1286.38 270.495V28.7559L1288.08 27.0625H1298.73L1300.44 28.7559V259.487H1374.12L1375.83 261.181V270.495L1374.12 272.188Z" fill="url(#paint4_linear_1014_1389)" />
-                <path d="M716.098 275.706H709.284C707.154 275.706 705.876 274.01 705.876 272.315V162.934H597.7C595.571 162.934 594.293 161.238 594.293 159.543V153.183C594.293 151.063 595.996 149.792 597.7 149.792H705.876V40.4112C705.876 38.2914 707.58 37.0195 709.284 37.0195H716.098C718.227 37.0195 719.505 38.7154 719.505 40.4112V149.792H829.385C831.514 149.792 832.792 151.487 832.792 153.183V159.543C832.792 161.662 831.088 162.934 829.385 162.934H719.505V272.315C719.505 274.434 717.801 275.706 716.098 275.706Z" fill="url(#paint5_linear_1014_1389)" />
-                <defs>
-                    <linearGradient id="paint0_linear_1014_1389" x1="265.868" y1="0" x2="265.868" y2="275.707" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="#6F6F6F" stopOpacity="0.9" />
-                        <stop offset="1" stopColor="white" stopOpacity="0.9" />
-                    </linearGradient>
-                    <linearGradient id="paint1_linear_1014_1389" x1="993.316" y1="22.4062" x2="993.316" y2="275.999" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="#6F6F6F" stopOpacity="0.9" />
-                        <stop offset="1" stopColor="white" stopOpacity="0.9" />
-                    </linearGradient>
-                    <linearGradient id="paint2_linear_1014_1389" x1="1187.76" y1="27.0625" x2="1187.76" y2="272.611" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="#6F6F6F" stopOpacity="0.9" />
-                        <stop offset="1" stopColor="white" stopOpacity="0.9" />
-                    </linearGradient>
-                    <linearGradient id="paint3_linear_1014_1389" x1="1465.28" y1="27.0625" x2="1465.28" y2="272.188" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="#6F6F6F" stopOpacity="0.9" />
-                        <stop offset="1" stopColor="white" stopOpacity="0.9" />
-                    </linearGradient>
-                    <linearGradient id="paint4_linear_1014_1389" x1="1331.1" y1="27.0625" x2="1331.1" y2="272.188" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="#6F6F6F" stopOpacity="0.9" />
-                        <stop offset="1" stopColor="white" stopOpacity="0.9" />
-                    </linearGradient>
-                    <linearGradient id="paint5_linear_1014_1389" x1="713.542" y1="37.0195" x2="713.542" y2="275.706" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="#6F6F6F" stopOpacity="0.9" />
-                        <stop offset="1" stopColor="white" stopOpacity="0.9" />
-                    </linearGradient>
-                </defs>
-            </svg>
+            <svg width="80%" height="210" viewBox="0 0 1152 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M35.1059 208.812C27.6297 208.812 20.4785 207.203 14.3024 203.986C7.80132 200.769 2.92549 196.264 0 190.795V177.281H1.62527C8.45143 191.76 19.5033 199.482 34.4558 199.482C49.4083 199.482 51.6837 196.586 57.8598 191.116C64.0358 185.647 67.2864 179.212 67.2864 172.133C67.2864 165.055 65.336 159.264 61.4354 154.437C57.5347 149.611 52.3338 145.429 46.4829 142.211C40.6319 138.672 34.7809 135.454 28.9299 131.915C23.0789 128.376 17.878 124.193 13.6523 119.367C9.42659 114.541 7.15121 108.428 7.15121 101.993C7.15121 95.5581 9.75165 89.445 15.2776 84.9406C20.8035 80.4361 27.6297 78.1839 36.0811 78.1839C44.5325 78.1839 52.0088 81.4014 57.8598 88.158V88.8015V100.063L56.2345 100.706C50.7086 92.3407 43.2323 88.158 34.7809 88.158C26.3294 88.158 26.3294 89.7667 22.7538 92.6624C19.1782 95.5581 17.553 99.0973 17.553 103.602C17.553 108.106 19.5033 111.967 23.404 115.506C27.6297 119.367 32.5055 122.906 38.0314 125.802C43.8824 129.02 49.7334 132.559 55.5844 136.098C61.4354 139.637 66.6363 144.463 70.862 150.255C75.0877 156.046 77.3631 162.803 77.3631 170.203C77.3631 181.142 73.1374 190.473 64.6859 198.195C56.2345 205.917 46.1578 209.777 34.4558 209.777L35.1059 208.812ZM404.693 205.916H395.917L394.942 204.951V133.524C394.942 121.298 390.391 110.358 381.94 101.35C373.163 92.3407 362.436 87.8363 350.084 87.8363C337.732 87.8363 326.68 92.3407 317.254 101.35C307.827 110.358 302.951 121.298 302.951 133.524V204.951L301.976 205.916H293.2L292.224 204.951V82.0449L293.2 81.0796H301.976L302.951 82.0449V103.28C312.703 86.5493 328.305 78.1839 350.084 78.1839C371.863 78.1839 379.014 83.6536 389.741 94.2711C400.468 104.889 405.668 118.08 405.668 133.524V204.951L404.693 205.916ZM242.816 205.916H234.04L233.064 204.951V82.3666L234.04 81.4014H242.816L243.791 82.3666V204.951L242.816 205.916ZM200.559 205.916H188.207L126.771 142.533V204.951L125.796 205.916H117.02L116.045 204.951V0.965231L117.02 0H125.796L126.771 0.965231V122.906L174.229 81.7231H174.88H186.256L186.907 83.3318L130.672 131.915L201.209 204.951L200.559 206.56V205.916ZM238.59 53.4096C232.739 53.4096 229.814 50.5139 229.814 45.0442C229.814 39.5746 232.739 36.6789 238.59 36.6789C244.441 36.6789 247.367 39.5746 247.367 45.0442C247.367 50.5139 244.441 53.4096 238.59 53.4096Z" fill="url(#paint0_linear_1067_173)"/>
+<path d="M781.863 210.002H779.264C762.04 210.002 745.792 205.492 731.169 196.473C716.221 187.453 704.522 175.535 696.073 160.717C687.624 145.899 683.074 130.116 683.074 113.365C683.074 87.2733 692.823 64.0806 711.996 45.3975C731.169 26.3923 754.241 17.0508 780.888 17.0508C807.535 17.0508 815.659 21.8826 831.908 30.902L832.558 32.1905V41.2099L830.283 42.1763C815.01 31.8684 798.436 26.7144 780.888 26.7144C763.34 26.7144 736.368 35.4117 719.47 52.1621C702.572 68.9124 693.798 89.5282 693.798 113.365C693.798 137.202 702.247 157.496 719.47 174.568C736.368 191.641 757.166 200.016 780.888 200.016C804.611 200.016 815.01 194.862 830.283 184.554L832.558 185.52V194.54L831.908 195.828C816.634 205.17 800.061 209.68 782.188 209.68L781.863 210.002Z" fill="url(#paint1_linear_1067_173)"/>
+<path d="M939.468 207.102H872.851L871.551 205.814V21.8822L872.851 20.5938H939.468L940.768 21.8822V28.9689L939.468 30.2574H882.275V127.86H929.719L931.019 129.149V136.236L929.719 137.524H882.275V197.761H939.468L940.768 199.049V206.136L939.468 207.424V207.102Z" fill="url(#paint2_linear_1067_173)"/>
+<path d="M1150.7 207.102H1085.06L1083.76 205.814V21.8822L1085.06 20.5938H1093.18L1094.48 21.8822V197.439H1150.7L1152 198.727V205.814L1150.7 207.102Z" fill="url(#paint3_linear_1067_173)"/>
+<path d="M1048.34 207.102H982.696L981.396 205.814V21.8822L982.696 20.5938H990.82L992.12 21.8822V197.439H1048.34L1049.64 198.727V205.814L1048.34 207.102Z" fill="url(#paint4_linear_1067_173)"/>
+<path d="M546.321 209.777H541.122C539.498 209.777 538.523 208.487 538.523 207.197V123.973H455.994C454.369 123.973 453.395 122.682 453.395 121.392V116.553C453.395 114.94 454.694 113.973 455.994 113.973H538.523V30.7486C538.523 29.1357 539.823 28.168 541.122 28.168H546.321C547.946 28.168 548.92 29.4583 548.92 30.7486V113.973H632.749C634.374 113.973 635.349 115.263 635.349 116.553V121.392C635.349 123.005 634.049 123.973 632.749 123.973H548.92V207.197C548.92 208.81 547.621 209.777 546.321 209.777Z" fill="url(#paint5_linear_1067_173)"/>
+<defs>
+<linearGradient id="paint0_linear_1067_173" x1="202.834" y1="0" x2="202.834" y2="209.777" gradientUnits="userSpaceOnUse">
+<stop stop-color="#999999" stop-opacity="0.6"/>
+<stop offset="0.835" stop-color="white" stop-opacity="0.9"/>
+<stop offset="1" stop-color="white" stop-opacity="0.9"/>
+</linearGradient>
+<linearGradient id="paint1_linear_1067_173" x1="757.816" y1="17.0508" x2="757.816" y2="210.002" gradientUnits="userSpaceOnUse">
+<stop stop-color="#999999" stop-opacity="0.6"/>
+<stop offset="0.835" stop-color="white" stop-opacity="0.9"/>
+<stop offset="1" stop-color="white" stop-opacity="0.9"/>
+</linearGradient>
+<linearGradient id="paint2_linear_1067_173" x1="906.159" y1="20.5937" x2="906.159" y2="207.424" gradientUnits="userSpaceOnUse">
+<stop stop-color="#999999" stop-opacity="0.6"/>
+<stop offset="0.835" stop-color="white" stop-opacity="0.9"/>
+<stop offset="1" stop-color="white" stop-opacity="0.9"/>
+</linearGradient>
+<linearGradient id="paint3_linear_1067_173" x1="1117.88" y1="20.5937" x2="1117.88" y2="207.102" gradientUnits="userSpaceOnUse">
+<stop stop-color="#999999" stop-opacity="0.6"/>
+<stop offset="0.835" stop-color="white" stop-opacity="0.9"/>
+<stop offset="1" stop-color="white" stop-opacity="0.9"/>
+</linearGradient>
+<linearGradient id="paint4_linear_1067_173" x1="1015.52" y1="20.5937" x2="1015.52" y2="207.102" gradientUnits="userSpaceOnUse">
+<stop stop-color="#999999" stop-opacity="0.6"/>
+<stop offset="0.835" stop-color="white" stop-opacity="0.9"/>
+<stop offset="1" stop-color="white" stop-opacity="0.9"/>
+</linearGradient>
+<linearGradient id="paint5_linear_1067_173" x1="544.372" y1="28.168" x2="544.372" y2="209.777" gradientUnits="userSpaceOnUse">
+<stop stop-color="#999999" stop-opacity="0.6"/>
+<stop offset="0.835" stop-color="white" stop-opacity="0.9"/>
+<stop offset="1" stop-color="white" stop-opacity="0.9"/>
+</linearGradient>
+</defs>
+</svg>
+
         )
     }
+    const paragraph = "Skin and Cell AG was founded in Switzerland in 2021 as a new skin science company born out of the experience of a group of eminent oncologists, dermatologists, epidemiologists and skin formulation experts."
+    const words = paragraph.split(" ")
 
     return (
-        <main className="w-full">
+        <main className="w-full ">
             <section className="h-svh max-h-svh flex-col ">
                 <Image
                     src={BG_Lander_new}
                     alt="Landerbackground"
                     className="z-[-1] absolute w-full h-svh object-cover sm:object-center md:object-[center_top] lg:object-cover" />
-                <div className="top-[-5%] absolute flex justify-center items-center w-full h-svh">
+                <div className="top-[-2%] absolute flex justify-center items-center w-full h-svh">
                     <motion.div
                         initial={{ opacity: 0, y: 40, filter: 'blur(4px)' }}
                         animate={{
@@ -376,16 +386,19 @@ const Updated = () => {
                                 delay: 1.2
                             },
                         }}
-                        className="z-[50] flex flex-col">
-                        <div className="font-medium text-[#fff] text-[5rem] text-center">
-                            New Bioactive Skincare
+                        className="z-[50] flex flex-col max-[600px]:justify-between">
+                        <div className="font-normal max-[800px]:text-[40px] max-[400px]:text-[32px] text-[#fff] text-[3.875rem] text-center">
+                            Innovative Bioactive Skincare
                         </div>
-                        <div className="flex items-center px-[4px]">
-                            <Swisscross />
-                            <div className="pl-[8px] font-normal text-[#fff] text-[20px]">
-                                From The Glarner Alps in Switzerland
+                        <div className="flex max-[650px]:flex-col justify-center items-center px-[4px]">
+                            <div className="flex items-center">
+                                <Swisscross />
+                                <div className="pl-[8px] font-normal text-[#fff] max-[800px]:text-[16px] text-[20px]">
+                                    From The Glarner Alps in Switzerland
+                                </div>
                             </div>
-                            <div className="pl-[4px] font-normal text-[#BFBFBF] text-[20px]">
+
+                            <div className="min-[800px]:pl-2 font-normal max-[800px]:text-[16px] text-[#939192] text-[20px]">
                                 made with the highest cosmetic standards.
                             </div>
                         </div>
@@ -410,13 +423,28 @@ const Updated = () => {
                         <Logo />
                     </motion.div>
                 </div>
-
+            </section>
+            <section className=" flex justify-center h-svh px-10  items-center">
+                <Word paragraph={paragraph}/>
             </section>
             <section className="flex  justify-center">
-                <div className="">
-                    <h1 className="pt-16 pb-16 text-[7.5rem] font-semibold text-[#000]">
+                <div className="max-[1000px]:flex max-[1000px]:items-center flex-col">
+                    <motion.h1
+                    className="pb-16  pt-16  text-[3.875rem] font-semibold  text-[#000]"
+                    initial={{ opacity: 0, y: 40, filter: 'blur(4px)' }}
+                        whileInView={{
+                            opacity: 1,
+                            y: 0,
+                            filter: 'blur(0px)',
+                            transition: {
+                                duration: 0.6,
+                                type: 'spring',
+                                bounce: 0.2,
+                            },
+                        }}
+                    >
                         Products
-                    </h1>
+                    </motion.h1>
                     <AnimatePresence>
                         {openSerum && (
                             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed left-0 top-0 z-[100] flex justify-center items-center w-full h-screen overflow-y-hidden backdrop-blur-[8px] ">
@@ -506,17 +534,18 @@ const Updated = () => {
                             </motion.div>
                         )}
                     </AnimatePresence>
-                    <Carousel className="max-w-[1350px] max-[1900px]:max-w-[1072px] max-[1200px]:max-w-[696px]">
-                        <CarouselContent className='-ml-4'>
-                            <CarouselItem className='basis-1/3 max-[850px]:basis-0 max-[1200px]:basis-1/2 pl-4'>
+                    <Carousel className="min-[1600px]:w-[1350px] min-[650px]:w-[900px]">
+                        <CarouselContent className='-ml-4 space-x-4'>
+                            <CarouselItem className='min-[1600px]:basis-1/3 min-[1000px]:basis-1/2 max-[1000px]:ml-[27.5%]  pl-4'>
                                 <div className="flex flex-col">
-                                    <motion.div onClick={() => { setOpenSerum(true) }} layout layoutId="openSerum" className=" flex justify-center items-center w-[25rem] relative cursor-pointer p-16 h-[30rem] max-[1900px]:w-[20rem] bg-[#fff] border border-[#000]/10">
+                                    <motion.div 
+                                    onClick={() => { setOpenSerum(true) }} layout layoutId="openSerum" className=" flex justify-center items-center  w-[25rem] relative cursor-pointer p-16 h-[30rem] bg-[#fff] border border-[#000]/10">
                                         <motion.img
                                             layout
                                             src="/B3_Serum_Gold.png"
                                             alt="B3 Serum"
                                             layoutId="Serum-same"
-                                            className="h-[350px] max-h-[450px] object-contain"
+                                            className="h-[320px] max-h-[450px] object-contain"
                                         />
                                     </motion.div>
                                     <div className="pt-6">
@@ -525,15 +554,15 @@ const Updated = () => {
                                     </div>
                                 </div>
                             </CarouselItem>
-                            <CarouselItem className='basis-1/3 max-[850px]:basis-0 max-[1200px]:basis-1/2 pl-4'>
+                            <CarouselItem className='min-[1600px]:basis-1/3 pl-4 min-[1000px]:basis-1/2'>
                                 <div className="flex flex-col">
-                                    <motion.div className=" flex justify-center items-center w-[25rem] relative cursor-pointer max-[1900px]:w-[20rem] p-16 bg-[#fff] h-[30rem] border border-[#000]/10">
+                                    <motion.div className=" flex justify-center items-center w-[25rem] relative cursor-pointer p-16 bg-[#fff] h-[30rem] border border-[#000]/10">
                                         <motion.img
                                             layout
                                             src="/B3_Eye_Gold.png"
                                             alt="B3 Eye"
                                             layoutId="Eye-same"
-                                            className="h-[350px] max-h-[450px] object-contain"
+                                            className="h-[320px] max-h-[450px] object-contain"
                                         />
                                     </motion.div>
                                     <div className="pt-6">
@@ -542,15 +571,15 @@ const Updated = () => {
                                     </div>
                                 </div>
                             </CarouselItem>
-                            <CarouselItem className='basis-1/3 max-[850px]:basis-0 max-[1200px]:basis-1/2 pl-4'>
+                            <CarouselItem className='min-[1600px]:basis-1/3 pl-4 min-[1000px]:basis-1/2'>
                                 <div className="flex flex-col">
-                                    <motion.div className="flex justify-center items-center w-[25rem] relative cursor-pointer max-[1900px]:w-[20rem] p-16 bg-[#fff] h-[30rem] border border-[#000]/10">
+                                    <motion.div className="flex justify-center items-center w-[25rem] relative cursor-pointer p-16 bg-[#fff] h-[30rem] border border-[#000]/10">
                                         <motion.img
                                             layout
                                             src="/2_B3_Body_slim-200ml.png"
                                             alt="B3 Body"
                                             layoutId="Body-same"
-                                            className="h-[350px] max-h-[450px] object-contain"
+                                            className="h-[320px] max-h-[450px] object-contain"
                                         />
                                     </motion.div>
                                     <div className="pt-6">
@@ -559,15 +588,15 @@ const Updated = () => {
                                     </div>
                                 </div>
                             </CarouselItem>
-                            <CarouselItem className='basis-1/3 max-[850px]:basis-0 max-[1200px]:basis-1/2 pl-4'>
+                            <CarouselItem className='min-[1600px]:basis-1/3 pl-4 min-[1000px]:basis-1/2'>
                                 <div className="flex flex-col">
-                                    <motion.div className="flex justify-center items-center w-[25rem] relative cursor-pointer max-[1900px]:w-[20rem] p-16 bg-[#fff] h-[30rem] border border-[#000]/10">
+                                    <motion.div className="flex justify-center items-center w-[25rem] relative cursor-pointer p-16 bg-[#fff] h-[30rem] border border-[#000]/10">
                                         <motion.img
                                             layout
                                             src="/B3_Face_gold.png"
                                             alt="B3 Face"
                                             layoutId="Face-same"
-                                            className="h-[350px] max-h-[450px] object-contain"
+                                            className="h-[320px] max-h-[450px] object-contain"
                                         />
                                     </motion.div>
                                     <div className="pt-6">
@@ -588,13 +617,13 @@ const Updated = () => {
             <section className="h-svh flex justify-center py-24">
 
                 <div className="w-full  flex justify-center ">
-                    <div className="flex justify-center items-center ">
+                    <div className="flex justify-center items-center  ">
 
                         <div className="flex flex-col items-center ">
                             <p className="uppercase text-[#000] text-[0.875rem]">
                                 Research
                             </p>
-                            <h1 className="text-[3.875rem] font-semibold text-[#000] pb-8">
+                            <h1 className="text-[3.875rem] text-center font-semibold text-[#000] pb-8">
                                 Bioactive Techonology, Perfected. <br />
                             </h1>
                             <div className=" flex justify-center items-center">
@@ -608,111 +637,52 @@ const Updated = () => {
 
             </section>
             <section className=" flex justify-center">
-                <div className="w-[1350px] max-[1900px]:w-[1072px] max-[1200px]:w-[696px] flex justify-between">
-                    <div className="w-1/2 flex ">
-                    <div className="flex-col justify-center">
-                        <p className=" uppercase text-[#000] text-[0.875rem]">
-                            Contact/About Us
-                        </p>
-                        <h1 className="text-[7.5rem] -ml-2 leading-[1] pb-2  font-semibold text-[#000]">
-                            Reach out
-                        </h1>
-                        <p className="text-[1.25rem]  mt-4 text-[#000]/80 font-normal">
-                            Skin and Cell AG was founded in Switzerland in 2021 as a new skin science company born out of the experience of a group of eminent oncologists, dermatologists, epidemiologists and skin formulation experts. Led by Dr. Simon Ward who has spent much of his career researching and teaching oncology and dermatology at Oxford University’s medical school in the United Kingdom, Skin and Cell wants to help repair and maintain good skin health, vibrance and longevity through bringing science backed skin formulations to people around the world.
-                        </p>
-                        <div className="flex mt-12 space-x-2">
-                            <p className="text-[1.25rem] text-center cursor-text p-4 border bg-black text-[#fff] font-normal">
-                                Support@Skinandcell.com
-                            </p>
-                            <p onClick={() => window.location.href = 'mailto:your.email@example.com'} className="text-[1.25rem] cursor-pointer text-center p-4 border border-black text-[#000]/80 font-normal">
-                                Open Mail
-                            </p>
-                            </div>
+                <div className="min-[1600px]:w-[1350px] min-[650px]:w-[900px] flex">
 
-                        </div>
-                        <div className="w-full h-full"/>
-                    </div>
-                    <div className="w-1/2 flex items-center">
+                    <div className="w-1/2 max-[980px]:hidden flex justify-start pr-24">
                         <Image
                             src={Lindenpark}
                             alt="Landerbackground"
                             className="z-[-1] border border-black/10  w-full h-[550px] object-cover sm:object-center md:object-[center_top] lg:object-cover" />
                     </div>
+                    <div className="w-1/2 max-[980px]:w-full justify-center flex items-center ">
+                        <div className="flex-col justify-center">
+                            <p className=" uppercase text-[#000] text-[0.875rem]">
+                                Contact/About Us
+                            </p>
+                            <h1 className="text-[3.875rem] leading-[1] pb-2  font-semibold text-[#000]">
+                                Reach out
+                            </h1>
+                            <p className="text-[1.25rem]  mt-4 text-[#000]/80 font-normal">
+                                Skin and Cell AG was founded in Switzerland in 2021 as a new skin science company born out of the experience of a group of eminent oncologists, dermatologists, epidemiologists and skin formulation experts. Led by Dr. Simon Ward who has spent much of his career researching and teaching oncology and dermatology at Oxford University’s medical school in the United Kingdom, Skin and Cell wants to help repair and maintain good skin health, vibrance and longevity through bringing science backed skin formulations to people around the world.
+                            </p>
+                            <div className="flex mt-12 space-x-2">
+                                <p className="text-[1.25rem] text-center cursor-text p-4 border bg-black text-[#fff] font-normal">
+                                    Support@Skinandcell.com
+                                </p>
+                                <p onClick={() => window.location.href = 'mailto:your.email@example.com'} className="text-[1.25rem] cursor-pointer text-center p-4 border border-black text-[#000]/80 font-normal">
+                                    Open Mail
+                                </p>
+                            </div>
+
+                        </div>
+                        <div className="w-full h-full" />
+                    </div>
                 </div>
-
             </section>
-            <section className="w-full h-svh">
-
+            <section className="w-full pb-4 pt-48 flex justify-center">
+                        <div className="text-[1rem]">
+                            © Copyright Skin and Cell 2025
+                        </div>
             </section>
         </main>
     )
 }
 
 export default Updated
- */
+
 // top headings = .875rem
 // header = 3.875rem | 2.25rem
 // little text = 1.25rem
 // products = 7.5rem
 //
-{/*<div className={`flex ${move ? "justify-start" : "justify-center"} ${move ? "pt-[64px]" : undefined} flex-col max-[900px]:flex-col items-center space-x-[32px]  h-full`}>
-<motion.div
-    initial={{ opacity: 0, y: 40, filter: 'blur(4px)' }}
-    animate={{
-        opacity: 1,
-        y: 0,
-        filter: 'blur(0px)',
-        transition: {
-            duration: 1.2,
-            type: 'spring',
-            bounce: 0.2,
-        },
-    }}
-    layoutId="moveToTop"
-    layout>
-    <Logo />
-</motion.div>
-</div>
-<nav className="flex items-center justify-between w-full left-0 z-[40]">
-<div className="max-[1450px]:block hidden">
-    <Hamburger />
-</div>
-<motion.div
-    variants={initialAnimation}
-    initial="initial"
-    animate="animate"
-    className="flex pl-12 max-[1450px]:hidden">
-    <div className="py-12 cursor-pointer font-normal text-[1.1rem] text-[#fff]">
-        Products
-    </div>
-    <div className="py-12 cursor-pointer pl-10 font-normal text-[1.1rem] text-[#fff]">
-        Bioacitve Technology
-    </div>
-    <div className="py-12 cursor-pointer pl-10 font-normal text-[1.1rem] text-[#fff]">
-        Coming soon
-    </div>
-</motion.div>
- <div className={`absolute select-none max-[1450px]:pt-40 w-full flex justify-center pt-12`}>
-    <motion.div
-        variants={initialAnimation}
-        initial="initialLogo"
-        animate="animateLogo"
-        layout
-        layoutId="logo"
-    >
-        <Logo />
-    </motion.div>
-</div> 
-<motion.div
-    variants={initialAnimation}
-    initial="initial"
-    animate="animate"
-    className="flex pr-12 z-[40] max-[1450px]:hidden">
-    <div className="py-12 cursor-pointer pr-10  font-normal text-[1.1rem] text-[#fff]">
-        Contact
-    </div>
-    <div className="py-12 cursor-pointer font-normal text-[1.1rem] text-[#fff]">
-        About Us
-    </div>
-</motion.div>
-</nav>*/}
