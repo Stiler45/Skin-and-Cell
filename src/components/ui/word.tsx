@@ -31,7 +31,7 @@ const Paragraph: React.FC<ParagraphProps> = ({ paragraph }) => {
   const words = paragraph.split(' ');
 
   return (
-    <p ref={container} className="flex flex-wrap text-[3.875rem] max-[1300px]:text-[3rem] max-[750px]:text-[2rem]  leading-[1] w-[1350px] text-[#000]">
+    <p ref={container} className="flex flex-wrap text-[3.875rem] text-center max-[1300px]:text-[3rem] max-[750px]:text-[2rem]  leading-[1] w-[1350px] text-[#000]">
       {words.map((word, i) => {
         const start = i / words.length;
         const end = start + 1 / words.length;

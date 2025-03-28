@@ -27,13 +27,12 @@ const Updated = () => {
     const [openEye, setOpenEye] = useState(false)
 
     useEffect(() => {
-        // Clear the timeout when component unmounts to avoid memory leaks
         const timer = setTimeout(() => {
-          setMoved(true);
+            setMoved(true);
         }, 1000);
-      
+
         return () => clearTimeout(timer);
-      }, []); // Empty dependency array means this runs once on mount
+    }, []);
 
     const ingredients = [
         {
@@ -312,8 +311,8 @@ const Updated = () => {
                         <feBlend mode="normal" in2="shape" result="effect2_innerShadow_1158_270" />
                     </filter>
                     <linearGradient id="paint0_linear_1158_270" x1="266.81" y1="50.6145" x2="207.947" y2="109.388" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#3E3E3E" />
-                        <stop offset="1" stop-color="#1A1A1A" />
+                        <stop stopColor="#3E3E3E" />
+                        <stop offset="1" stopColor="#1A1A1A" />
                     </linearGradient>
                 </defs>
             </svg>
@@ -322,47 +321,40 @@ const Updated = () => {
     }
     const Footer = () => {
         return (
-            <svg width="80%" height="210" viewBox="0 0 1152 210" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M35.1059 208.812C27.6297 208.812 20.4785 207.203 14.3024 203.986C7.80132 200.769 2.92549 196.264 0 190.795V177.281H1.62527C8.45143 191.76 19.5033 199.482 34.4558 199.482C49.4083 199.482 51.6837 196.586 57.8598 191.116C64.0358 185.647 67.2864 179.212 67.2864 172.133C67.2864 165.055 65.336 159.264 61.4354 154.437C57.5347 149.611 52.3338 145.429 46.4829 142.211C40.6319 138.672 34.7809 135.454 28.9299 131.915C23.0789 128.376 17.878 124.193 13.6523 119.367C9.42659 114.541 7.15121 108.428 7.15121 101.993C7.15121 95.5581 9.75165 89.445 15.2776 84.9406C20.8035 80.4361 27.6297 78.1839 36.0811 78.1839C44.5325 78.1839 52.0088 81.4014 57.8598 88.158V88.8015V100.063L56.2345 100.706C50.7086 92.3407 43.2323 88.158 34.7809 88.158C26.3294 88.158 26.3294 89.7667 22.7538 92.6624C19.1782 95.5581 17.553 99.0973 17.553 103.602C17.553 108.106 19.5033 111.967 23.404 115.506C27.6297 119.367 32.5055 122.906 38.0314 125.802C43.8824 129.02 49.7334 132.559 55.5844 136.098C61.4354 139.637 66.6363 144.463 70.862 150.255C75.0877 156.046 77.3631 162.803 77.3631 170.203C77.3631 181.142 73.1374 190.473 64.6859 198.195C56.2345 205.917 46.1578 209.777 34.4558 209.777L35.1059 208.812ZM404.693 205.916H395.917L394.942 204.951V133.524C394.942 121.298 390.391 110.358 381.94 101.35C373.163 92.3407 362.436 87.8363 350.084 87.8363C337.732 87.8363 326.68 92.3407 317.254 101.35C307.827 110.358 302.951 121.298 302.951 133.524V204.951L301.976 205.916H293.2L292.224 204.951V82.0449L293.2 81.0796H301.976L302.951 82.0449V103.28C312.703 86.5493 328.305 78.1839 350.084 78.1839C371.863 78.1839 379.014 83.6536 389.741 94.2711C400.468 104.889 405.668 118.08 405.668 133.524V204.951L404.693 205.916ZM242.816 205.916H234.04L233.064 204.951V82.3666L234.04 81.4014H242.816L243.791 82.3666V204.951L242.816 205.916ZM200.559 205.916H188.207L126.771 142.533V204.951L125.796 205.916H117.02L116.045 204.951V0.965231L117.02 0H125.796L126.771 0.965231V122.906L174.229 81.7231H174.88H186.256L186.907 83.3318L130.672 131.915L201.209 204.951L200.559 206.56V205.916ZM238.59 53.4096C232.739 53.4096 229.814 50.5139 229.814 45.0442C229.814 39.5746 232.739 36.6789 238.59 36.6789C244.441 36.6789 247.367 39.5746 247.367 45.0442C247.367 50.5139 244.441 53.4096 238.59 53.4096Z" fill="url(#paint0_linear_1067_173)"/>
-<path d="M781.863 210.002H779.264C762.04 210.002 745.792 205.492 731.169 196.473C716.221 187.453 704.522 175.535 696.073 160.717C687.624 145.899 683.074 130.116 683.074 113.365C683.074 87.2733 692.823 64.0806 711.996 45.3975C731.169 26.3923 754.241 17.0508 780.888 17.0508C807.535 17.0508 815.659 21.8826 831.908 30.902L832.558 32.1905V41.2099L830.283 42.1763C815.01 31.8684 798.436 26.7144 780.888 26.7144C763.34 26.7144 736.368 35.4117 719.47 52.1621C702.572 68.9124 693.798 89.5282 693.798 113.365C693.798 137.202 702.247 157.496 719.47 174.568C736.368 191.641 757.166 200.016 780.888 200.016C804.611 200.016 815.01 194.862 830.283 184.554L832.558 185.52V194.54L831.908 195.828C816.634 205.17 800.061 209.68 782.188 209.68L781.863 210.002Z" fill="url(#paint1_linear_1067_173)"/>
-<path d="M939.468 207.102H872.851L871.551 205.814V21.8822L872.851 20.5938H939.468L940.768 21.8822V28.9689L939.468 30.2574H882.275V127.86H929.719L931.019 129.149V136.236L929.719 137.524H882.275V197.761H939.468L940.768 199.049V206.136L939.468 207.424V207.102Z" fill="url(#paint2_linear_1067_173)"/>
-<path d="M1150.7 207.102H1085.06L1083.76 205.814V21.8822L1085.06 20.5938H1093.18L1094.48 21.8822V197.439H1150.7L1152 198.727V205.814L1150.7 207.102Z" fill="url(#paint3_linear_1067_173)"/>
-<path d="M1048.34 207.102H982.696L981.396 205.814V21.8822L982.696 20.5938H990.82L992.12 21.8822V197.439H1048.34L1049.64 198.727V205.814L1048.34 207.102Z" fill="url(#paint4_linear_1067_173)"/>
-<path d="M546.321 209.777H541.122C539.498 209.777 538.523 208.487 538.523 207.197V123.973H455.994C454.369 123.973 453.395 122.682 453.395 121.392V116.553C453.395 114.94 454.694 113.973 455.994 113.973H538.523V30.7486C538.523 29.1357 539.823 28.168 541.122 28.168H546.321C547.946 28.168 548.92 29.4583 548.92 30.7486V113.973H632.749C634.374 113.973 635.349 115.263 635.349 116.553V121.392C635.349 123.005 634.049 123.973 632.749 123.973H548.92V207.197C548.92 208.81 547.621 209.777 546.321 209.777Z" fill="url(#paint5_linear_1067_173)"/>
-<defs>
-<linearGradient id="paint0_linear_1067_173" x1="202.834" y1="0" x2="202.834" y2="209.777" gradientUnits="userSpaceOnUse">
-<stop stop-color="#999999" stop-opacity="0.6"/>
-<stop offset="0.835" stop-color="white" stop-opacity="0.9"/>
-<stop offset="1" stop-color="white" stop-opacity="0.9"/>
-</linearGradient>
-<linearGradient id="paint1_linear_1067_173" x1="757.816" y1="17.0508" x2="757.816" y2="210.002" gradientUnits="userSpaceOnUse">
-<stop stop-color="#999999" stop-opacity="0.6"/>
-<stop offset="0.835" stop-color="white" stop-opacity="0.9"/>
-<stop offset="1" stop-color="white" stop-opacity="0.9"/>
-</linearGradient>
-<linearGradient id="paint2_linear_1067_173" x1="906.159" y1="20.5937" x2="906.159" y2="207.424" gradientUnits="userSpaceOnUse">
-<stop stop-color="#999999" stop-opacity="0.6"/>
-<stop offset="0.835" stop-color="white" stop-opacity="0.9"/>
-<stop offset="1" stop-color="white" stop-opacity="0.9"/>
-</linearGradient>
-<linearGradient id="paint3_linear_1067_173" x1="1117.88" y1="20.5937" x2="1117.88" y2="207.102" gradientUnits="userSpaceOnUse">
-<stop stop-color="#999999" stop-opacity="0.6"/>
-<stop offset="0.835" stop-color="white" stop-opacity="0.9"/>
-<stop offset="1" stop-color="white" stop-opacity="0.9"/>
-</linearGradient>
-<linearGradient id="paint4_linear_1067_173" x1="1015.52" y1="20.5937" x2="1015.52" y2="207.102" gradientUnits="userSpaceOnUse">
-<stop stop-color="#999999" stop-opacity="0.6"/>
-<stop offset="0.835" stop-color="white" stop-opacity="0.9"/>
-<stop offset="1" stop-color="white" stop-opacity="0.9"/>
-</linearGradient>
-<linearGradient id="paint5_linear_1067_173" x1="544.372" y1="28.168" x2="544.372" y2="209.777" gradientUnits="userSpaceOnUse">
-<stop stop-color="#999999" stop-opacity="0.6"/>
-<stop offset="0.835" stop-color="white" stop-opacity="0.9"/>
-<stop offset="1" stop-color="white" stop-opacity="0.9"/>
-</linearGradient>
-</defs>
-</svg>
-
+            <svg width="100%" height="210" viewBox="0 0 1152 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M35.1059 208.812C27.6297 208.812 20.4785 207.203 14.3024 203.986C7.80132 200.769 2.92549 196.264 0 190.795V177.281H1.62527C8.45143 191.76 19.5033 199.482 34.4558 199.482C49.4083 199.482 51.6837 196.586 57.8598 191.116C64.0358 185.647 67.2864 179.212 67.2864 172.133C67.2864 165.055 65.336 159.264 61.4354 154.437C57.5347 149.611 52.3338 145.429 46.4829 142.211C40.6319 138.672 34.7809 135.454 28.9299 131.915C23.0789 128.376 17.878 124.193 13.6523 119.367C9.42659 114.541 7.15121 108.428 7.15121 101.993C7.15121 95.5581 9.75165 89.445 15.2776 84.9406C20.8035 80.4361 27.6297 78.1839 36.0811 78.1839C44.5325 78.1839 52.0088 81.4014 57.8598 88.158V88.8015V100.063L56.2345 100.706C50.7086 92.3407 43.2323 88.158 34.7809 88.158C26.3294 88.158 26.3294 89.7667 22.7538 92.6624C19.1782 95.5581 17.553 99.0973 17.553 103.602C17.553 108.106 19.5033 111.967 23.404 115.506C27.6297 119.367 32.5055 122.906 38.0314 125.802C43.8824 129.02 49.7334 132.559 55.5844 136.098C61.4354 139.637 66.6363 144.463 70.862 150.255C75.0877 156.046 77.3631 162.803 77.3631 170.203C77.3631 181.142 73.1374 190.473 64.6859 198.195C56.2345 205.917 46.1578 209.777 34.4558 209.777L35.1059 208.812ZM404.693 205.916H395.917L394.942 204.951V133.524C394.942 121.298 390.391 110.358 381.94 101.35C373.163 92.3407 362.436 87.8363 350.084 87.8363C337.732 87.8363 326.68 92.3407 317.254 101.35C307.827 110.358 302.951 121.298 302.951 133.524V204.951L301.976 205.916H293.2L292.224 204.951V82.0449L293.2 81.0796H301.976L302.951 82.0449V103.28C312.703 86.5493 328.305 78.1839 350.084 78.1839C371.863 78.1839 379.014 83.6536 389.741 94.2711C400.468 104.889 405.668 118.08 405.668 133.524V204.951L404.693 205.916ZM242.816 205.916H234.04L233.064 204.951V82.3666L234.04 81.4014H242.816L243.791 82.3666V204.951L242.816 205.916ZM200.559 205.916H188.207L126.771 142.533V204.951L125.796 205.916H117.02L116.045 204.951V0.965231L117.02 0H125.796L126.771 0.965231V122.906L174.229 81.7231H174.88H186.256L186.907 83.3318L130.672 131.915L201.209 204.951L200.559 206.56V205.916ZM238.59 53.4096C232.739 53.4096 229.814 50.5139 229.814 45.0442C229.814 39.5746 232.739 36.6789 238.59 36.6789C244.441 36.6789 247.367 39.5746 247.367 45.0442C247.367 50.5139 244.441 53.4096 238.59 53.4096Z" fill="url(#paint0_linear_1158_204)" />
+                <path d="M781.863 210.002H779.264C762.04 210.002 745.792 205.492 731.169 196.473C716.221 187.453 704.522 175.535 696.073 160.717C687.624 145.899 683.074 130.116 683.074 113.365C683.074 87.2733 692.823 64.0806 711.996 45.3975C731.169 26.3923 754.241 17.0508 780.888 17.0508C807.535 17.0508 815.659 21.8826 831.908 30.902L832.558 32.1905V41.2099L830.283 42.1763C815.01 31.8684 798.436 26.7144 780.888 26.7144C763.34 26.7144 736.368 35.4117 719.47 52.1621C702.572 68.9124 693.798 89.5282 693.798 113.365C693.798 137.202 702.247 157.496 719.47 174.568C736.368 191.641 757.166 200.016 780.888 200.016C804.611 200.016 815.01 194.862 830.283 184.554L832.558 185.52V194.54L831.908 195.828C816.634 205.17 800.061 209.68 782.188 209.68L781.863 210.002Z" fill="url(#paint1_linear_1158_204)" />
+                <path d="M939.468 207.102H872.85L871.55 205.814V21.8822L872.85 20.5938H939.468L940.768 21.8822V28.9689L939.468 30.2574H882.274V127.86H929.719L931.019 129.149V136.236L929.719 137.524H882.274V197.761H939.468L940.768 199.049V206.136L939.468 207.424V207.102Z" fill="url(#paint2_linear_1158_204)" />
+                <path d="M1150.7 207.102H1085.06L1083.76 205.814V21.8822L1085.06 20.5938H1093.18L1094.48 21.8822V197.439H1150.7L1152 198.727V205.814L1150.7 207.102Z" fill="url(#paint3_linear_1158_204)" />
+                <path d="M1048.34 207.102H982.696L981.396 205.814V21.8822L982.696 20.5938H990.82L992.12 21.8822V197.439H1048.34L1049.64 198.727V205.814L1048.34 207.102Z" fill="url(#paint4_linear_1158_204)" />
+                <path d="M546.321 209.777H541.122C539.498 209.777 538.523 208.487 538.523 207.197V123.973H455.993C454.369 123.973 453.394 122.682 453.394 121.392V116.553C453.394 114.941 454.694 113.973 455.993 113.973H538.523V30.7486C538.523 29.1357 539.822 28.168 541.122 28.168H546.321C547.945 28.168 548.92 29.4583 548.92 30.7486V113.973H632.749C634.374 113.973 635.348 115.263 635.348 116.553V121.392C635.348 123.005 634.049 123.973 632.749 123.973H548.92V207.197C548.92 208.81 547.62 209.777 546.321 209.777Z" fill="url(#paint5_linear_1158_204)" />
+                <defs>
+                    <linearGradient id="paint0_linear_1158_204" x1="202.834" y1="0" x2="202.834" y2="209.777" gradientUnits="userSpaceOnUse">
+                        <stop stopColor="#454545" stopOpacity="0.9" />
+                        <stop offset="1" stopOpacity="0" />
+                    </linearGradient>
+                    <linearGradient id="paint1_linear_1158_204" x1="757.816" y1="17.0508" x2="757.816" y2="210.002" gradientUnits="userSpaceOnUse">
+                        <stop stopColor="#454545" stopOpacity="0.9" />
+                        <stop offset="1" stopOpacity="0" />
+                    </linearGradient>
+                    <linearGradient id="paint2_linear_1158_204" x1="906.159" y1="20.5937" x2="906.159" y2="207.424" gradientUnits="userSpaceOnUse">
+                        <stop stopColor="#454545" stopOpacity="0.9" />
+                        <stop offset="1" stopOpacity="0" />
+                    </linearGradient>
+                    <linearGradient id="paint3_linear_1158_204" x1="1117.88" y1="20.5937" x2="1117.88" y2="207.102" gradientUnits="userSpaceOnUse">
+                        <stop stopColor="#454545" stopOpacity="0.9" />
+                        <stop offset="1" stopOpacity="0" />
+                    </linearGradient>
+                    <linearGradient id="paint4_linear_1158_204" x1="1015.52" y1="20.5937" x2="1015.52" y2="207.102" gradientUnits="userSpaceOnUse">
+                        <stop stopColor="#454545" stopOpacity="0.9" />
+                        <stop offset="1" stopOpacity="0" />
+                    </linearGradient>
+                    <linearGradient id="paint5_linear_1158_204" x1="544.371" y1="28.168" x2="544.371" y2="209.777" gradientUnits="userSpaceOnUse">
+                        <stop stopColor="#454545" stopOpacity="0.9" />
+                        <stop offset="1" stopOpacity="0" />
+                    </linearGradient>
+                </defs>
+            </svg>
         )
     }
     const paragraph = "Skin and Cell AG was founded in Switzerland in 2021 as a new skin science company born out of the experience of a group of eminent oncologists, dermatologists, epidemiologists and skin formulation experts."
@@ -390,8 +382,8 @@ const Updated = () => {
                             },
                         }}
                         className="z-[50] flex flex-col max-[600px]:justify-between">
-                        <div className="font-normal max-[800px]:text-[40px] max-[400px]:text-[32px] text-[#fff] text-[3.875rem] text-center">
-                            Innovative Bioactive Skincare
+                        <div className=" text-center text-[#fff] text-[3.875rem]">
+                            New Bioactive Skincare 
                         </div>
                         <div className="flex max-[650px]:flex-col justify-center items-center px-[4px]">
                             <div className="flex items-center">
@@ -428,25 +420,16 @@ const Updated = () => {
                 </div>
             </section>
             <section className=" flex justify-center h-svh px-10  items-center">
-                <Word paragraph={paragraph}/>
+                <Word paragraph={paragraph} />
             </section>
             <section className="flex  justify-center">
                 <div className="max-[1000px]:flex max-[1000px]:items-center flex-col">
-                    <motion.h1
-                    className="pb-16  pt-16  text-[3.875rem] font-semibold  text-[#000]"
-                    initial={{ opacity: 0, y: 40, filter: 'blur(4px)' }}
-                        whileInView={{
-                            opacity: 1,
-                            y: 0,
-                            filter: 'blur(0px)',
-                            transition: {
-                                duration: 0.6,
-                                type: 'spring',
-                                bounce: 0.2,
-                            },
-                        }}
-                    >
+                    <p className="uppercase pt-16  text-[#000] text-[0.875rem]">
                         Products
+                    </p>
+                    <motion.h1
+                        className="pb-16   text-[3.875rem]  w-full font-semibold  text-[#000]">
+                        Repair & Nourish your Skin.
                     </motion.h1>
                     <AnimatePresence>
                         {openSerum && (
@@ -541,8 +524,8 @@ const Updated = () => {
                         <CarouselContent className='-ml-4 space-x-4'>
                             <CarouselItem className='min-[1600px]:basis-1/3 min-[1000px]:basis-1/2 max-[1000px]:ml-[27.5%]  pl-4'>
                                 <div className="flex flex-col">
-                                    <motion.div 
-                                    onClick={() => { setOpenSerum(true) }} layout layoutId="openSerum" className=" flex justify-center items-center  w-[25rem] relative cursor-pointer p-16 h-[30rem] bg-[#fff] border border-[#000]/10">
+                                    <motion.div
+                                        onClick={() => { setOpenSerum(true) }} layout layoutId="openSerum" className=" flex justify-center items-center  w-[25rem] relative cursor-pointer p-16 h-[30rem] bg-[#fff] border border-[#000]/10">
                                         <motion.img
                                             layout
                                             src="/B3_Serum_Gold.png"
@@ -639,7 +622,7 @@ const Updated = () => {
                 </div>
 
             </section>
-            <section className=" flex justify-center">
+            <section className=" flex justify-center pb-44">
                 <div className="min-[1600px]:w-[1350px] min-[650px]:w-[900px] flex">
 
                     <div className="w-1/2 max-[980px]:hidden flex justify-start pr-24">
@@ -648,7 +631,7 @@ const Updated = () => {
                             alt="Landerbackground"
                             className="z-[-1] border border-black/10  w-full h-[550px] object-cover sm:object-center md:object-[center_top] lg:object-cover" />
                     </div>
-                    <div className="w-1/2 max-[980px]:w-full justify-center flex items-center ">
+                    <div className="w-1/2 max-[980px]:w-full justify-end flex items-center ">
                         <div className="flex-col justify-center">
                             <p className=" uppercase text-[#000] text-[0.875rem]">
                                 Contact/About Us
@@ -673,10 +656,25 @@ const Updated = () => {
                     </div>
                 </div>
             </section>
-            <section className="w-full pb-4 pt-48 flex justify-center">
-                        <div className="text-[1rem]">
-                            © Copyright Skin and Cell 2025
+            <section className="w-full bg-black ">
+                <div
+                    className='relative h-[800px]'
+                    style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
+                >
+                    <div className='relative h-[calc(100vh+800px)] -top-[100vh]'>
+                        <div className='h-[800px] sticky top-[calc(100vh-800px)]'>
+                            <div className='flex justify-center items-center h-full flex-col'>
+                                <Footer />
+                                <p className="text-white/10 absolute left-0 bottom-0 p-10">
+                                    © Copyright Skin and Cell 2025. All rights reserved.
+                                </p>
+                            </div>
                         </div>
+                    </div>
+                </div>
+
+                <div className="text-[1rem]">
+                </div>
             </section>
         </main>
     )
