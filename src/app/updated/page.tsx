@@ -404,24 +404,7 @@ const Updated = () => {
                     </motion.div>
                 </div>
 
-                <div className={`flex ${move ? "justify-start" : "justify-center"} ${move ? "pt-[64px]" : ""} flex-col max-[900px]:flex-col items-center space-x-[32px]  h-full`}>
-                    <motion.div
-                        initial={{ opacity: 0, y: 40, filter: 'blur(4px)' }}
-                        animate={{
-                            opacity: 1,
-                            y: 0,
-                            filter: 'blur(0px)',
-                            transition: {
-                                duration: 1.2,
-                                type: 'spring',
-                                bounce: 0.2,
-                            },
-                        }}
-                        layoutId="moveToTop"
-                        layout>
-                        <Logo />
-                    </motion.div>
-                </div>
+                
             </section>
             <section className=" flex justify-center min-h-svh px-10  items-center">
                 <div className="flex flex-col max-[750px]:items-center py-24">
