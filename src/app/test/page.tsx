@@ -1,4 +1,4 @@
-/* 'use client'
+'use client'
 import { motion, AnimatePresence, useInView, delay, animate } from "framer-motion"
 import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
@@ -1075,4 +1075,4 @@ const Test = () => {
     )
 }
 
-export default Test */
+export default Test
