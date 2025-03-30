@@ -144,19 +144,19 @@ const Updated = () => {
                     onLoad={()=>{setLoad(true)}}
                     className="z-[-1] absolute w-full h-svh object-cover sm:object-center md:object-[center_top] lg:object-cover" />
                 <div className="min-[800px]:top-[-2%] top-6 absolute flex justify-center items-center w-full h-svh">
-                    <motion.div
-                        initial={{ opacity: 0, y: 40, filter: 'blur(4px)' }}
-                        animate={{
-                            opacity: 1,
-                            y: 0,
-                            filter: 'blur(0px)',
-                            transition: {
-                                duration: 0.6,
-                                type: 'spring',
-                                bounce: 0.2,
-                                delay: 1.2
-                            },
-                        }}
+                <motion.div
+            initial={{ opacity: 0, y: 40, filter: 'blur(4px)' }}
+            animate={load ? {
+                opacity: 1,
+                y: 0,
+                filter: 'blur(0px)',
+                transition: {
+                    duration: 0.6,
+                    type: 'spring',
+                    bounce: 0.2,
+                    delay: 1.2
+                },
+            } : {}}
                         className="z-[50] flex flex-col max-[600px]:justify-between">
                         <div className=" text-center text-[#fff] max-[650px]:text-[2rem] max-[650px]:leading-[1] text-[3.875rem]">
                             New Bioactive Skincare
