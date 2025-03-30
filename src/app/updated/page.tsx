@@ -404,7 +404,24 @@ const Updated = () => {
                     </motion.div>
                 </div>
 
-                
+                <div className="">
+                    <motion.div
+                        initial={{ opacity: 0, y: 40, filter: 'blur(4px)' }}
+                        animate={{
+                            opacity: 1,
+                            y: 0,
+                            filter: 'blur(0px)',
+                            transition: {
+                                duration: 1.2,
+                                type: 'spring',
+                                bounce: 0.2,
+                            },
+                        }}
+                        layoutId="moveToTop"
+                        layout>
+                        <Logo />
+                    </motion.div>
+                </div>
             </section>
             <section className=" flex justify-center min-h-svh px-10  items-center">
                 <div className="flex flex-col max-[750px]:items-center py-24">
@@ -456,7 +473,7 @@ const Updated = () => {
                                                     animate="animate"
                                                     exit="exit"
                                                     layout
-                                                    className={`text-[1.25rem] text-[#000] font-semibold`}
+                                                    className=""
                                                 >
                                                     B3 Eye Concentrate
                                                 </motion.div>
@@ -465,7 +482,7 @@ const Updated = () => {
                                                     animate="animate"
                                                     exit="exit"
                                                     layout
-                                                    className={`text-[0.875rem]  text-[#000]/80 font-normal`}
+                                                    className=""
                                                 >
                                                     Infused with Peptides which is Anti Aging
                                                 </motion.div>
@@ -489,8 +506,8 @@ const Updated = () => {
                                                         initial="initial"
                                                         animate="animate"
                                                         exit="exit"
-                                                        layoutId={`hand-text-${index}`}
-                                                        className={`text-[1.25rem]  text-[#000]/90 font-medium`}
+                                                        layoutId=""
+                                                        className=""
                                                     >
                                                         {index + 1}. {ingredient.title}
                                                     </motion.div>
@@ -499,8 +516,8 @@ const Updated = () => {
                                                         initial="initial"
                                                         animate="animate"
                                                         exit="exit"
-                                                        layoutId={`hand-desc-${index}`}
-                                                        className={`max-w-[650px] pb-4 text-[0.875rem] text-[#000]/80 font-normal`}
+                                                        layoutId="dfasfdsdf"
+                                                        className="max-w-[650px] pb-4 text-[0.875rem] text-[#000]/80 font-normal"
                                                     >
                                                         {ingredient.description}
                                                     </motion.div>
@@ -528,8 +545,8 @@ const Updated = () => {
                                             />
                                         </motion.div>
                                         <div className="pt-6">
-                                            <motion.h1 className={`text-[1.25rem] ${openSerum ? "hidden" : "block"} text-[#000] font-semibold`}>B3 Serum Concentrate</motion.h1>
-                                            <motion.p className={`text-[0.875rem] ${openSerum ? "hidden" : "block"} text-[#000]/80 font-normal`}>Infused with Peptides which is Anti Aging</motion.p>
+                                            <motion.h1 className="">B3 Serum Concentrate</motion.h1>
+                                            <motion.p className="">Infused with Peptides which is Anti Aging</motion.p>
                                         </div>
                                     </div>
                                 </div>
@@ -610,8 +627,8 @@ const Updated = () => {
                                         />
                                     </motion.div>
                                     <div className="pt-6">
-                                        <motion.h1 className={`text-[1.25rem] ${openSerum ? "hidden" : "block"} text-[#000] font-semibold`}>B3 Serum Concentrate</motion.h1>
-                                        <motion.p className={`text-[0.875rem] ${openSerum ? "hidden" : "block"} text-[#000]/80 font-normal`}>Infused with Peptides which is Anti Aging</motion.p>
+                                        <motion.h1 className="">B3 Serum Concentrate</motion.h1>
+                                        <motion.p className="">Infused with Peptides which is Anti Aging</motion.p>
                                     </div>
                                 </div>
                             </CarouselItem>
@@ -687,7 +704,7 @@ const Updated = () => {
                                 Research
                             </p>
                             <h1 className="text-[3.875rem] max-[1450px]:text-[3rem] max-[750px]:text-[2.5rem] text-center font-semibold text-[#000] pb-8">
-                                Bioactive Techonology, Perfected. <br />
+                                Bioactive Techonology, Perfected.
                             </h1>
                             <div className=" flex justify-center items-center">
                                 <p className="uppercase cursor-pointer text-[#fff] bg-black py-4 px-7 text-[1.25rem] max-[750px]:text-[1rem]">
@@ -738,9 +755,3 @@ const Updated = () => {
 }
 
 export default Updated
-
-// top headings = .875rem
-// header = 3.875rem | 2.25rem
-// little text = 1.25rem
-// products = 7.5rem
-//
