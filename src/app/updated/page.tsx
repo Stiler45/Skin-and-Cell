@@ -20,14 +20,15 @@ const Updated = () => {
 
     const [move, setMoved] = useState(false)
     const [openSerum, setOpenSerum] = useState(false)
-    const [isLoaded, setIsLoaded] = useState(false);
+    const [load, setLoad] = useState(false)
+
     useEffect(() => {
         const timer = setTimeout(() => {
             setMoved(true);
         }, 1000);
 
         return () => clearTimeout(timer);
-    }, []);
+    }, [load]);
 
     const ingredients = [
         {
@@ -144,6 +145,7 @@ const Updated = () => {
                     src={BG_Lander_new}
                     priority
                     alt="Landerbackground"
+                    onLoad={()=>{setLoad(true)}}
                     className="z-[-1] absolute w-full h-svh object-cover sm:object-center md:object-[center_top] lg:object-cover" />
                 <div className="min-[800px]:top-[-2%] top-6 absolute flex justify-center items-center w-full h-svh">
                     <motion.div
@@ -160,9 +162,9 @@ const Updated = () => {
                             },
                         }}
                         className="z-[50] flex flex-col max-[600px]:justify-between">
-                        <div className=" text-center text-[#fff] max-[650px]:text-[2rem] max-[650px]:leading-[1] text-[3.875rem]">
+                        <TextEffect preset='fade-in-blur' speedReveal={1.1} speedSegment={0.3} className=" text-center text-[#fff] max-[650px]:text-[2rem] max-[650px]:leading-[1] text-[3.875rem]">
                             New Bioactive Skincare
-                        </div>
+                        </TextEffect>
                         <div className="flex max-[650px]:flex-col justify-center items-center px-[4px] max-[650px]:p-4">
                             <div className="flex items-center">
                                 <Swisscross />
@@ -328,7 +330,7 @@ const Updated = () => {
                             <CarouselItem className='p-4'>
                                 <div className="flex justify-center">
                                     <div className="flex flex-col">
-                                        <motion.div className=" flex justify-center items-center w-[25rem] relative cursor-pointer p-16 bg-[#fff] h-[30rem] border border-[#000]/10">
+                                        <motion.div className=" flex justify-center items-center w-[25rem] max-[450px]:w-[20rem] max-[450px]:w-[20rem] relative cursor-pointer p-16 bg-[#fff] h-[30rem] border border-[#000]/10">
                                             <motion.img
                                                 layout
                                                 src="/B3_Eye_Gold.png"
@@ -347,7 +349,7 @@ const Updated = () => {
                             <CarouselItem className='p-4'>
                                 <div className="flex justify-center">
                                     <div className="flex flex-col">
-                                        <motion.div className="flex justify-center items-center w-[25rem] relative cursor-pointer p-16 bg-[#fff] h-[30rem] border border-[#000]/10">
+                                        <motion.div className="flex justify-center items-center w-[25rem] max-[450px]:w-[20rem] relative cursor-pointer p-16 bg-[#fff] h-[30rem] border border-[#000]/10">
                                             <motion.img
                                                 layout
                                                 src="/B3_Face_gold.png"
@@ -366,7 +368,7 @@ const Updated = () => {
                             <CarouselItem className='p-4'>
                                 <div className="flex justify-center">
                                     <div className="flex flex-col">
-                                        <motion.div className="flex justify-center items-center w-[25rem] relative cursor-pointer p-16 bg-[#fff] h-[30rem] border border-[#000]/10">
+                                        <motion.div className="flex justify-center items-center w-[25rem] max-[450px]:w-[20rem] relative cursor-pointer p-16 bg-[#fff] h-[30rem] border border-[#000]/10">
                                             <motion.img
                                                 layout
                                                 src="/B3_Face_gold.png"
