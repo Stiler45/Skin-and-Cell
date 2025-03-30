@@ -162,9 +162,9 @@ const Updated = () => {
                             },
                         }}
                         className="z-[50] flex flex-col max-[600px]:justify-between">
-                        <TextEffect preset='fade-in-blur' speedReveal={1.1} speedSegment={0.3} className=" text-center text-[#fff] max-[650px]:text-[2rem] max-[650px]:leading-[1] text-[3.875rem]">
+                        <div className=" text-center text-[#fff] max-[650px]:text-[2rem] max-[650px]:leading-[1] text-[3.875rem]">
                             New Bioactive Skincare
-                        </TextEffect>
+                        </div>
                         <div className="flex max-[650px]:flex-col justify-center items-center px-[4px] max-[650px]:p-4">
                             <div className="flex items-center">
                                 <Swisscross />
