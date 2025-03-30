@@ -1,9 +1,5 @@
 'use client'
 import Image from "next/image"
-import B3_Face_Gold from "../../../public/B3_Face_gold.png"
-import B3_Body_Slim from "../../../public/2_B3_Body_slim-200ml.png"
-import B3_Eye_Gold from "../../../public/B3_Eye_gold.png"
-import B3_Serum_Gold from "../../../public/B3_Serum_gold.png"
 import BG_Lander_new from "../../../public/BG_Lander_New.png"
 import Lindenpark from "../../../public/Lindenpark.png"
 import { motion, AnimatePresence } from "framer-motion"
@@ -322,7 +318,7 @@ const Updated = () => {
                                         </motion.div>
                                         <div className="pt-6">
                                             <motion.h1 className={`text-[1.25rem] ${openSerum ? "hidden" : "block"} text-[#000] font-semibold`}>B3 Serum Concentrate</motion.h1>
-                                            <motion.p className={`text-[0.875rem] ${openSerum ? "hidden" : "block"} text-[#000]/80 font-normal`}>Infused with Peptides which is Anti Aging</motion.p>
+                                            <motion.p className={`text-[0.875rem] ${openSerum ? "hidden" : "block"} text-[#000]/80 font-normal`}>Infused with anti-aging Peptides</motion.p>
                                         </div>
                                     </div>
                                 </div>
@@ -330,7 +326,7 @@ const Updated = () => {
                             <CarouselItem className='p-4'>
                                 <div className="flex justify-center">
                                     <div className="flex flex-col">
-                                        <motion.div className=" flex justify-center items-center w-[25rem] max-[450px]:w-[20rem] max-[450px]:w-[20rem] relative cursor-pointer p-16 bg-[#fff] h-[30rem] border border-[#000]/10">
+                                        <motion.div className=" flex justify-center items-center w-[25rem] max-[450px]:w-[20rem] relative cursor-pointer p-16 bg-[#fff] h-[30rem] border border-[#000]/10">
                                             <motion.img
                                                 layout
                                                 src="/B3_Eye_Gold.png"
@@ -341,7 +337,7 @@ const Updated = () => {
                                         </motion.div>
                                         <div className="pt-6">
                                             <motion.h1 className="text-[1.25rem] text-[#000] font-semibold">B3 Eye Concentrate</motion.h1>
-                                            <motion.p className="text-[0.875rem] text-[#000]/80 font-normal">Infused with Peptides which is Anti Aging</motion.p>
+                                            <motion.p className="text-[0.875rem] text-[#000]/80 font-normal">Infused with Ceramides</motion.p>
                                         </div>
                                     </div>
                                 </div>
@@ -360,7 +356,7 @@ const Updated = () => {
                                         </motion.div>
                                         <div className="pt-6">
                                             <motion.h1 className="text-[1.25rem] text-[#000] font-semibold">B3 Face Concentrate</motion.h1>
-                                            <motion.p className="text-[0.875rem] text-[#000]/80 font-normal">Infused with Peptides which is Anti Aging</motion.p>
+                                            <motion.p className="text-[0.875rem] text-[#000]/80 font-normal">Infused with Glucosamine & Vitamin B3</motion.p>
                                         </div>
                                     </div>
                                 </div>
@@ -371,15 +367,15 @@ const Updated = () => {
                                         <motion.div className="flex justify-center items-center w-[25rem] max-[450px]:w-[20rem] relative cursor-pointer p-16 bg-[#fff] h-[30rem] border border-[#000]/10">
                                             <motion.img
                                                 layout
-                                                src="/B3_Face_gold.png"
+                                                src="/B3_Hand_gold.png"
                                                 alt="B3 Face"
                                                 layoutId="Face-same"
                                                 className="h-[320px] max-h-[450px] object-contain"
                                             />
                                         </motion.div>
                                         <div className="pt-6">
-                                            <motion.h1 className="text-[1.25rem] text-[#000] font-semibold">B3 Face Concentrate</motion.h1>
-                                            <motion.p className="text-[0.875rem] text-[#000]/80 font-normal">Infused with Peptides which is Anti Aging</motion.p>
+                                            <motion.h1 className="text-[1.25rem] text-[#000] font-semibold">B3 Hand Concentrate</motion.h1>
+                                            <motion.p className="text-[0.875rem] text-[#000]/80 font-normal">Infused with Glucosamine & Vitamin B3</motion.p>
                                         </div>
                                     </div>
                                 </div>
