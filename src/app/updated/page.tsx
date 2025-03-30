@@ -19,13 +19,9 @@ import Word from '../../components/ui/word'
 
 const Updated = () => {
 
-    const [scrolled, setScrolled] = useState(false)
-    const [openHand, setOpenHand] = useState(false)
     const [move, setMoved] = useState(false)
-    const [openFace, setOpenFace] = useState(false)
     const [openSerum, setOpenSerum] = useState(false)
-    const [openBody, setOpenBody] = useState(false)
-    const [openEye, setOpenEye] = useState(false)
+
 
     useEffect(() => {
         const timer = setTimeout(() => {
