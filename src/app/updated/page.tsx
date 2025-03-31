@@ -25,7 +25,7 @@ const Updated = () => {
         return () => clearTimeout(timer);
     }, [load]);
 
-    
+
     const Logo = () => {
         return (
             <svg
@@ -115,22 +115,22 @@ const Updated = () => {
                     src={BG_Lander_new}
                     priority
                     alt="Landerbackground"
-                    onLoad={()=>{setLoad(true)}}
+                    onLoad={() => { setLoad(true) }}
                     className="z-[-1] absolute w-full h-svh object-cover sm:object-center md:object-[center_top] lg:object-cover" />
                 <div className="min-[800px]:top-[-2%] top-6 absolute flex justify-center items-center w-full h-svh">
-                <motion.div
-            initial={{ opacity: 0, y: 40, filter: 'blur(4px)' }}
-            animate={load ? {
-                opacity: 1,
-                y: 0,
-                filter: 'blur(0px)',
-                transition: {
-                    duration: 0.6,
-                    type: 'spring',
-                    bounce: 0.2,
-                    delay: 1.2
-                },
-            } : {}}
+                    <motion.div
+                        initial={{ opacity: 0, y: 40, filter: 'blur(4px)' }}
+                        animate={load ? {
+                            opacity: 1,
+                            y: 0,
+                            filter: 'blur(0px)',
+                            transition: {
+                                duration: 0.6,
+                                type: 'spring',
+                                bounce: 0.2,
+                                delay: 1.2
+                            },
+                        } : {}}
                         className="z-[50] flex flex-col max-[600px]:justify-between">
                         <div className=" text-center text-[#fff] max-[650px]:text-[2rem] max-[650px]:leading-[1] text-[3.875rem]">
                             New Bioactive Skincare
@@ -148,6 +148,7 @@ const Updated = () => {
                             </div>
                         </div>
                     </motion.div>
+                    
                 </div>
 
                 <div className={`flex ${move ? "justify-start" : "justify-center"} ${move ? "pt-[64px]" : ""} flex-col max-[900px]:flex-col items-center space-x-[32px]  h-full`}>
@@ -280,17 +281,16 @@ const Updated = () => {
                             <CarouselItem className='p-4'>
                                 <div className="flex justify-center">
                                     <div className="flex flex-col">
-                                        <motion.div
-                                            layout layoutId="openSerum-" className=" flex justify-center items-center w-[25rem] max-[450px]:w-[20rem] max-[750px]:w-[22rem] relative cursor-pointer p-16 h-[30rem] bg-[#fff] border border-[#000]/10">
+                                        <motion.div className="flex justify-center items-center w-[25rem] max-[450px]:w-[20rem] relative cursor-pointer p-16 bg-[#fff] h-[30rem] border border-[#000]/10">
                                             <motion.img
-                                                src="/B3_Serum_gold.png"
-                                                alt="B3 Serum"
+                                                src="/B3_Face_gold.png"
+                                                alt="B3 Face"
                                                 className="h-[320px] max-h-[450px] object-contain"
                                             />
                                         </motion.div>
                                         <div className="pt-6">
-                                            <motion.h1 className={`text-[1.25rem]  text-[#000] font-semibold`}>B3 Serum Concentrate</motion.h1>
-                                            <motion.p className={`text-[0.875rem]  text-[#000]/80 font-normal`}>Infused with anti-aging Peptides</motion.p>
+                                            <motion.h1 className="text-[1.25rem] text-[#000] font-semibold">B3 Face Concentrate</motion.h1>
+                                            <motion.p className="text-[0.875rem] text-[#000]/80 font-normal">Infused with Glucosamine & Vitamin B3</motion.p>
                                         </div>
                                     </div>
                                 </div>
@@ -315,16 +315,34 @@ const Updated = () => {
                             <CarouselItem className='p-4'>
                                 <div className="flex justify-center">
                                     <div className="flex flex-col">
-                                        <motion.div className="flex justify-center items-center w-[25rem] max-[450px]:w-[20rem] relative cursor-pointer p-16 bg-[#fff] h-[30rem] border border-[#000]/10">
+                                        <motion.div
+                                            layout layoutId="openSerum-" className=" flex justify-center items-center w-[25rem] max-[450px]:w-[20rem] max-[750px]:w-[22rem] relative cursor-pointer p-16 h-[30rem] bg-[#fff] border border-[#000]/10">
                                             <motion.img
-                                                src="/B3_Face_gold.png"
-                                                alt="B3 Face"
+                                                src="/B3_Serum_gold.png"
+                                                alt="B3 Serum"
                                                 className="h-[320px] max-h-[450px] object-contain"
                                             />
                                         </motion.div>
                                         <div className="pt-6">
-                                            <motion.h1 className="text-[1.25rem] text-[#000] font-semibold">B3 Face Concentrate</motion.h1>
-                                            <motion.p className="text-[0.875rem] text-[#000]/80 font-normal">Infused with Glucosamine & Vitamin B3</motion.p>
+                                            <motion.h1 className={`text-[1.25rem]  text-[#000] font-semibold`}>B3 Serum Concentrate</motion.h1>
+                                            <motion.p className={`text-[0.875rem]  text-[#000]/80 font-normal`}>Infused with anti-aging Peptides</motion.p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </CarouselItem>
+                            <CarouselItem className='p-4'>
+                                <div className="flex justify-center">
+                                    <div className="flex flex-col">
+                                        <motion.div className="flex justify-center items-center w-[25rem] max-[450px]:w-[20rem] relative cursor-pointer p-16 bg-[#fff] h-[30rem] border border-[#000]/10">
+                                            <motion.img
+                                                src="/2_B3_Body_slim-200ml.png"
+                                                alt="B3 Body"
+                                                className="h-[320px] max-h-[450px] object-contain"
+                                            />
+                                        </motion.div>
+                                        <div className="pt-6">
+                                            <motion.h1 className="text-[1.25rem] text-[#000] font-semibold">B3 Body Concentrate</motion.h1>
+                                            <motion.p className="text-[0.875rem] text-[#000]/80 font-normal">Infused with silk-protein & Vitamin B3</motion.p>
                                         </div>
                                     </div>
                                 </div>
@@ -346,42 +364,23 @@ const Updated = () => {
                                     </div>
                                 </div>
                             </CarouselItem>
-                            <CarouselItem className='p-4'>
-                                <div className="flex justify-center">
-                                    <div className="flex flex-col">
-                                        <motion.div className="flex justify-center items-center w-[25rem] max-[450px]:w-[20rem] relative cursor-pointer p-16 bg-[#fff] h-[30rem] border border-[#000]/10">
-                                            <motion.img
-                                            src="/2_B3_Body_slim-200ml.png"
-                                                alt="B3 Body"
-                                                className="h-[320px] max-h-[450px] object-contain"
-                                            />
-                                        </motion.div>
-                                        <div className="pt-6">
-                                            <motion.h1 className="text-[1.25rem] text-[#000] font-semibold">B3 Body Concentrate</motion.h1>
-                                            <motion.p className="text-[0.875rem] text-[#000]/80 font-normal">Infused with silk-protein & Vitamin B3</motion.p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </CarouselItem>
                         </CarouselContent>
                         <CarouselNavigation alwaysShow />
                     </Carousel>
                     <Carousel className="min-[1600px]:w-[1350px] min-[1000px]:block min-[1000px]:w-[900px] hidden ">
                         <CarouselContent className='min-[750px]:-ml-4 min-[750px]:space-x-4'>
-                            <CarouselItem className='min-[1600px]:basis-1/3 min-[1000px]:basis-1/2 basis pl-4'>
-
+                            <CarouselItem className='min-[1600px]:basis-1/3  min-[1000px]:basis-1/2  pl-4'>
                                 <div className="flex flex-col">
-                                    <motion.div
-                                        layout layoutId="openSerum" className=" flex justify-center items-center w-[25rem] max-[750px]:w-[22rem] relative cursor-pointer p-16 h-[30rem] bg-[#fff] border border-[#000]/10">
+                                    <motion.div className="flex justify-center items-center w-[25rem] relative cursor-pointer p-16 bg-[#fff] h-[30rem] border border-[#000]/10">
                                         <motion.img
-                                            src="/B3_Serum_gold.png"
-                                            alt="B3 Serum"
+                                            src="/B3_Face_gold.png"
+                                            alt="B3 Face"
                                             className="min-h-[300px] h-[300px] max-h-[320px] object-contain"
                                         />
                                     </motion.div>
                                     <div className="pt-6">
-                                        <motion.h1 className={`text-[1.25rem] text-[#000] font-semibold`}>B3 Serum Concentrate</motion.h1>
-                                        <motion.p className={`text-[0.875rem] text-[#000]/80 font-normal`}>Infused with anti-aging Peptides</motion.p>
+                                        <motion.h1 className="text-[1.25rem] text-[#000] font-semibold">B3 Face Concentrate</motion.h1>
+                                        <motion.p className="text-[0.875rem] text-[#000]/80 font-normal">Infused with Glucosamine & Vitamin B3</motion.p>
                                     </div>
                                 </div>
                             </CarouselItem>
@@ -400,6 +399,23 @@ const Updated = () => {
                                     </div>
                                 </div>
                             </CarouselItem>
+                            <CarouselItem className='min-[1600px]:basis-1/3 min-[1000px]:basis-1/2 basis'>
+
+                                <div className="flex flex-col">
+                                    <motion.div
+                                        layout layoutId="openSerum" className=" flex justify-center items-center w-[25rem] max-[750px]:w-[22rem] relative cursor-pointer p-16 h-[30rem] bg-[#fff] border border-[#000]/10">
+                                        <motion.img
+                                            src="/B3_Serum_gold.png"
+                                            alt="B3 Serum"
+                                            className="min-h-[300px] h-[300px] max-h-[320px] object-contain"
+                                        />
+                                    </motion.div>
+                                    <div className="pt-6">
+                                        <motion.h1 className={`text-[1.25rem] text-[#000] font-semibold`}>B3 Serum Concentrate</motion.h1>
+                                        <motion.p className={`text-[0.875rem] text-[#000]/80 font-normal`}>Infused with anti-aging Peptides</motion.p>
+                                    </div>
+                                </div>
+                            </CarouselItem>
                             <CarouselItem className='min-[1600px]:basis-1/3 min-[1000px]:basis-1/2 '>
                                 <div className="flex flex-col">
                                     <motion.div className="flex justify-center items-center w-[25rem] relative cursor-pointer p-16 bg-[#fff] h-[30rem] border border-[#000]/10">
@@ -412,21 +428,6 @@ const Updated = () => {
                                     <div className="pt-6">
                                         <motion.h1 className="text-[1.25rem] text-[#000] font-semibold">B3 Body Concentrate</motion.h1>
                                         <motion.p className="text-[0.875rem] text-[#000]/80 font-normal ">Infused with silk-protein & Vitamin B3</motion.p>
-                                    </div>
-                                </div>
-                            </CarouselItem>
-                            <CarouselItem className='min-[1600px]:basis-1/3  min-[1000px]:basis-1/2'>
-                                <div className="flex flex-col">
-                                    <motion.div className="flex justify-center items-center w-[25rem] relative cursor-pointer p-16 bg-[#fff] h-[30rem] border border-[#000]/10">
-                                        <motion.img
-                                            src="/B3_Face_gold.png"
-                                            alt="B3 Face"
-                                            className="min-h-[300px] h-[300px] max-h-[320px] object-contain"
-                                        />
-                                    </motion.div>
-                                    <div className="pt-6">
-                                        <motion.h1 className="text-[1.25rem] text-[#000] font-semibold">B3 Face Concentrate</motion.h1>
-                                        <motion.p className="text-[0.875rem] text-[#000]/80 font-normal">Infused with Glucosamine & Vitamin B3</motion.p>
                                     </div>
                                 </div>
                             </CarouselItem>
