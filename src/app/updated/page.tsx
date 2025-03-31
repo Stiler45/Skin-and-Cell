@@ -2,7 +2,7 @@
 import Image from "next/image"
 import BG_Lander_new from "../../../public/BG_Lander_New.png"
 import Lindenpark from "../../../public/Lindenpark.png"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 import { useEffect, useState } from "react"
 import {
     Carousel,
@@ -15,7 +15,6 @@ import Word from '../../components/ui/word'
 const Updated = () => {
 
     const [move, setMoved] = useState(false)
-    const [openSerum, setOpenSerum] = useState(false)
     const [load, setLoad] = useState(false)
 
     useEffect(() => {
@@ -26,32 +25,7 @@ const Updated = () => {
         return () => clearTimeout(timer);
     }, [load]);
 
-    const ingredients = [
-        {
-            id: 1,
-            title: "Ceramides",
-            description:
-                "Key structural components of the skin, replenishing and providing a healthier-looking skin.",
-        },
-        {
-            id: 2,
-            title: "Glycerol",
-            description:
-                "Moisturizer (established as the best possible moisturizing agent), hydrating and softening the skin.",
-        },
-        {
-            id: 3,
-            title: "Nicotinamide",
-            description:
-                "Nicotinamide (Niacinamide) – the bioactive form of Vitamin B3, shown to provide protection against the harmful effects of the sun (UV irradiation), skin aging, and environmental insult.",
-        },
-        {
-            id: 4,
-            title: "Nicotinamide",
-            description:
-                "Nicotinamide (Niacinamide) – the bioactive form of Vitamin B3, shown to provide protection against the harmful effects of the sun (UV irradiation), skin aging, and environmental insult.",
-        },
-    ];
+    
     const Logo = () => {
         return (
             <svg
@@ -317,8 +291,8 @@ const Updated = () => {
                                             />
                                         </motion.div>
                                         <div className="pt-6">
-                                            <motion.h1 className={`text-[1.25rem] ${openSerum ? "hidden" : "block"} text-[#000] font-semibold`}>B3 Serum Concentrate</motion.h1>
-                                            <motion.p className={`text-[0.875rem] ${openSerum ? "hidden" : "block"} text-[#000]/80 font-normal`}>Infused with anti-aging Peptides</motion.p>
+                                            <motion.h1 className={`text-[1.25rem]  text-[#000] font-semibold`}>B3 Serum Concentrate</motion.h1>
+                                            <motion.p className={`text-[0.875rem]  text-[#000]/80 font-normal`}>Infused with anti-aging Peptides</motion.p>
                                         </div>
                                     </div>
                                 </div>
@@ -418,8 +392,8 @@ const Updated = () => {
                                         />
                                     </motion.div>
                                     <div className="pt-6">
-                                        <motion.h1 className={`text-[1.25rem] ${openSerum ? "hidden" : "block"} text-[#000] font-semibold`}>B3 Serum Concentrate</motion.h1>
-                                        <motion.p className={`text-[0.875rem] ${openSerum ? "hidden" : "block"} text-[#000]/80 font-normal`}>Infused with anti-aging Peptides</motion.p>
+                                        <motion.h1 className={`text-[1.25rem] text-[#000] font-semibold`}>B3 Serum Concentrate</motion.h1>
+                                        <motion.p className={`text-[0.875rem] text-[#000]/80 font-normal`}>Infused with anti-aging Peptides</motion.p>
                                     </div>
                                 </div>
                             </CarouselItem>
