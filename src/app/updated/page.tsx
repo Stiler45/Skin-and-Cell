@@ -283,10 +283,8 @@ const Updated = () => {
                                         <motion.div
                                             layout layoutId="openSerum" className=" flex justify-center items-center w-[25rem] max-[450px]:w-[20rem] max-[750px]:w-[22rem] relative cursor-pointer p-16 h-[30rem] bg-[#fff] border border-[#000]/10">
                                             <motion.img
-                                                layout
                                                 src="/B3_Serum_Gold.png"
                                                 alt="B3 Serum"
-                                                layoutId="Serum-same"
                                                 className="h-[320px] max-h-[450px] object-contain"
                                             />
                                         </motion.div>
@@ -302,10 +300,8 @@ const Updated = () => {
                                     <div className="flex flex-col">
                                         <motion.div className=" flex justify-center items-center w-[25rem] max-[450px]:w-[20rem] relative cursor-pointer p-16 bg-[#fff] h-[30rem] border border-[#000]/10">
                                             <motion.img
-                                                layout
                                                 src="/B3_Eye_Gold.png"
                                                 alt="B3 Eye"
-                                                layoutId="Eye-same"
                                                 className="h-[320px] max-h-[450px] object-contain"
                                             />
                                         </motion.div>
@@ -321,10 +317,8 @@ const Updated = () => {
                                     <div className="flex flex-col">
                                         <motion.div className="flex justify-center items-center w-[25rem] max-[450px]:w-[20rem] relative cursor-pointer p-16 bg-[#fff] h-[30rem] border border-[#000]/10">
                                             <motion.img
-                                                layout
                                                 src="/B3_Face_gold.png"
                                                 alt="B3 Face"
-                                                layoutId="Face-same"
                                                 className="h-[320px] max-h-[450px] object-contain"
                                             />
                                         </motion.div>
@@ -340,10 +334,8 @@ const Updated = () => {
                                     <div className="flex flex-col">
                                         <motion.div className="flex justify-center items-center w-[25rem] max-[450px]:w-[20rem] relative cursor-pointer p-16 bg-[#fff] h-[30rem] border border-[#000]/10">
                                             <motion.img
-                                                layout
                                                 src="/B3_Hand_gold.png"
                                                 alt="B3 Face"
-                                                layoutId="Face-same"
                                                 className="h-[320px] max-h-[450px] object-contain"
                                             />
                                         </motion.div>
@@ -359,10 +351,8 @@ const Updated = () => {
                                     <div className="flex flex-col">
                                         <motion.div className="flex justify-center items-center w-[25rem] max-[450px]:w-[20rem] relative cursor-pointer p-16 bg-[#fff] h-[30rem] border border-[#000]/10">
                                             <motion.img
-                                                layout
                                                 src="/B3_Hand_gold.png"
                                                 alt="B3 Body"
-                                                layoutId="Body-same"
                                                 className="h-[320px] max-h-[450px] object-contain"
                                             />
                                         </motion.div>
@@ -386,7 +376,7 @@ const Updated = () => {
                                         <motion.img
                                             src="/B3_Serum_Gold.png"
                                             alt="B3 Serum"
-                                            className="min-h-[300px] max-h-[320px] object-contain"
+                                            className="min-h-[300px] h-[300px] max-h-[320px] object-contain"
                                         />
                                     </motion.div>
                                     <div className="pt-6">
@@ -401,7 +391,7 @@ const Updated = () => {
                                         <motion.img
                                             src="/B3_Eye_Gold.png"
                                             alt="B3 Eye"
-                                            className="min-h-[300px] max-h-[320px] object-contain"
+                                            className="min-h-[300px] h-[300px] max-h-[320px] object-contain"
                                         />
                                     </motion.div>
                                     <div className="pt-6">
@@ -416,7 +406,7 @@ const Updated = () => {
                                         <motion.img
                                             src="/2_B3_Body_slim-200ml.png"
                                             alt="B3 Body"
-                                            className="min-h-[300px] max-h-[320px] object-contain"
+                                            className="min-h-[300px] h-[300px] max-h-[320px] object-contain"
                                         />
                                     </motion.div>
                                     <div className="pt-6">
@@ -431,7 +421,7 @@ const Updated = () => {
                                         <motion.img
                                             src="/B3_Face_gold.png"
                                             alt="B3 Face"
-                                            className="min-h-[300px] max-h-[320px] object-contain"
+                                            className="min-h-[300px] h-[300px] max-h-[320px] object-contain"
                                         />
                                     </motion.div>
                                     <div className="pt-6">
@@ -446,7 +436,7 @@ const Updated = () => {
                                         <motion.img
                                             src="/B3_Hand_gold.png"
                                             alt="B3 Hand"
-                                            className="min-h-[300px] max-h-[320px] object-contain"
+                                            className="min-h-[300px] h-[300px] max-h-[320px] object-contain"
                                         />
                                     </motion.div>
                                     <div className="pt-6">
