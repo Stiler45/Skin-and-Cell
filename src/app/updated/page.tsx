@@ -148,10 +148,23 @@ const Updated = () => {
                             </div>
                         </div>
                     </motion.div>
-                    
+                    {/* <div className="flex w-full top-12 h-[115px] items-center absolute justify-between">
+                        <div className="flex space-x-4">
+                        <p className="pl-[8px] font-normal text-[#fff] max-[800px]:text-[14px] text-[20px]">
+                            Products
+                        </p>
+                        <p className="pl-[8px] font-normal text-[#fff] max-[800px]:text-[14px] text-[20px]">
+                            Bioactive Technology
+                        </p>
+                        <p className="pl-[8px] font-normal text-[#fff] max-[800px]:text-[14px] text-[20px]">
+                            Coming Products
+                        </p>
+                        </div>
+
+                    </div> */}
                 </div>
 
-                <div className={`flex ${move ? "justify-start" : "justify-center"} ${move ? "pt-[64px]" : ""} flex-col max-[900px]:flex-col items-center space-x-[32px]  h-full`}>
+                <div className={`flex ${move ? "justify-start" : "justify-center"} ${move ? "pt-12" : ""} flex-col max-[900px]:flex-col items-center space-x-[32px]  h-full`}>
                     <motion.div
                         initial={{ opacity: 0, y: 40, filter: 'blur(4px)' }}
                         animate={{

@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform, MotionValue } from 'framer-motion';
+import { motion, useScroll, useTransform, MotionValue, useSpring } from 'framer-motion';
 import React, { useRef } from 'react';
 
 interface ParagraphProps {
@@ -27,6 +27,11 @@ const Paragraph: React.FC<ParagraphProps> = ({ paragraph }) => {
     target: container,
     offset: ['start 0.7', 'start 0.25'],
   });
+  const smoothScrollYPrgrs = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 20,
+    restDelta: 0.001
+  })
 
   const words = paragraph.split(' ');
 
@@ -35,7 +40,7 @@ const Paragraph: React.FC<ParagraphProps> = ({ paragraph }) => {
       {words.map((word, i) => {
         const start = i / words.length;
         const end = start + 1 / words.length;
-        return <Word key={i} progress={scrollYProgress} range={[start, end]}>{word}</Word>;
+        return <Word key={i} progress={smoothScrollYPrgrs} range={[start, end]}>{word}</Word>;
       })}
     </p>
   );
