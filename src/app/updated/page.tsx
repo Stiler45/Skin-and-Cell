@@ -12,6 +12,7 @@ import {
     CarouselItem,
 } from '../../components/ui/carousel';
 import Word from '../../components/ui/word'
+import { redirect } from "next/dist/server/api-utils"
 
 const Updated = () => {
 
@@ -162,7 +163,9 @@ const Updated = () => {
                                 <div className={`h-[1px] ${hoveredOne? "w-full" : "w-[0px]"} transition-all duration-300 bg-white`}/>
                             </motion.div>
 
-                            <motion.div onMouseEnter={() => (setHoveredTwo(true))} onMouseLeave={() => { setHoveredTwo(false)}} className="flex flex-col pl-[8px]">
+                            <motion.div onClick={() => {
+  window.location.href = '/pdf';  // Redirects to /pdf
+}} onMouseEnter={() => (setHoveredTwo(true))} onMouseLeave={() => { setHoveredTwo(false)}} className="flex flex-col pl-[8px]">
                                 <p className=" cursor-pointer font-normal text-[#fff] max-[800px]:text-[14px] text-[20px] ">
                                     Coming Products
                                 </p>
