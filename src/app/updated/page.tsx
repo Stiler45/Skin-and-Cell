@@ -15,7 +15,6 @@ import Word from '../../components/ui/word'
 
 const Updated = () => {
 
-    const [move, setMoved] = useState(false)
     const [openHam, setOpenHam] = useState(false)
     const [load, setLoad] = useState(false)
     const [hovered, setHovered] = useState(false)
@@ -28,13 +27,6 @@ const Updated = () => {
     const sectionRefThree = useRef<HTMLDivElement | null>(null);
     const sectionRefFour = useRef<HTMLDivElement | null>(null);
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setMoved(true);
-        }, 1000);
-
-        return () => clearTimeout(timer);
-    }, [load]);
     useEffect(() => {
         if (openHam) {
             document.body.style.overflow = "hidden";
