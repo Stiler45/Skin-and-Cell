@@ -16,7 +16,6 @@ import Word from '../../components/ui/word'
 const Updated = () => {
 
     const [openHam, setOpenHam] = useState(false)
-    const [load, setLoad] = useState(false)
     const [hovered, setHovered] = useState(false)
     const [hoveredOne, setHoveredOne] = useState(false)
     const [hoveredTwo, setHoveredTwo] = useState(false)
@@ -130,7 +129,6 @@ const Updated = () => {
                     src={BG_Lander_new}
                     priority
                     alt="Landerbackground"
-                    onLoad={() => { setLoad(true) }}
                     className="z-[-1] absolute w-full h-svh object-cover sm:object-center md:object-[center_top] lg:object-cover" />
                 <div className="top-[-1%] absolute flex justify-center  items-center w-full h-svh">
                     <motion.div
