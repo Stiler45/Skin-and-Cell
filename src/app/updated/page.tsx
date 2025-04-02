@@ -198,7 +198,7 @@ const Updated = () => {
                         </div>
                         <div className="min-[1000px]:hidden flex justify-center items-center w-full">
                             <div onClick={() => { setOpenHam(true) }} className="cursor-pointer p-4 bg-white/10 backdrop-blur-3xl border border-[#fff]/10">
-                                <Menu className="bg-white/10 backdrop-blur-3xl border border-[#fff]/10" />
+                                <Menu className="" />
                             </div>
                         </div>
                     </motion.div>
