@@ -23,10 +23,8 @@ const Updated = () => {
     const [hoveredTwo, setHoveredTwo] = useState(false)
     const [hoveredThree, setHoveredThree] = useState(false)
     const [hoveredFour, setHoveredFour] = useState(false)
-    const [hoveredFive, setHoveredFive] = useState(false)
     const sectionRef = useRef<HTMLDivElement | null>(null);
     const sectionRefOne = useRef<HTMLDivElement | null>(null);
-    const sectionRefTwo = useRef<HTMLDivElement | null>(null);
     const sectionRefThree = useRef<HTMLDivElement | null>(null);
     const sectionRefFour = useRef<HTMLDivElement | null>(null);
 
@@ -113,124 +111,6 @@ const Updated = () => {
             </svg>
         )
     }
-    const Ingredients_Face = [
-        {
-            id: 1,
-            title: "Glucosamine",
-            description:
-                "A rising star in cosmetic technologies linked with younger looking skin, anti-wrinkle properties and stimulates Hyaluronic Acid production.",
-        },
-        {
-            id: 2,
-            title: "Glycerol",
-            description:
-                "Moisturizer (established as the best possible moisturizing agent), hydrating and softening the skin.",
-        },
-        {
-            id: 3,
-            title: "Nicotinamide",
-            description:
-                "Nicotinamide (Niacinamide) – the bioactive form of Vitamin B3, shown to provide protection against the harmful effects of the sun (UV irradiation), skin aging, and environmental insult.",
-        },
-        {
-            id: 4,
-            title: "Lactobionic Acid",
-            description:
-                "Brings a fresh complexion to the skin through skin renewal, maintenance of skin integrity and fortification of the natural Skin Barrier.",
-        },
-    ]
-    const Ingredients_Eye = [
-        {
-            id: 1,
-            title: "Ceramides",
-            description:
-                "Key structural components of the skin, replenishing and providing a healthier looking skin.",
-        },
-        {
-            id: 2,
-            title: "Glycerol",
-            description:
-                "Moisturizer (established as the best possible moisturizing agent), hydrating and softening the skin.",
-        },
-        {
-            id: 3,
-            title: "Nicotinamide",
-            description:
-                "Nicotinamide (Niacinamide) – the bioactive form of Vitamin B3, shown to provide protection against the harmful effects of the sun (UV irradiation), skin aging, and environmental insult.",
-        },
-        {
-            id: 4,
-            title: "Lactobionic Acid",
-            description:
-                "Brings a fresh complexion to the skin through skin renewal, maintenance of skin integrity and fortification of the natural Skin Barrier.",
-        },
-    ]
-    const Ingredients_Serum = [
-        {
-            id: 1,
-            title: "Anti-Aging Peptide Complex",
-            description:
-                "Is a complex formula of short chain amino acids which make up certain proteins needed by the skin. Collagen is also made up of three polypeptide chains, so by adding our complex chain of peptides we help to promote the production of additional collagen within the skin which can have visible anti-aging effects.",
-        },
-        {
-            id: 2,
-            title: "Nicotinamide",
-            description:
-                "Nicotinamide (Niacinamide) – the bioactive form of Vitamin B3, shown to provide protection against the harmful effects of the sun (UV irradiation), skin aging, and environmental insult.",
-        },
-        {
-            id: 3,
-            title: "Lactobionic Acid",
-            description:
-                "Brings a fresh complexion to the skin through skin renewal, maintenance of skin integrity and fortification of the natural Skin Barrier.",
-        },
-    ]
-    const Ingredients_Body = [
-        {
-            id: 1,
-            title: "Silk Protein",
-            description:
-                "a variety of silk proteins have been associated with skin rejuvenation, anti-ageing and sun protection.",
-        },
-        {
-            id: 2,
-            title: "Glycerol",
-            description:
-                "Moisturizer (established as the best possible moisturizing agent), hydrating and softening the skin.",
-        },
-        {
-            id: 3,
-            title: "Nicotinamide",
-            description:
-                "Nicotinamide (Niacinamide) – the bioactive form of Vitamin B3, shown to provide protection against the harmful effects of the sun (UV irradiation), skin aging, and environmental insult.",
-        },
-    ]
-    const Ingredients_Hand = [
-        {
-            id: 1,
-            title: "Linoleic Acid",
-            description:
-                "An essential fatty acid and key component of the skins lipid barrier. It strengthens the skins outer layer, making it more resilient and preventing moisture loss, which is essential for keeping hands soft and hydrated, especially in harsh conditions. Other reported ben fits include soothing of irritation, enhancing skin elasticity, regulating cell function, and neutralising damaging free radicals.",
-        },
-        {
-            id: 2,
-            title: "Glycerol",
-            description:
-                "Moisturizer (established as the best possible moisturizing agent), hydrating and softening the skin.",
-        },
-        {
-            id: 3,
-            title: "Nicotinamide",
-            description:
-                "Nicotinamide (Niacinamide) – the bioactive form of Vitamin B3, shown to provide protection against the harmful effects of the sun (UV irradiation), skin aging, and environmental insult.",
-        },
-        {
-            id: 4,
-            title: "Lactobionic Acid",
-            description:
-                "Brings a fresh complexion to the skin through skin renewal, maintenance of skin integrity and fortification of the natural Skin Barrier.",
-        },
-    ]
     const items = [
         "Products",
         "Bioactive Technology",
@@ -239,28 +119,13 @@ const Updated = () => {
         "Contact"
     ];
 
-    const Menu = (className: any) => {
+    const Menu: React.FC<{ className?: string }> = ({ className }) => {
         return (
             <svg xmlns="http://www.w3.org/2000/svg" className={className} width="28" height="28" fill="#ffffff" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"></path></svg>)
     }
-    const Close = (className: any) => {
+    const Close: React.FC<{ className?: string }> = ({ className }) => {
         return (
             <svg xmlns="http://www.w3.org/2000/svg" className={className} width="28" height="28" fill="#000000" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path></svg>
-        )
-    }
-    const Swisscross = () => {
-        return (
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clipPath="url(#clip0_1100_817)">
-                    <path d="M0 0H18V18H0V0Z" fill="#DA291C" />
-                    <path d="M7.3125 3.375H10.6875V7.3125H14.625V10.6875H10.6875V14.625H7.3125V10.6875H3.375V7.3125H7.3125V3.375Z" fill="white" />
-                </g>
-                <defs>
-                    <clipPath id="clip0_1100_817">
-                        <rect width="18" height="18" fill="white" />
-                    </clipPath>
-                </defs>
-            </svg>
         )
     }
 
