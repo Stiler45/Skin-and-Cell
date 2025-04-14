@@ -141,28 +141,28 @@ const PoppedOut = () => {
                     <h1 className="  text-[#000] font-[400] max-[800px]:text-[3rem] max-[500px]:text-[2.1rem] text-[3rem]">
                         Facial Moisturiser
                     </h1>
-                    <p>
-                        With Bioactive Vitamin B3 and Glucosamine
+                    <p className='text-[#000] font-light'>
+                        With Bioactive Vitamin B3 and Glucosamine.
                     </p>
-                    <div className="pt-12">
+                    <div className="pt-7">
                         <div className="flex space-x-4">
                             {Ingredients_Face.map((item, index) => (
                                 <button
                                     key={index}
                                     onClick={() => setActiveIndex(index)}
-                                    className={`rounded-md px-3 py-1 text-sm font-medium ${activeIndex === index
-                                        ? 'bg-zinc-200 text-zinc-900 dark:bg-zinc-800 dark:text-zinc-100'
-                                        : 'bg-zinc-100 text-zinc-600 dark:bg-zinc-700 dark:text-zinc-400'
+                                    className={`px-[16px] py-[8px] border border-[#000]/10 text-[0.875rem] ${activeIndex === index
+                                        ? ' text-[#fff] bg-black transition-all duration-100'
+                                        : 'text-[#000]/80 transition-all duration-100'
                                         }`}
                                 >
                                     {item.title}
                                 </button>
                             ))}
                         </div>
-                        <div className='overflow-hidden  border-[#000]/10'>
+                        <div className='overflow-hidden  border-[#000]/10 absolute'>
                             <TransitionPanel
                                 activeIndex={activeIndex}
-                                transition={{ duration: 0.2, ease: 'easeInOut' }}
+                                transition={{ duration: 0.3, ease: 'easeInOut' }}
                                 variants={{
                                     enter: { opacity: 0, y: -50, filter: 'blur(4px)' },
                                     center: { opacity: 1, y: 0, filter: 'blur(0px)' },
@@ -170,11 +170,8 @@ const PoppedOut = () => {
                                 }}
                             >
                                 {Ingredients_Face.map((item, index) => (
-                                    <div key={index} className='py-2'>
-                                        <h3 className='mb-2 font-medium text-[#000]'>
-                                            {item.title}
-                                        </h3>
-                                        <p className='text-[#000]'>{item.description}</p>
+                                    <div key={index} className='mt-4 max-w-[70%]'>
+                                        <p className='text-[#000] font-[400]'>{item.description}</p>
                                     </div>
                                 ))}
                             </TransitionPanel>

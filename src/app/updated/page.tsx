@@ -12,6 +12,7 @@ import {
     CarouselItem,
 } from '../../components/ui/carousel';
 import Word from '../../components/ui/word'
+import { VariableDeclaration } from "typescript"
 
 const Updated = () => {
 
@@ -119,6 +120,28 @@ const Updated = () => {
             <svg xmlns="http://www.w3.org/2000/svg" className={className} width="28" height="28" fill="#000000" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path></svg>
         )
     }
+    const handleScrollToSection = (sectionRef: any) => () => {
+        sectionRef.current?.scrollIntoView({ behavior: "smooth" });
+    };
+
+    const handleNavigateToPdf = () => {
+        window.location.href = "/pdf";
+    };
+
+    const handleMouseEnterTwo = () => {
+        setHoveredTwo(true);
+    };
+
+    const links = [
+        { onClick: handleScrollToSection(sectionRef) },
+        { onClick: handleScrollToSection(sectionRefOne) },
+        {
+            onClick: handleNavigateToPdf,
+            onMouseEnter: handleMouseEnterTwo
+        },
+        { onClick: handleScrollToSection(sectionRefThree) },
+        { onClick: handleScrollToSection(sectionRefFour) }
+    ];
 
     const paragraph = "Skin and Cell AG was founded in Switzerland in 2021 as a new skin science company born out of the experience of a group of eminent oncologists, dermatologists, epidemiologists and skin formulation experts."
 
@@ -148,41 +171,41 @@ const Updated = () => {
 
                     <motion.div initial={{ opacity: 0, filter: "blur(6px)", y: 15 }} animate={{ opacity: 1, filter: "blur(0px)", y: 0 }} transition={{ delay: 1.15, duration: 0.5 }} className="flex w-full top-4 h-[115px] items-center absolute justify-between px-12">
                         <div className="space-x-6 min-[1000px]:flex hidden">
-                            <motion.div onClick={()=>{sectionRef.current?.scrollIntoView({ behavior: "smooth" });}}  onMouseEnter={() => (setHovered(true))} onMouseLeave={() => { setHovered(false) }} className="flex flex-col pl-[8px]">
+                            <motion.div onClick={() => { sectionRef.current?.scrollIntoView({ behavior: "smooth" }); }} onMouseEnter={() => (setHovered(true))} onMouseLeave={() => { setHovered(false) }} className="flex flex-col pl-[8px]">
                                 <p className=" cursor-pointer font-normal text-[#fff] max-[800px]:text-[14px] text-[20px] ">
                                     Products
                                 </p>
-                                <div className={`h-[1px] ${hovered? "w-full" : "w-[0px]"} transition-all duration-300 bg-white`}/>
+                                <div className={`h-[1px] ${hovered ? "w-full" : "w-[0px]"} transition-all duration-300 bg-white`} />
                             </motion.div>
 
-                            <motion.div onClick={()=>{sectionRefOne.current?.scrollIntoView({ behavior: "smooth" });}}  onMouseEnter={() => (setHoveredOne(true))} onMouseLeave={() => { setHoveredOne(false) }} className="flex flex-col pl-[8px]">
+                            <motion.div onClick={() => { sectionRefOne.current?.scrollIntoView({ behavior: "smooth" }); }} onMouseEnter={() => (setHoveredOne(true))} onMouseLeave={() => { setHoveredOne(false) }} className="flex flex-col pl-[8px]">
                                 <p className=" cursor-pointer font-normal text-[#fff] max-[800px]:text-[14px] text-[20px] ">
                                     Bioactive Technology
                                 </p>
-                                <div className={`h-[1px] ${hoveredOne? "w-full" : "w-[0px]"} transition-all duration-300 bg-white`}/>
+                                <div className={`h-[1px] ${hoveredOne ? "w-full" : "w-[0px]"} transition-all duration-300 bg-white`} />
                             </motion.div>
 
-                            <motion.div onClick={() => {window.location.href = '/pdf';}} onMouseEnter={() => (setHoveredTwo(true))} onMouseLeave={() => { setHoveredTwo(false)}} className="flex flex-col pl-[8px]">
+                            <motion.div onClick={() => { window.location.href = '/pdf'; }} onMouseEnter={() => (setHoveredTwo(true))} onMouseLeave={() => { setHoveredTwo(false) }} className="flex flex-col pl-[8px]">
                                 <p className=" cursor-pointer font-normal text-[#fff] max-[800px]:text-[14px] text-[20px] ">
                                     Coming Products
                                 </p>
-                                <div className={`h-[1px] ${hoveredTwo? "w-full" : "w-[0px]"} transition-all duration-300 bg-white`}/>
+                                <div className={`h-[1px] ${hoveredTwo ? "w-full" : "w-[0px]"} transition-all duration-300 bg-white`} />
                             </motion.div>
 
                         </div>
                         <div className="space-x-6 min-[1000px]:flex hidden">
-                            <motion.div onClick={()=>{sectionRefThree.current?.scrollIntoView({ behavior: "smooth" });}} onMouseEnter={() => (setHoveredThree(true))} onMouseLeave={() => { setHoveredThree(false) }} className="flex flex-col pl-[8px]">
+                            <motion.div onClick={() => { sectionRefThree.current?.scrollIntoView({ behavior: "smooth" }); }} onMouseEnter={() => (setHoveredThree(true))} onMouseLeave={() => { setHoveredThree(false) }} className="flex flex-col pl-[8px]">
                                 <p className=" cursor-pointer font-normal text-[#fff] max-[800px]:text-[14px] text-[20px] ">
                                     About Us
                                 </p>
-                                <div className={`h-[1px] ${hoveredThree? "w-full" : "w-[0px]"} transition-all duration-300 bg-white`}/>
+                                <div className={`h-[1px] ${hoveredThree ? "w-full" : "w-[0px]"} transition-all duration-300 bg-white`} />
                             </motion.div>
 
-                            <motion.div onClick={()=>{sectionRefFour.current?.scrollIntoView({ behavior: "smooth" });}} onMouseEnter={() => (setHoveredFour(true))} onMouseLeave={() => { setHoveredFour(false) }} className="flex flex-col pl-[8px]">
+                            <motion.div onClick={() => { sectionRefFour.current?.scrollIntoView({ behavior: "smooth" }); }} onMouseEnter={() => (setHoveredFour(true))} onMouseLeave={() => { setHoveredFour(false) }} className="flex flex-col pl-[8px]">
                                 <p className=" cursor-pointer font-normal text-[#fff] max-[800px]:text-[14px] text-[20px] ">
                                     Contact
                                 </p>
-                                <div className={`h-[1px] ${hoveredFour? "w-full" : "w-[0px]"} transition-all duration-300 bg-white`}/>
+                                <div className={`h-[1px] ${hoveredFour ? "w-full" : "w-[0px]"} transition-all duration-300 bg-white`} />
                             </motion.div>
 
                         </div>
@@ -223,7 +246,8 @@ const Updated = () => {
                                                 hidden: { opacity: 0, y: 15, },
                                                 visible: { opacity: 1, y: 0, transition: { duration: 0.15, stiffness: 300, mass: 3 } }
                                             }}
-                                            className="font-medium text-[#000] leading-[1] text-[32px]"
+                                        onClick={() => {links[index].onClick(), setOpenHam(!openHam) }}
+                                            className="font-medium text-[#000] cursor-pointer leading-[1] text-[32px]"
                                         >
                                             {item}
                                         </motion.p>
@@ -562,7 +586,7 @@ const Updated = () => {
                 </div>
 
             </section>
-            <section ref={sectionRefFour}  className=" flex justify-center pb-[10.5rem] px-10  items-center">
+            <section ref={sectionRefFour} className=" flex justify-center pb-[10.5rem] px-10  items-center">
                 <div className="min-[1600px]:w-[1350px] min-[650px]:w-[900px] max-[500px]:translate-x-4  justify-center flex">
 
                     <div className="w-1/2 max-[980px]:hidden flex justify-start pr-24">
