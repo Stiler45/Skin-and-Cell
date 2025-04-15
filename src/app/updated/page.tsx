@@ -43,7 +43,7 @@ const Updated = () => {
         return () => {
             document.body.style.overflow = "";
         };
-    }, [openHam, openSerum]);
+    }, [openHam]);
 
     // const Logo = () => {
     //     return (
@@ -271,7 +271,6 @@ const Updated = () => {
         },
     ]
 
-
     const paragraph = "Skin and Cell AG was founded in Switzerland in 2021 as a new skin science company born out of the experience of a group of eminent oncologists, dermatologists, epidemiologists and skin formulation experts."
 
     return (
@@ -423,11 +422,11 @@ const Updated = () => {
                         Replenish your Skin.
                     </motion.h1>
                     <AnimatePresence>
-                        {openSerum && (
+                        {openFace && (
                             <div className="fixed left-0 top-0 z-[100] flex justify-center items-center max-[720px]:flex-col w-full h-screen max-[720px]:overflow-y-scroll overflow-y-hidden">
                                 <motion.div initial={{ y: "100%" }} animate={{ y: "0%" }} exit={{ y: "-100%" }} transition={{ duration: 1, bounce: 0.1, type: "spring" }} className="h-svh w-full flex  max-[720px]:overflow-y-scroll">
                                     <div className=" pointer-events-none absolute w-full h-svh flex justify-end items-start p-[24px] max-[720px]:p-[18px]  ">
-                                        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.45, delay: 1 }} onClick={() => { setOpenSerum(false) }} className=" cursor-pointer  pointer-events-auto z-50 max-[720px]:text-[000]/60">
+                                        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.45, delay: 1 }} onClick={() => { setOpenFace(false) }} className=" cursor-pointer  pointer-events-auto z-50 max-[720px]:text-[000]/60">
                                             Close
                                         </motion.div>
                                     </div>
@@ -438,7 +437,7 @@ const Updated = () => {
                                                     Facial Moisturiser
                                                 </h1>
                                                 <p className='text-[#000] font-light text-[1rem] w-full text-center max-[720px]:text-[0.875rem]'>
-                                                    B3 Anti-Aging Face Serum 30ml contains:
+                                                    B3 Face Cream 50ml contains:
                                                 </p>
                                                 <div className="pt-7">
                                                     <div className="flex gap-4 flex-wrap justify-center">
@@ -574,14 +573,14 @@ const Updated = () => {
                                         <motion.div initial={{ opacity: 0, filter: "blur(4px)", y: 20 }} animate={{ opacity: 1, filter: "blur(0px)", y: 0 }} exit={{ opacity: 0, filter: "blur(4px)", y: -20 }} transition={{ delay: 1.4, duration: 0.65 }} className=" pt-16 px-10 flex justify-center items-center">
                                             <div>
                                                 <h1 className="  text-[#000] font-[400] w-full text-center max-[1250px]:text-[2.1rem] text-[3rem]">
-                                                    B3 Face Serum
+                                                    Face Serum
                                                 </h1>
                                                 <p className='text-[#000] font-light text-[1rem] w-full text-center max-[720px]:text-[0.875rem]'>
                                                     B3 Anti-Aging Face Serum 30ml contains:
                                                 </p>
                                                 <div className="pt-7">
                                                     <div className="flex gap-4 flex-wrap justify-center">
-                                                        {Ingredients_Face.map((item, index) => (
+                                                        {Ingredients_Serum.map((item, index) => (
                                                             <button
                                                                 key={index}
                                                                 onClick={() => setActiveIndex(index)}
@@ -601,8 +600,8 @@ const Updated = () => {
                                             <motion.img
                                                 layout
                                                 layoutId="imgmobile"
-                                                src="/B3_Face_gold.png"
-                                                alt="B3 Face"
+                                                src="/B3_Serum_gold.png"
+                                                alt="B3 Serum"
                                                 className="max-h-[320px] h-[80%] cursor-crosshair object-contain"
                                             />
                                         </motion.div>
@@ -642,8 +641,8 @@ const Updated = () => {
                                                 <Lens hovering={hovering} setHovering={setHovering}>
                                                     <div className=' p-24'>
                                                         <img
-                                                            src="/B3_Face_gold.png"
-                                                            alt="B3 Face"
+                                                            src="/B3_Serum_gold.png"
+                                                            alt="B3 Serum"
                                                             className="h-[320px] cursor-crosshair max-h-[450px] object-contain"
                                                         />
                                                     </div>
@@ -661,7 +660,7 @@ const Updated = () => {
                                                         exit: { opacity: 0, y: 50, filter: 'blur(4px)' },
                                                     }}
                                                 >
-                                                    {Ingredients_Face.map((item, index) => (
+                                                    {Ingredients_Serum.map((item, index) => (
                                                         <div key={index} className=''>
                                                             <p className='text-[#000] font-[400]'>{item.description}</p>
                                                         </div>
@@ -673,14 +672,14 @@ const Updated = () => {
                                     <div className="w-1/2 max-[720px]:hidden bg-white h-svh flex justify-center items-center">
                                         <motion.div initial={{ opacity: 0, filter: "blur(4px)", y: 20 }} animate={{ opacity: 1, filter: "blur(0px)", y: 0 }} exit={{ opacity: 0, filter: "blur(4px)", y: -20 }} transition={{ delay: 1.4, duration: 0.65 }} className=" px-10">
                                             <h1 className="  text-[#000] font-[400] max-[1250px]:text-[2.1rem] text-[3rem]">
-                                                Facial Moisturiser
+                                                Face Serum
                                             </h1>
                                             <p className='text-[#000] font-light text-[1rem] max-[720px]:text-[0.875rem]'>
                                                 B3 Anti-Aging Face Serum 30ml contains:
                                             </p>
                                             <div className="pt-7">
                                                 <div className="flex gap-4 flex-wrap">
-                                                    {Ingredients_Face.map((item, index) => (
+                                                    {Ingredients_Serum.map((item, index) => (
                                                         <button
                                                             key={index}
                                                             onClick={() => setActiveIndex(index)}
@@ -700,11 +699,427 @@ const Updated = () => {
                             </div>
                         )}
                     </AnimatePresence>
-                    
+                    <AnimatePresence>
+                        {openEye && (
+                            <div className="fixed left-0 top-0 z-[100] flex justify-center items-center max-[720px]:flex-col w-full h-screen max-[720px]:overflow-y-scroll overflow-y-hidden">
+                                <motion.div initial={{ y: "100%" }} animate={{ y: "0%" }} exit={{ y: "-100%" }} transition={{ duration: 1, bounce: 0.1, type: "spring" }} className="h-svh w-full flex  max-[720px]:overflow-y-scroll">
+                                    <div className=" pointer-events-none absolute w-full h-svh flex justify-end items-start p-[24px] max-[720px]:p-[18px]  ">
+                                        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.45, delay: 1 }} onClick={() => { setOpenEye(false) }} className=" cursor-pointer  pointer-events-auto z-50 max-[720px]:text-[000]/60">
+                                            Close
+                                        </motion.div>
+                                    </div>
+                                    <div className="hidden max-[720px]:flex w-full h-auto min-h-auto overflow-y-scroll max-[720px]:flex-col bg-white">
+                                        <motion.div initial={{ opacity: 0, filter: "blur(4px)", y: 20 }} animate={{ opacity: 1, filter: "blur(0px)", y: 0 }} exit={{ opacity: 0, filter: "blur(4px)", y: -20 }} transition={{ delay: 1.4, duration: 0.65 }} className=" pt-16 px-10 flex justify-center items-center">
+                                            <div>
+                                                <h1 className="  text-[#000] font-[400] w-full text-center max-[1250px]:text-[2.1rem] text-[3rem]">
+                                                    Under Eye Concentrate
+                                                </h1>
+                                                <p className='text-[#000] font-light text-[1rem] w-full text-center max-[720px]:text-[0.875rem]'>
+                                                    Under Eye Cream 15ml contains:
+                                                </p>
+                                                <div className="pt-7">
+                                                    <div className="flex gap-4 flex-wrap justify-center">
+                                                        {Ingredients_Eye.map((item, index) => (
+                                                            <button
+                                                                key={index}
+                                                                onClick={() => setActiveIndex(index)}
+                                                                className={`px-[16px] py-[8px] max-[1000px]:px-[12px] border border-[#000]/10 text-[0.875rem] ${activeIndex === index
+                                                                    ? ' text-[#fff] bg-black transition-all duration-100'
+                                                                    : 'text-[#000]/80 transition-all duration-100'
+                                                                    }`}
+                                                            >
+                                                                {item.title}
+                                                            </button>
+                                                        ))}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </motion.div>
+                                        <motion.div initial={{ opacity: 0, filter: "blur(4px)", y: 20 }} animate={{ opacity: 1, filter: "blur(0px)", y: 0 }} exit={{ opacity: 0, filter: "blur(4px)", y: -20 }} transition={{ delay: 1.55, duration: 0.65 }} className="w-full flex justify-center items-center h-full">
+                                            <motion.img
+                                                layout
+                                                layoutId="imgmobile"
+                                                src="/B3_Eye_gold.png"
+                                                alt="B3 Face"
+                                                className="max-h-[320px] h-[80%] cursor-crosshair object-contain"
+                                            />
+                                        </motion.div>
+                                        <motion.div initial={{ opacity: 0, filter: "blur(4px)", y: 20 }} animate={{ opacity: 1, filter: "blur(0px)", y: 0 }} exit={{ opacity: 0, filter: "blur(4px)", y: -20 }} transition={{ delay: 1.7, duration: 0.65 }} className=' pb-8 px-10 bottom-0 pt-4 flex items-end'>
+                                                <TransitionPanel
+                                                    activeIndex={activeIndex}
+                                                    transition={{ duration: 0.3, ease: 'easeInOut' }}
+                                                    variants={{
+                                                        enter: { opacity: 0, y: -50, filter: 'blur(4px)' },
+                                                        center: { opacity: 1, y: 0, filter: 'blur(0px)' },
+                                                        exit: { opacity: 0, y: 50, filter: 'blur(4px)' },
+                                                    }}
+                                                >
+                                                    {Ingredients_Eye.map((item, index) => (
+                                                        <div key={index} className=''>
+                                                            <p className='text-[#000] font-[400]'>{item.description}</p>
+                                                        </div>
+                                                    ))}
+                                                </TransitionPanel>
+                                        </motion.div>
+                                    </div>
+                                    <div className='absolute h-svh max-[720px]:flex-col  w-full flex select-none pointer-events-none overflow-hidden z-[1] max-[720px]:hidden'>
+                                        <div className='w-1/2 h-svh flex flex-col'>
+                                            <div className='w-full h-3/4'>
+
+                                            </div>
+                                            <motion.div initial={{ x: "-100%" }} animate={{ x: 0 }} transition={{ delay: 0.8, duration: 1, type: "spring", bounce: 0.1 }} className='w-[100%] z-50 h-[1px] bg-[#000]/10' />
+                                            <div className='bg-white w-full -translate-y-1 h-[14px]'>
+
+                                            </div>
+                                        </div>
+                                        <motion.div initial={{ y: "100%" }} animate={{ y: 0 }} transition={{ delay: 0.8, duration: 1, type: "spring", bounce: 0.1 }} className='left-0 bg-[#000]/10 w-[1px] h-svh' />
+                                    </div>
+                                    <div className="w-1/2 max-[720px]:hidden h-svh flex-col flex justify-center items-center">
+                                        <div className='h-3/4 w-full flex justify-center items-center bg-white'>
+                                            <motion.div initial={{ opacity: 0, filter: "blur(4px)", y: 20 }} animate={{ opacity: 1, filter: "blur(0px)", y: 0 }} exit={{ opacity: 0, filter: "blur(4px)", y: -20 }} transition={{ delay: 1.55, duration: 0.65 }}>
+                                                <Lens hovering={hovering} setHovering={setHovering}>
+                                                    <div className=' p-24'>
+                                                        <img
+                                                            src="/B3_Eye_gold.png"
+                                                            alt="B3 Face"
+                                                            className="h-[320px] cursor-crosshair max-h-[450px] object-contain"
+                                                        />
+                                                    </div>
+                                                </Lens>
+                                            </motion.div>
+                                        </div>
+                                        <div className='h-1/4 flex justify-center bg-white items-center w-full px-24 max-[900px]:px-12'>
+                                            <motion.div initial={{ opacity: 0, filter: "blur(4px)", y: 20 }} animate={{ opacity: 1, filter: "blur(0px)", y: 0 }} exit={{ opacity: 0, filter: "blur(4px)", y: -20 }} transition={{ delay: 1.7, duration: 0.65 }} className='overflow-hidden'>
+                                                <TransitionPanel
+                                                    activeIndex={activeIndex}
+                                                    transition={{ duration: 0.3, ease: 'easeInOut' }}
+                                                    variants={{
+                                                        enter: { opacity: 0, y: -50, filter: 'blur(4px)' },
+                                                        center: { opacity: 1, y: 0, filter: 'blur(0px)' },
+                                                        exit: { opacity: 0, y: 50, filter: 'blur(4px)' },
+                                                    }}
+                                                >
+                                                    {Ingredients_Eye.map((item, index) => (
+                                                        <div key={index} className=''>
+                                                            <p className='text-[#000] font-[400]'>{item.description}</p>
+                                                        </div>
+                                                    ))}
+                                                </TransitionPanel>
+                                            </motion.div>
+                                        </div>
+                                    </div>
+                                    <div className="w-1/2 max-[720px]:hidden bg-white h-svh flex justify-center items-center">
+                                        <motion.div initial={{ opacity: 0, filter: "blur(4px)", y: 20 }} animate={{ opacity: 1, filter: "blur(0px)", y: 0 }} exit={{ opacity: 0, filter: "blur(4px)", y: -20 }} transition={{ delay: 1.4, duration: 0.65 }} className=" px-10">
+                                            <h1 className="  text-[#000] font-[400] max-[1250px]:text-[2.1rem] text-[3rem]">
+                                                Under Eye Concentrate
+                                            </h1>
+                                            <p className='text-[#000] font-light text-[1rem] max-[720px]:text-[0.875rem]'>
+                                                Under Eye Cream 15ml contains:
+                                            </p>
+                                            <div className="pt-7">
+                                                <div className="flex gap-4 flex-wrap">
+                                                    {Ingredients_Eye.map((item, index) => (
+                                                        <button
+                                                            key={index}
+                                                            onClick={() => setActiveIndex(index)}
+                                                            className={`px-[16px] py-[8px] max-[1000px]:px-[12px] border border-[#000]/10 text-[0.875rem] ${activeIndex === index
+                                                                ? ' text-[#fff] bg-black transition-all duration-100'
+                                                                : 'text-[#000]/80 transition-all duration-100'
+                                                                }`}
+                                                        >
+                                                            {item.title}
+                                                        </button>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        </motion.div>
+                                    </div>
+                                </motion.div>
+                            </div>
+                        )}
+                    </AnimatePresence>
+                    <AnimatePresence>
+                        {openBody && (
+                            <div className="fixed left-0 top-0 z-[100] flex justify-center items-center max-[720px]:flex-col w-full h-screen max-[720px]:overflow-y-scroll overflow-y-hidden">
+                                <motion.div initial={{ y: "100%" }} animate={{ y: "0%" }} exit={{ y: "-100%" }} transition={{ duration: 1, bounce: 0.1, type: "spring" }} className="h-svh w-full flex  max-[720px]:overflow-y-scroll">
+                                    <div className=" pointer-events-none absolute w-full h-svh flex justify-end items-start p-[24px] max-[720px]:p-[18px]  ">
+                                        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.45, delay: 1 }} onClick={() => { setOpenBody(false) }} className=" cursor-pointer  pointer-events-auto z-50 max-[720px]:text-[000]/60">
+                                            Close
+                                        </motion.div>
+                                    </div>
+                                    <div className="hidden max-[720px]:flex w-full h-auto min-h-auto overflow-y-scroll max-[720px]:flex-col bg-white">
+                                        <motion.div initial={{ opacity: 0, filter: "blur(4px)", y: 20 }} animate={{ opacity: 1, filter: "blur(0px)", y: 0 }} exit={{ opacity: 0, filter: "blur(4px)", y: -20 }} transition={{ delay: 1.4, duration: 0.65 }} className=" pt-16 px-10 flex justify-center items-center">
+                                            <div>
+                                                <h1 className="  text-[#000] font-[400] w-full text-center max-[1250px]:text-[2.1rem] text-[3rem]">
+                                                    Body
+                                                </h1>
+                                                <p className='text-[#000] font-light text-[1rem] w-full text-center max-[720px]:text-[0.875rem]'>
+                                                    Body Cream 200ml contains:
+                                                </p>
+                                                <div className="pt-7">
+                                                    <div className="flex gap-4 flex-wrap justify-center">
+                                                        {Ingredients_Body.map((item, index) => (
+                                                            <button
+                                                                key={index}
+                                                                onClick={() => setActiveIndex(index)}
+                                                                className={`px-[16px] py-[8px] max-[1000px]:px-[12px] border border-[#000]/10 text-[0.875rem] ${activeIndex === index
+                                                                    ? ' text-[#fff] bg-black transition-all duration-100'
+                                                                    : 'text-[#000]/80 transition-all duration-100'
+                                                                    }`}
+                                                            >
+                                                                {item.title}
+                                                            </button>
+                                                        ))}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </motion.div>
+                                        <motion.div initial={{ opacity: 0, filter: "blur(4px)", y: 20 }} animate={{ opacity: 1, filter: "blur(0px)", y: 0 }} exit={{ opacity: 0, filter: "blur(4px)", y: -20 }} transition={{ delay: 1.55, duration: 0.65 }} className="w-full flex justify-center items-center h-full">
+                                            <motion.img
+                                                layout
+                                                layoutId="imgmobile"
+                                                src="/2_B3_Body_slim-200ml.png"
+                                                alt="B3 Face"
+                                                className="max-h-[320px] h-[80%] cursor-crosshair object-contain"
+                                            />
+                                        </motion.div>
+                                        <motion.div initial={{ opacity: 0, filter: "blur(4px)", y: 20 }} animate={{ opacity: 1, filter: "blur(0px)", y: 0 }} exit={{ opacity: 0, filter: "blur(4px)", y: -20 }} transition={{ delay: 1.7, duration: 0.65 }} className=' pb-8 px-10 bottom-0 pt-4 flex items-end'>
+                                                <TransitionPanel
+                                                    activeIndex={activeIndex}
+                                                    transition={{ duration: 0.3, ease: 'easeInOut' }}
+                                                    variants={{
+                                                        enter: { opacity: 0, y: -50, filter: 'blur(4px)' },
+                                                        center: { opacity: 1, y: 0, filter: 'blur(0px)' },
+                                                        exit: { opacity: 0, y: 50, filter: 'blur(4px)' },
+                                                    }}
+                                                >
+                                                    {Ingredients_Body.map((item, index) => (
+                                                        <div key={index} className=''>
+                                                            <p className='text-[#000] font-[400]'>{item.description}</p>
+                                                        </div>
+                                                    ))}
+                                                </TransitionPanel>
+                                        </motion.div>
+                                    </div>
+                                    <div className='absolute h-svh max-[720px]:flex-col  w-full flex select-none pointer-events-none overflow-hidden z-[1] max-[720px]:hidden'>
+                                        <div className='w-1/2 h-svh flex flex-col'>
+                                            <div className='w-full h-3/4'>
+
+                                            </div>
+                                            <motion.div initial={{ x: "-100%" }} animate={{ x: 0 }} transition={{ delay: 0.8, duration: 1, type: "spring", bounce: 0.1 }} className='w-[100%] z-50 h-[1px] bg-[#000]/10' />
+                                            <div className='bg-white w-full -translate-y-1 h-[14px]'>
+
+                                            </div>
+                                        </div>
+                                        <motion.div initial={{ y: "100%" }} animate={{ y: 0 }} transition={{ delay: 0.8, duration: 1, type: "spring", bounce: 0.1 }} className='left-0 bg-[#000]/10 w-[1px] h-svh' />
+                                    </div>
+                                    <div className="w-1/2 max-[720px]:hidden h-svh flex-col flex justify-center items-center">
+                                        <div className='h-3/4 w-full flex justify-center items-center bg-white'>
+                                            <motion.div initial={{ opacity: 0, filter: "blur(4px)", y: 20 }} animate={{ opacity: 1, filter: "blur(0px)", y: 0 }} exit={{ opacity: 0, filter: "blur(4px)", y: -20 }} transition={{ delay: 1.55, duration: 0.65 }}>
+                                                <Lens hovering={hovering} setHovering={setHovering}>
+                                                    <div className=' p-24'>
+                                                        <img
+                                                            src="/2_B3_Body_slim-200ml.png"
+                                                            alt="B3 Face"
+                                                            className="h-[320px] cursor-crosshair max-h-[450px] object-contain"
+                                                        />
+                                                    </div>
+                                                </Lens>
+                                            </motion.div>
+                                        </div>
+                                        <div className='h-1/4 flex justify-center bg-white items-center w-full px-24 max-[900px]:px-12'>
+                                            <motion.div initial={{ opacity: 0, filter: "blur(4px)", y: 20 }} animate={{ opacity: 1, filter: "blur(0px)", y: 0 }} exit={{ opacity: 0, filter: "blur(4px)", y: -20 }} transition={{ delay: 1.7, duration: 0.65 }} className='overflow-hidden'>
+                                                <TransitionPanel
+                                                    activeIndex={activeIndex}
+                                                    transition={{ duration: 0.3, ease: 'easeInOut' }}
+                                                    variants={{
+                                                        enter: { opacity: 0, y: -50, filter: 'blur(4px)' },
+                                                        center: { opacity: 1, y: 0, filter: 'blur(0px)' },
+                                                        exit: { opacity: 0, y: 50, filter: 'blur(4px)' },
+                                                    }}
+                                                >
+                                                    {Ingredients_Body.map((item, index) => (
+                                                        <div key={index} className=''>
+                                                            <p className='text-[#000] font-[400]'>{item.description}</p>
+                                                        </div>
+                                                    ))}
+                                                </TransitionPanel>
+                                            </motion.div>
+                                        </div>
+                                    </div>
+                                    <div className="w-1/2 max-[720px]:hidden bg-white h-svh flex justify-center items-center">
+                                        <motion.div initial={{ opacity: 0, filter: "blur(4px)", y: 20 }} animate={{ opacity: 1, filter: "blur(0px)", y: 0 }} exit={{ opacity: 0, filter: "blur(4px)", y: -20 }} transition={{ delay: 1.4, duration: 0.65 }} className=" px-10">
+                                            <h1 className="  text-[#000] font-[400] max-[1250px]:text-[2.1rem] text-[3rem]">
+                                                Body
+                                            </h1>
+                                            <p className='text-[#000] font-light text-[1rem] max-[720px]:text-[0.875rem]'>
+                                                Body Cream 200ml contains:
+                                            </p>
+                                            <div className="pt-7">
+                                                <div className="flex gap-4 flex-wrap">
+                                                    {Ingredients_Body.map((item, index) => (
+                                                        <button
+                                                            key={index}
+                                                            onClick={() => setActiveIndex(index)}
+                                                            className={`px-[16px] py-[8px] max-[1000px]:px-[12px] border border-[#000]/10 text-[0.875rem] ${activeIndex === index
+                                                                ? ' text-[#fff] bg-black transition-all duration-100'
+                                                                : 'text-[#000]/80 transition-all duration-100'
+                                                                }`}
+                                                        >
+                                                            {item.title}
+                                                        </button>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        </motion.div>
+                                    </div>
+                                </motion.div>
+                            </div>
+                        )}
+                    </AnimatePresence>
+                    <AnimatePresence>
+                        {openHand && (
+                            <div className="fixed left-0 top-0 z-[100] flex justify-center items-center max-[720px]:flex-col w-full h-screen max-[720px]:overflow-y-scroll overflow-y-hidden">
+                                <motion.div initial={{ y: "100%" }} animate={{ y: "0%" }} exit={{ y: "-100%" }} transition={{ duration: 1, bounce: 0.1, type: "spring" }} className="h-svh w-full flex  max-[720px]:overflow-y-scroll">
+                                    <div className=" pointer-events-none absolute w-full h-svh flex justify-end items-start p-[24px] max-[720px]:p-[18px]  ">
+                                        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.45, delay: 1 }} onClick={() => { setOpenBody(false) }} className=" cursor-pointer  pointer-events-auto z-50 max-[720px]:text-[000]/60">
+                                            Close
+                                        </motion.div>
+                                    </div>
+                                    <div className="hidden max-[720px]:flex w-full h-auto min-h-auto overflow-y-scroll max-[720px]:flex-col bg-white">
+                                        <motion.div initial={{ opacity: 0, filter: "blur(4px)", y: 20 }} animate={{ opacity: 1, filter: "blur(0px)", y: 0 }} exit={{ opacity: 0, filter: "blur(4px)", y: -20 }} transition={{ delay: 1.4, duration: 0.65 }} className=" pt-16 px-10 flex justify-center items-center">
+                                            <div>
+                                                <h1 className="  text-[#000] font-[400] w-full text-center max-[1250px]:text-[2.1rem] text-[3rem]">
+                                                    Hand
+                                                </h1>
+                                                <p className='text-[#000] font-light text-[1rem] w-full text-center max-[720px]:text-[0.875rem]'>
+                                                    B3 Hand Cream 30ml contains:
+                                                </p>
+                                                <div className="pt-7">
+                                                    <div className="flex gap-4 flex-wrap justify-center">
+                                                        {Ingredients_Hand.map((item, index) => (
+                                                            <button
+                                                                key={index}
+                                                                onClick={() => setActiveIndex(index)}
+                                                                className={`px-[16px] py-[8px] max-[1000px]:px-[12px] border border-[#000]/10 text-[0.875rem] ${activeIndex === index
+                                                                    ? ' text-[#fff] bg-black transition-all duration-100'
+                                                                    : 'text-[#000]/80 transition-all duration-100'
+                                                                    }`}
+                                                            >
+                                                                {item.title}
+                                                            </button>
+                                                        ))}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </motion.div>
+                                        <motion.div initial={{ opacity: 0, filter: "blur(4px)", y: 20 }} animate={{ opacity: 1, filter: "blur(0px)", y: 0 }} exit={{ opacity: 0, filter: "blur(4px)", y: -20 }} transition={{ delay: 1.55, duration: 0.65 }} className="w-full flex justify-center items-center h-full">
+                                            <motion.img
+                                                layout
+                                                layoutId="imgmobile"
+                                                src="/B3_Hand_Gold.png"
+                                                alt="B3 Face"
+                                                className="max-h-[320px] h-[80%] cursor-crosshair object-contain"
+                                            />
+                                        </motion.div>
+                                        <motion.div initial={{ opacity: 0, filter: "blur(4px)", y: 20 }} animate={{ opacity: 1, filter: "blur(0px)", y: 0 }} exit={{ opacity: 0, filter: "blur(4px)", y: -20 }} transition={{ delay: 1.7, duration: 0.65 }} className=' pb-8 px-10 bottom-0 pt-4 flex items-end'>
+                                                <TransitionPanel
+                                                    activeIndex={activeIndex}
+                                                    transition={{ duration: 0.3, ease: 'easeInOut' }}
+                                                    variants={{
+                                                        enter: { opacity: 0, y: -50, filter: 'blur(4px)' },
+                                                        center: { opacity: 1, y: 0, filter: 'blur(0px)' },
+                                                        exit: { opacity: 0, y: 50, filter: 'blur(4px)' },
+                                                    }}
+                                                >
+                                                    {Ingredients_Hand.map((item, index) => (
+                                                        <div key={index} className=''>
+                                                            <p className='text-[#000] font-[400]'>{item.description}</p>
+                                                        </div>
+                                                    ))}
+                                                </TransitionPanel>
+                                        </motion.div>
+                                    </div>
+                                    <div className='absolute h-svh max-[720px]:flex-col  w-full flex select-none pointer-events-none overflow-hidden z-[1] max-[720px]:hidden'>
+                                        <div className='w-1/2 h-svh flex flex-col'>
+                                            <div className='w-full h-3/4'>
+
+                                            </div>
+                                            <motion.div initial={{ x: "-100%" }} animate={{ x: 0 }} transition={{ delay: 0.8, duration: 1, type: "spring", bounce: 0.1 }} className='w-[100%] z-50 h-[1px] bg-[#000]/10' />
+                                            <div className='bg-white w-full -translate-y-1 h-[14px]'>
+
+                                            </div>
+                                        </div>
+                                        <motion.div initial={{ y: "100%" }} animate={{ y: 0 }} transition={{ delay: 0.8, duration: 1, type: "spring", bounce: 0.1 }} className='left-0 bg-[#000]/10 w-[1px] h-svh' />
+                                    </div>
+                                    <div className="w-1/2 max-[720px]:hidden h-svh flex-col flex justify-center items-center">
+                                        <div className='h-3/4 w-full flex justify-center items-center bg-white'>
+                                            <motion.div initial={{ opacity: 0, filter: "blur(4px)", y: 20 }} animate={{ opacity: 1, filter: "blur(0px)", y: 0 }} exit={{ opacity: 0, filter: "blur(4px)", y: -20 }} transition={{ delay: 1.55, duration: 0.65 }}>
+                                                <Lens hovering={hovering} setHovering={setHovering}>
+                                                    <div className=' p-24'>
+                                                        <img
+                                                            src="/B3_Hand_Gold.png"
+                                                            alt="B3 Face"
+                                                            className="h-[320px] cursor-crosshair max-h-[450px] object-contain"
+                                                        />
+                                                    </div>
+                                                </Lens>
+                                            </motion.div>
+                                        </div>
+                                        <div className='h-1/4 flex justify-center bg-white items-center w-full px-24 max-[900px]:px-12'>
+                                            <motion.div initial={{ opacity: 0, filter: "blur(4px)", y: 20 }} animate={{ opacity: 1, filter: "blur(0px)", y: 0 }} exit={{ opacity: 0, filter: "blur(4px)", y: -20 }} transition={{ delay: 1.7, duration: 0.65 }} className='overflow-hidden'>
+                                                <TransitionPanel
+                                                    activeIndex={activeIndex}
+                                                    transition={{ duration: 0.3, ease: 'easeInOut' }}
+                                                    variants={{
+                                                        enter: { opacity: 0, y: -50, filter: 'blur(4px)' },
+                                                        center: { opacity: 1, y: 0, filter: 'blur(0px)' },
+                                                        exit: { opacity: 0, y: 50, filter: 'blur(4px)' },
+                                                    }}
+                                                >
+                                                    {Ingredients_Hand.map((item, index) => (
+                                                        <div key={index} className=''>
+                                                            <p className='text-[#000] font-[400]'>{item.description}</p>
+                                                        </div>
+                                                    ))}
+                                                </TransitionPanel>
+                                            </motion.div>
+                                        </div>
+                                    </div>
+                                    <div className="w-1/2 max-[720px]:hidden bg-white h-svh flex justify-center items-center">
+                                        <motion.div initial={{ opacity: 0, filter: "blur(4px)", y: 20 }} animate={{ opacity: 1, filter: "blur(0px)", y: 0 }} exit={{ opacity: 0, filter: "blur(4px)", y: -20 }} transition={{ delay: 1.4, duration: 0.65 }} className=" px-10">
+                                            <h1 className="  text-[#000] font-[400] max-[1250px]:text-[2.1rem] text-[3rem]">
+                                                Hand
+                                            </h1>
+                                            <p className='text-[#000] font-light text-[1rem] max-[720px]:text-[0.875rem]'>
+                                                B3 Hand Cream 30ml contains:
+                                            </p>
+                                            <div className="pt-7">
+                                                <div className="flex gap-4 flex-wrap">
+                                                    {Ingredients_Hand.map((item, index) => (
+                                                        <button
+                                                            key={index}
+                                                            onClick={() => setActiveIndex(index)}
+                                                            className={`px-[16px] py-[8px] max-[1000px]:px-[12px] border border-[#000]/10 text-[0.875rem] ${activeIndex === index
+                                                                ? ' text-[#fff] bg-black transition-all duration-100'
+                                                                : 'text-[#000]/80 transition-all duration-100'
+                                                                }`}
+                                                        >
+                                                            {item.title}
+                                                        </button>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        </motion.div>
+                                    </div>
+                                </motion.div>
+                            </div>
+                        )}
+                    </AnimatePresence>
                     <Carousel className="max-[1000px]:block hidden -translate-y-8">
                         <CarouselContent>
                             <CarouselItem className='p-4'>
-                                <div onClick={() => { setOpenSerum(true); }} className="flex justify-center">
+                                <div onClick={() => { setOpenFace(true); }} className="flex justify-center">
                                     <div className="flex flex-col">
                                         <motion.div className="flex justify-center items-center w-[25rem] max-[450px]:w-[20rem] relative cursor-pointer p-16 bg-[#fff] h-[30rem] border border-[#000]/10">
                                             <motion.img
@@ -721,7 +1136,7 @@ const Updated = () => {
                                 </div>
                             </CarouselItem>
                             <CarouselItem className='p-4'>
-                                <div className="flex justify-center">
+                                <div onClick={() => { setOpenEye(true); }} className="flex justify-center">
                                     <div className="flex flex-col">
                                         <motion.div className=" flex justify-center items-center w-[25rem] max-[450px]:w-[20rem] relative cursor-pointer p-16 bg-[#fff] h-[30rem] border border-[#000]/10">
                                             <motion.img
@@ -738,7 +1153,7 @@ const Updated = () => {
                                 </div>
                             </CarouselItem>
                             <CarouselItem className='p-4'>
-                                <div className="flex justify-center">
+                                <div onClick={() => { setOpenSerum(true); }}  className="flex justify-center">
                                     <div className="flex flex-col">
                                         <motion.div
                                             layout layoutId="openSerum-" className=" flex justify-center items-center w-[25rem] max-[450px]:w-[20rem] max-[750px]:w-[22rem] relative cursor-pointer p-16 h-[30rem] bg-[#fff] border border-[#000]/10">
@@ -755,8 +1170,8 @@ const Updated = () => {
                                     </div>
                                 </div>
                             </CarouselItem>
-                            <CarouselItem className='p-4'>
-                                <div className="flex justify-center">
+                            <CarouselItem  className='p-4'>
+                                <div onClick={() => { setOpenBody(true); }} className="flex justify-center">
                                     <div className="flex flex-col">
                                         <motion.div className="flex justify-center items-center w-[25rem] max-[450px]:w-[20rem] relative cursor-pointer p-16 bg-[#fff] h-[30rem] border border-[#000]/10">
                                             <motion.img
@@ -773,7 +1188,7 @@ const Updated = () => {
                                 </div>
                             </CarouselItem>
                             <CarouselItem className='p-4'>
-                                <div className="flex justify-center">
+                                <div  onClick={() => { setOpenHand(true); }}  className="flex justify-center">
                                     <div className="flex flex-col">
                                         <motion.div className="flex justify-center items-center w-[25rem] max-[450px]:w-[20rem] relative cursor-pointer p-16 bg-[#fff] h-[30rem] border border-[#000]/10">
                                             <motion.img
@@ -795,7 +1210,7 @@ const Updated = () => {
                     <Carousel className="min-[1600px]:w-[1350px] min-[1000px]:block min-[1000px]:w-[900px] hidden ">
                         <CarouselContent className='min-[750px]:-ml-4 min-[750px]:space-x-4'>
                             <CarouselItem className='min-[1600px]:basis-1/3  min-[1000px]:basis-1/2  pl-4'>
-                                <div onClick={() => { setOpenSerum(true); }} className="flex flex-col">
+                                <div onClick={() => { setOpenFace(true); }} className="flex flex-col">
                                     <motion.div className="flex justify-center items-center w-[25rem] relative cursor-pointer p-16 bg-[#fff] h-[30rem] border border-[#000]/10">
                                         <motion.img
                                             src="/B3_Face_gold.png"
@@ -810,7 +1225,7 @@ const Updated = () => {
                                 </div>
                             </CarouselItem>
                             <CarouselItem className='min-[1600px]:basis-1/3 min-[1000px]:basis-1/2  w-full flex justify-center'>
-                                <div className="flex flex-col">
+                                <div  onClick={() => { setOpenEye(true); }}  className="flex flex-col">
                                     <motion.div className=" flex justify-center items-center w-[25rem] relative cursor-pointer p-16 bg-[#fff] h-[30rem] border border-[#000]/10">
                                         <motion.img
                                             src="/B3_Eye_gold.png"
@@ -825,8 +1240,7 @@ const Updated = () => {
                                 </div>
                             </CarouselItem>
                             <CarouselItem className='min-[1600px]:basis-1/3 min-[1000px]:basis-1/2 basis'>
-
-                                <div className="flex flex-col">
+                                <div  onClick={() => { setOpenSerum(true); }}  className="flex flex-col">
                                     <motion.div
                                         layout layoutId="openSerum" className=" flex justify-center items-center w-[25rem] max-[750px]:w-[22rem] relative cursor-pointer p-16 h-[30rem] bg-[#fff] border border-[#000]/10">
                                         <motion.img
@@ -842,7 +1256,7 @@ const Updated = () => {
                                 </div>
                             </CarouselItem>
                             <CarouselItem className='min-[1600px]:basis-1/3 min-[1000px]:basis-1/2 '>
-                                <div className="flex flex-col">
+                                <div  onClick={() => { setOpenBody(true); }}  className="flex flex-col">
                                     <motion.div className="flex justify-center items-center w-[25rem] relative cursor-pointer p-16 bg-[#fff] h-[30rem] border border-[#000]/10">
                                         <motion.img
                                             src="/2_B3_Body_slim-200ml.png"
@@ -857,7 +1271,7 @@ const Updated = () => {
                                 </div>
                             </CarouselItem>
                             <CarouselItem className='min-[1600px]:basis-1/3  min-[1000px]:basis-1/2'>
-                                <div className="flex flex-col">
+                                <div onClick={() => { setOpenHand(true); }} className="flex flex-col">
                                     <motion.div className="flex justify-center items-center w-[25rem] relative cursor-pointer p-16 bg-[#fff] h-[30rem] border border-[#000]/10">
                                         <motion.img
                                             src="/B3_Hand_Gold.png"
@@ -877,7 +1291,6 @@ const Updated = () => {
                             classNameButton='bg-black *:stroke-zinc-50'
                             alwaysShow
                         />
-
                     </Carousel>
                 </div>
             </section>
