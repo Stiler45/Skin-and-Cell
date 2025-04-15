@@ -326,10 +326,9 @@ function CarouselContent({
 export type CarouselItemProps = {
   children: ReactNode;
   className?: string;
-  onClick?: React.FC
 };
 
-function CarouselItem({ children, className, onClick }: CarouselItemProps) {
+function CarouselItem({ children, className }: CarouselItemProps) {
   return (
     <motion.div
       className={cn(
