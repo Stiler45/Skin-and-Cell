@@ -34,16 +34,19 @@ const Updated = () => {
     const sectionRefFour = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        if (openHam) {
-            document.body.style.overflow = "hidden";
+        const shouldLockScroll = openHam || openSerum || openEye || openHand || openFace || openBody;
+      
+        if (shouldLockScroll) {
+          document.body.style.overflow = "hidden";
         } else {
-            document.body.style.overflow = "";
+          document.body.style.overflow = "";
         }
-
+      
         return () => {
-            document.body.style.overflow = "";
+          document.body.style.overflow = "";
         };
-    }, [openHam]);
+      }, [openHam, openSerum, openEye, openHand, openFace, openBody]);
+      
 
     const items = [
         "Products",
