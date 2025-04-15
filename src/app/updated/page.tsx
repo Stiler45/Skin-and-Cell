@@ -12,10 +12,12 @@ import {
     CarouselItem,
 } from '../../components/ui/carousel';
 import Word from '../../components/ui/word'
-import { VariableDeclaration } from "typescript"
+import { TransitionPanel } from '@/components/ui/transition-panel';
+import { Lens } from '@/components/ui/lens';
 
 const Updated = () => {
 
+    const [openSerum, setOpenSerum] = useState(false)
     const [openHam, setOpenHam] = useState(false)
     const [hovered, setHovered] = useState(false)
     const [hoveredOne, setHoveredOne] = useState(false)
@@ -143,6 +145,129 @@ const Updated = () => {
         { onClick: handleScrollToSection(sectionRefFour) }
     ];
 
+    const [hovering, setHovering] = useState(false);
+    const [activeIndex, setActiveIndex] = useState(0);
+
+    const Ingredients_Face = [
+        {
+            id: 1,
+            title: "Glucosamine",
+            description:
+                "A rising star in cosmetic technologies linked with younger looking skin, anti-wrinkle properties and stimulates Hyaluronic Acid production.",
+        },
+        {
+            id: 2,
+            title: "Glycerol",
+            description:
+                "Moisturizer (established as the best possible moisturizing agent), hydrating and softening the skin.",
+        },
+        {
+            id: 3,
+            title: "Nicotinamide",
+            description:
+                "Nicotinamide (Niacinamide) – the bioactive form of Vitamin B3, shown to provide protection against the harmful effects of the sun (UV irradiation), skin aging, and environmental insult.",
+        },
+        {
+            id: 4,
+            title: "Lactobionic Acid",
+            description:
+                "Brings a fresh complexion to the skin through skin renewal, maintenance of skin integrity and fortification of the natural Skin Barrier.",
+        },
+    ]
+    const Ingredients_Eye = [
+        {
+            id: 1,
+            title: "Ceramides",
+            description:
+                "Key structural components of the skin, replenishing and providing a healthier looking skin.",
+        },
+        {
+            id: 2,
+            title: "Glycerol",
+            description:
+                "Moisturizer (established as the best possible moisturizing agent), hydrating and softening the skin.",
+        },
+        {
+            id: 3,
+            title: "Nicotinamide",
+            description:
+                "Nicotinamide (Niacinamide) – the bioactive form of Vitamin B3, shown to provide protection against the harmful effects of the sun (UV irradiation), skin aging, and environmental insult.",
+        },
+        {
+            id: 4,
+            title: "Lactobionic Acid",
+            description:
+                "Brings a fresh complexion to the skin through skin renewal, maintenance of skin integrity and fortification of the natural Skin Barrier.",
+        },
+    ]
+    const Ingredients_Serum = [
+        {
+            id: 1,
+            title: "Anti-Aging Peptide Complex",
+            description:
+                "Is a complex formula of short chain amino acids which make up certain proteins needed by the skin. Collagen is also made up of three polypeptide chains, so by adding our complex chain of peptides we help to promote the production of additional collagen within the skin which can have visible anti-aging effects.",
+        },
+        {
+            id: 2,
+            title: "Nicotinamide",
+            description:
+                "Nicotinamide (Niacinamide) – the bioactive form of Vitamin B3, shown to provide protection against the harmful effects of the sun (UV irradiation), skin aging, and environmental insult.",
+        },
+        {
+            id: 3,
+            title: "Lactobionic Acid",
+            description:
+                "Brings a fresh complexion to the skin through skin renewal, maintenance of skin integrity and fortification of the natural Skin Barrier.",
+        },
+    ]
+    const Ingredients_Body = [
+        {
+            id: 1,
+            title: "Silk Protein",
+            description:
+                "a variety of silk proteins have been associated with skin rejuvenation, anti-ageing and sun protection.",
+        },
+        {
+            id: 2,
+            title: "Glycerol",
+            description:
+                "Moisturizer (established as the best possible moisturizing agent), hydrating and softening the skin.",
+        },
+        {
+            id: 3,
+            title: "Nicotinamide",
+            description:
+                "Nicotinamide (Niacinamide) – the bioactive form of Vitamin B3, shown to provide protection against the harmful effects of the sun (UV irradiation), skin aging, and environmental insult.",
+        },
+    ]
+    const Ingredients_Hand = [
+        {
+            id: 1,
+            title: "Linoleic Acid",
+            description:
+                "An essential fatty acid and key component of the skins lipid barrier. It strengthens the skins outer layer, making it more resilient and preventing moisture loss, which is essential for keeping hands soft and hydrated, especially in harsh conditions. Other reported ben fits include soothing of irritation, enhancing skin elasticity, regulating cell function, and neutralising damaging free radicals.",
+        },
+        {
+            id: 2,
+            title: "Glycerol",
+            description:
+                "Moisturizer (established as the best possible moisturizing agent), hydrating and softening the skin.",
+        },
+        {
+            id: 3,
+            title: "Nicotinamide",
+            description:
+                "Nicotinamide (Niacinamide) – the bioactive form of Vitamin B3, shown to provide protection against the harmful effects of the sun (UV irradiation), skin aging, and environmental insult.",
+        },
+        {
+            id: 4,
+            title: "Lactobionic Acid",
+            description:
+                "Brings a fresh complexion to the skin through skin renewal, maintenance of skin integrity and fortification of the natural Skin Barrier.",
+        },
+    ]
+
+
     const paragraph = "Skin and Cell AG was founded in Switzerland in 2021 as a new skin science company born out of the experience of a group of eminent oncologists, dermatologists, epidemiologists and skin formulation experts."
 
     return (
@@ -246,7 +371,7 @@ const Updated = () => {
                                                 hidden: { opacity: 0, y: 15, },
                                                 visible: { opacity: 1, y: 0, transition: { duration: 0.15, stiffness: 300, mass: 3 } }
                                             }}
-                                        onClick={() => {links[index].onClick(), setOpenHam(!openHam) }}
+                                            onClick={() => { links[index].onClick(), setOpenHam(!openHam) }}
                                             className="font-medium text-[#000] cursor-pointer leading-[1] text-[32px]"
                                         >
                                             {item}
@@ -293,95 +418,91 @@ const Updated = () => {
                         className="pb-16 text-[3.875rem] max-[1450px]:text-[3rem] max-[750px]:text-[2.25rem] max-[100px]:pb-0 max-[1000px]:text-center w-full font-semibold  text-[#000]">
                         Replenish your Skin.
                     </motion.h1>
-                    {/* <AnimatePresence>
+                    <AnimatePresence>
                         {openSerum && (
-                            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed left-0 top-0 z-[100] flex justify-center items-center w-full h-screen overflow-y-hidden backdrop-blur-[8px] ">
-                                <motion.div
-                                    onClick={() => {
-                                        setOpenSerum(!openSerum)
-                                    }}
-                                    layout
-                                    layoutId="openSerum"
-                                    className="flex justify-center bg-white bg-blur-[24px] p-[32px] max-[800px]:p-[24px] max-[800px]:pr-[0px] border border-black/10 max-[800px]:border-none w-auto max-[800px]:w-full max-w-[1200px] overflow-hidden cursor-pointer"
-                                >
-                                    <div className="flex max-[800px]:flex-col select-none">
-                                        <div className="flex flex-col justify-between space-y-[40px] pr-[40px] max-[800px]:pr-[0px] max-[800px]:pb-[8px] max-w-[650px] max-[800px]:max-w-[100%]">
-                                            <motion.div
-                                                layout
-                                                layoutId="hand-box"
-                                                className="flex justify-center items-center pt-[12px] w-full h-full"
-                                            >
-                                                <motion.img
-                                                    layout
-                                                    src="/B3_Serum_Gold.png"
-                                                    alt="B3 Serum"
-                                                    layoutId="Serum-same"
-                                                    className="h-[320px] max-h-[500px] object-contain"
-                                                />
-                                            </motion.div>
+                            <div className="fixed left-0 top-0 z-[100] flex justify-center items-center w-full h-screen overflow-y-hidden ">
+                                <motion.div initial={{ y: "100%" }} animate={{ y: "0%" }} exit={{ y: "-100%" }} transition={{ duration: 1, bounce: 0.1, type: "spring" }} className="h-svh w-full flex">
+                                    <div className=" pointer-events-none absolute w-full h-svh flex justify-end items-start p-[24px]">
+                                       <div onClick={()=>{setOpenSerum(false)}} className=" cursor-pointer  pointer-events-auto">
+                                            Close
+                                       </div>
+                                    </div>
+                                    <div className='absolute h-svh w-full flex select-none pointer-events-none overflow-hidden z-[1]'>
+                                        <div className='w-1/2 h-svh flex flex-col'>
+                                            <div className='w-full h-3/4'>
 
-                                            <div className="flex flex-col">
-                                                <motion.div
-                                                    initial="initial"
-                                                    animate="animate"
-                                                    exit="exit"
-                                                    layout
-                                                    className={`text-[1.5rem] text-[#000] font-semibold`}
-                                                >
-                                                    B3 Eye Concentrate
-                                                </motion.div>
-                                                <motion.div
-                                                    initial="initial"
-                                                    animate="animate"
-                                                    exit="exit"
-                                                    layout
-                                                    className={`text-[1rem]  text-[#000]/80 font-normal`}
-                                                >
-                                                    Infused with Peptides which is Anti Aging
-                                                </motion.div>
+                                            </div>
+                                            <motion.div initial={{ x: "-100%" }} animate={{ x: 0 }} transition={{ delay: 0.45, duration: 0.8, type: "spring", bounce: 0.1 }} className='w-[100%] z-50 h-[1px] bg-[#000]/10' />
+                                            <div className='bg-white w-full -translate-y-1 h-[14px]'>
+
                                             </div>
                                         </div>
-                                        <div className="flex flex-col justify-start w-auto max-w-[760px]">
-                                            <motion.div
-                                                layout
-                                                initial="initial"
-                                                animate="animate"
-                                                exit="exit"
-                                                layoutId="hand-ingredients"
-                                                className="pb-3 text-[1.5rem] text-[#000] font-semibold"
-                                            >
-                                                Ingredients
+                                        <motion.div initial={{ y: "100%" }} animate={{ y: 0 }} transition={{ delay: 0.45, duration: 0.8, type: "spring", bounce: 0.1 }} className='left-0 bg-[#000]/10 w-[1px] h-svh' />
+                                    </div>
+                                    <div className="w-1/2 h-svh flex-col flex justify-center items-center ">
+                                        <div className='h-3/4 w-full flex justify-center items-center bg-white'>
+                                            <motion.div initial={{ opacity: 0, filter: "blur(4px)", y: 20 }} animate={{ opacity: 1, filter: "blur(0px)", y: 0 }} exit={{ opacity: 0, filter: "blur(4px)", y: -20 }} transition={{ delay: 1.1, duration: 0.55 }}>
+                                                <Lens hovering={hovering} setHovering={setHovering}>
+                                                    <div className=' p-24'>
+                                                        <img
+                                                            src="/B3_Face_gold.png"
+                                                            alt="B3 Face"
+                                                            className="h-[320px] cursor-none max-h-[450px] object-contain"
+                                                        />
+                                                    </div>
+                                                </Lens>
                                             </motion.div>
-                                            {ingredients.map((ingredient, index) => (
-                                                <div key={index} className="max-w-[35vw] max-[800px]:max-w-[100%]">
-                                                    <motion.div
-                                                        layout
-                                                        initial="initial"
-                                                        animate="animate"
-                                                        exit="exit"
-                                                        layoutId={`hand-text-${index}`}
-                                                        className={`text-[1.25rem]  text-[#000]/90 font-medium`}
-                                                    >
-                                                        {index + 1}. {ingredient.title}
-                                                    </motion.div>
-                                                    <motion.div
-                                                        layout
-                                                        initial="initial"
-                                                        animate="animate"
-                                                        exit="exit"
-                                                        layoutId={`hand-desc-${index}`}
-                                                        className={`max-w-[650px] pb-4 text-[1rem] text-[#000]/80 font-normal`}
-                                                    >
-                                                        {ingredient.description}
-                                                    </motion.div>
-                                                </div>
-                                            ))}
+                                        </div>
+                                        <div className='h-1/4 flex justify-center bg-white items-center w-full px-24 max-[900px]:px-12'>
+                                            <motion.div initial={{ opacity: 0, filter: "blur(4px)", y: 20 }} animate={{ opacity: 1, filter: "blur(0px)", y: 0 }} exit={{ opacity: 0, filter: "blur(4px)", y: -20 }} transition={{ delay: 1.4, duration: 0.65 }} className='overflow-hidden'>
+                                                <TransitionPanel
+                                                    activeIndex={activeIndex}
+                                                    transition={{ duration: 0.3, ease: 'easeInOut' }}
+                                                    variants={{
+                                                        enter: { opacity: 0, y: -50, filter: 'blur(4px)' },
+                                                        center: { opacity: 1, y: 0, filter: 'blur(0px)' },
+                                                        exit: { opacity: 0, y: 50, filter: 'blur(4px)' },
+                                                    }}
+                                                >
+                                                    {Ingredients_Face.map((item, index) => (
+                                                        <div key={index} className=''>
+                                                            <p className='text-[#000] font-[400]'>{item.description}</p>
+                                                        </div>
+                                                    ))}
+                                                </TransitionPanel>
+                                            </motion.div>
                                         </div>
                                     </div>
+                                    <motion.div className="w-1/2 bg-white h-svh  flex justify-center items-center">
+                                        <motion.div initial={{ opacity: 0, filter: "blur(4px)", y: 20 }} animate={{ opacity: 1, filter: "blur(0px)", y: 0 }} exit={{ opacity: 0, filter: "blur(4px)", y: -20 }} transition={{ delay: 0.8, duration: 0.65 }} className=" px-10">
+                                            <h1 className="  text-[#000] font-[400] max-[1250px]:text-[2.1rem] text-[3rem]">
+                                                Facial Moisturiser
+                                            </h1>
+                                            <p className='text-[#000] font-light text-[1rem]'>
+                                                B3 Anti-Aging Face Serum 30ml contains:
+                                            </p>
+                                            <div className="pt-7">
+                                                <div className="flex gap-4 flex-wrap">
+                                                    {Ingredients_Face.map((item, index) => (
+                                                        <button
+                                                            key={index}
+                                                            onClick={() => setActiveIndex(index)}
+                                                            className={`px-[16px] py-[8px] border border-[#000]/10 text-[0.875rem] ${activeIndex === index
+                                                                ? ' text-[#fff] bg-black transition-all duration-100'
+                                                                : 'text-[#000]/80 transition-all duration-100'
+                                                                }`}
+                                                        >
+                                                            {item.title}
+                                                        </button>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        </motion.div>
+                                    </motion.div>
                                 </motion.div>
-                            </motion.div>
+                            </div>
                         )}
-                    </AnimatePresence> */}
+                    </AnimatePresence>
                     <Carousel className="max-[1000px]:block hidden -translate-y-8">
                         <CarouselContent>
                             <CarouselItem className='p-4'>
@@ -476,7 +597,7 @@ const Updated = () => {
                     <Carousel className="min-[1600px]:w-[1350px] min-[1000px]:block min-[1000px]:w-[900px] hidden ">
                         <CarouselContent className='min-[750px]:-ml-4 min-[750px]:space-x-4'>
                             <CarouselItem className='min-[1600px]:basis-1/3  min-[1000px]:basis-1/2  pl-4'>
-                                <div className="flex flex-col">
+                                <div onClick={() => {setOpenSerum(true); console.log("clicked")}}  className="flex flex-col">
                                     <motion.div className="flex justify-center items-center w-[25rem] relative cursor-pointer p-16 bg-[#fff] h-[30rem] border border-[#000]/10">
                                         <motion.img
                                             src="/B3_Face_gold.png"
